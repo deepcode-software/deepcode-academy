@@ -15,8 +15,10 @@ export default function Navbar() {
         </div>
       </div>
       <nav>
-        <div>
-          <h1>DEEPCODE</h1>
+        <div className="logo">
+          <h1>
+            <span>DEEP</span>CODE
+          </h1>
         </div>
         <ul>
           <li>
