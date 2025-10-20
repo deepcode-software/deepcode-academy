@@ -2,15 +2,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: #1a1a1a;
+}
+
+.container {
+  max-width: 1440px;
+  margin: auto;
 }
 
 /* ========== Header Start ========== */
 
+header {
+  background: #ee2c3c;
+}
+
 header .top-nav {
   height: 40.8px;
   padding: 0 178px;
-  /* background: #ee2c3c; */
   font-size: 16px;
   color: #e1e1e1;
   font-family: "Manrope", sans-serif;
@@ -18,7 +25,6 @@ header .top-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(84, 84, 84, 0.48);
 }
 
 header .contact {
@@ -35,14 +41,13 @@ header nav {
   font-family: "Urbanist", sans-serif;
   padding: 0 178.5px;
   margin-left: auto;
-  border-bottom: 1px solid rgba(84, 84, 84, 0.48);
 }
 
 header nav h1 {
   color: #e1e1e1;
 }
 
-header nav h1 span{
+header nav h1 span {
   color: #2563eb;
 }
 
