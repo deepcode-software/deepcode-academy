@@ -1,7 +1,7 @@
-import React from 'react'
-
 export default function Blog() {
   return (
-    <div>Blog</div>
-  )
+    <div className="container">
+      <div>Blog</div>
+    </div>
+  );
 }
