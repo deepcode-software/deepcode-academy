@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Tuples - DeepCode Academy</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Tuples";
+        var mkdocs_page_input_path = "python\\tuples.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> DeepCode Academy
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Python</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../what-is-python/">What is Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../variables/">Variables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../data-types/">Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../operators/">Operatos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../lists/">Lists</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Tuples</a>
+    <ul class="current">
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sets/">Sets</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../dictionaries/">Dictionaries</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../conditional-statements/">Conditional Statements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../for-loop/">For Loop</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../while-loop/">While Loop</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../functions/">Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../exception-handling/">Exception Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../moduls/">Moduls</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../file-handling/">File Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../database/">Database</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../third-party-packages/">Third Party Packages</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../oop/">OOP</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">DeepCode Academy</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Python</li>
+      <li class="breadcrumb-item active">Tuples</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="python-dasturlash-asoslari">🐍 PYTHON DASTURLASH ASOSLARI</h1>
+<h1 id="5-dars-tuples">🧩 5-DARS TUPLES</h1>
+<p>📌 Tuple — bu Pythonda bir nechta ma’lumotni bitta o‘zgaruvchida saqlash uchun ishlatiladigan o‘zgarmas tuzilma. U dumaloq qavs ichida yoziladi va elementlar vergul bilan ajratiladi. Tuple yaratilgach, uning ichidagi qiymatlarni o‘zgartirib, o‘chirib yoki yangisini qo‘shib bo‘lmaydi. Undagi ma’lumotlar tartib bilan saqlanadi va indeks orqali chaqiriladi. Tuple listga o‘xshaydi, lekin o‘zgarmasligi bilan farq qiladi. U dasturda tezroq ishlaydi va kamroq xotira egallaydi. O‘zgarmas ma’lumotlarni xavfsiz saqlash uchun tuple juda qulay.</p>
+<h2 id="tuple-xususiyatlari">✅ TUPLE XUSUSIYATLARI</h2>
+<p>📌 <strong>O‘zgarmaydi:</strong> Tuple yaratilgandan keyin uning ichidagi ma’lumotlarni o‘zgartirib bo‘lmaydi. Masalan, yangi element qo‘shib yoki mavjudini o‘chirib bo‘lmaydi. Bu degani — tuple ichidagi ma’lumotlar doim bir xil bo‘lib qoladi.</p>
+<p>📌 <strong>Tartibli:</strong> Tuple ichida ma’lumotlar tartib bilan saqlanadi. Har bir element o‘z o‘rniga ega. Siz bu o‘rinni raqam bilan chaqirishingiz mumkin (masalan: birinchi element, ikkinchi element va hokazo).</p>
+<p>📌 <strong>Har xil turdagi ma’lumot bo‘lishi mumkin:</strong> Tuple ichida sonlar, matnlar, True/False qiymatlar yoki boshqa turdagi ma’lumotlar aralash bo‘lishi mumkin. Bularni bir joyda saqlash imkonini beradi.</p>
+<p>📌 <strong>Tez ishlaydi:</strong> Tuple — kompyuter uchun engil va tez tuzilma. Dastur ishlaganda tuplelar ro‘yxatlarga qaraganda tezroq ishlaydi va kam xotira ishlatadi.</p>
+<p>📌 <strong>O‘zgarmaydigan ma’lumotlar uchun qulay:</strong> Agar sizda haftaning kunlari, oylar nomi, davlatlar ro‘yxati kabi o‘zgarmas ma’lumotlar bo‘lsa, tuple juda foydali bo‘ladi.</p>
+<h2 id="tuple-va-list-farqi">✅ TUPLE VA LIST FARQI</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Tuple</th>
+<th>List</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>O'zgarishi mumkinmi?</td>
+<td>Yo'q(<strong>immutable</strong>)</td>
+<td>Ha(<strong>mutable</strong>)</td>
+</tr>
+<tr>
+<td>Tezligi</td>
+<td>Tezroq</td>
+<td>Sekinroq</td>
+</tr>
+<tr>
+<td>Qavs turi</td>
+<td><strong>()</strong></td>
+<td><strong>[]</strong></td>
+</tr>
+<tr>
+<td>Xotira sarfi</td>
+<td>Kamroq</td>
+<td>Ko'proq</td>
+</tr>
+<tr>
+<td>Qo'llanilish holati</td>
+<td>O'zgarmas ma'lumotlar uchun</td>
+<td>O'zgaruvchi ma'lumotlar uchun</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tuple-yaratish">✅ TUPLE YARATISH</h2>
+<h3 id="oddiy-tuple-yaratish">❇️ ODDIY TUPLE YARATISH</h3>
+<pre><code class="language-python"># Uchta meva nomini o‘z ichiga olgan tuple yaratamiz
+fruits = (&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;)
+
+# fruits tuple ichidagi barcha elementlarni ekranga chiqaramiz
+print(fruits)
+</code></pre>
+<h3 id="bitta-elementli-tuple-yaratish">❇️ BITTA E'LEMENTLI TUPLE YARATISH</h3>
+<pre><code class="language-python"># Faqat bitta elementdan iborat tuple yaratamiz
+# E’tibor bering, oxirida vergul qo‘yilishi shart
+single_fruit = (&quot;apple&quot;,)
+
+# Bitta elementli tuple ni ekranga chiqaramiz
+print(single_fruit)
+
+
+
+# ❌ Bu tuple emas (string bo‘lib qoladi)
+
+# Bu yerda vergul yo‘q, shuning uchun bu oddiy string bo‘ladi
+not_a_tuple = (&quot;apple&quot;)
+
+# O‘zgaruvchi turi (type) ni tekshiramiz
+print(type(not_a_tuple))  # &lt;class 'str'&gt;
+</code></pre>
+<h2 id="tuple-elementlariga-murojat-qilish">✅ TUPLE E'LEMENTLARIGA MUROJAT QILISH</h2>
+<p>📌 Tuple ichidagi har bir element tartib bilan joylashgan va ularga <strong>indekslar</strong> orqali murojaat qilish mumkin. Hisoblash <strong>0</strong> dan boshlanadi, ya’ni birinchi elementning indeksi <strong>0</strong> bo‘ladi. Bu xuddi listdagi kabi ishlaydi.</p>
+<pre><code class="language-python"># Bu yerda 5 ta elementdan iborat tuple yaratilmoqda
+my_tuple = (10, 20, 30, 40, 50)
+
+# [0] — bu birinchi elementga murojaat, indeks 0 dan boshlanadi
+print(my_tuple[0])  # 10
+
+# [2] — bu uchinchi elementga murojaat (0 - 1 - 2), qiymati 30
+print(my_tuple[2])  # 30
+
+# [-1] — bu oxirgi elementga murojaat, -1 doimo oxirgi elementni bildiradi
+print(my_tuple[-1])  # 50
+</code></pre>
+<h2 id="tuple-ustida-amallar">✅ TUPLE USTIDA AMALLAR</h2>
+<p>📌 Tuple — bu o‘zgarmas ma’lumot turi. Ya’ni, yaratilgach, uning ichidagi qiymatlarni o‘zgartirib, o‘chirib yoki yangisini qo‘shib bo‘lmaydi.</p>
+<ul>
+<li>Lekin, siz tuple bilan ikkita amalni bemalol bajara olasiz:<ul>
+<li>Tuplelarni birlashtirish</li>
+<li>Tupleni takrorlash</li>
+</ul>
+</li>
+</ul>
+<h3 id="operatori">✳️ + OPERATORI</h3>
+<p>📌 Bu usulda ikkita tuple birga qo‘shiladi va yangi tuple hosil bo‘ladi. Asl tuplelar o‘zgarmaydi.</p>
+<pre><code class="language-python"># Birinchi tuple
+tuple1 = (1, 2)
+
+# Ikkinchi tuple
+tuple2 = (3, 4)
+
+# Ikkalasini birlashtiramiz va yangi tuple hosil qilamiz
+new_tuple = tuple1 + tuple2
+
+# Natijani chiqaramiz
+print(new_tuple)  # (1, 2, 3, 4)
+</code></pre>
+<p>❗ Yuqorida <code>tuple1</code> va <code>tuple2</code> o‘zgarmagan holda qoladi, faqat <code>+</code> orqali ularning qiymatlari birga qo‘shilib, <code>new_tuple</code> degan yangi tuple yaratiladi.</p>
+<h3 id="takrorlash">✳️ TAKRORLASH</h3>
+<p>📌 Agar bir tuple ni o‘zini o‘ziga birlashtirmoqchi bo‘lsangiz, uni yana o‘zi bilan <code>+</code> orqali birlashtirasiz.</p>
+<pre><code class="language-python"># Asl tuple
+tuple1 = (1, 2, 3)
+
+# O‘z-o‘ziga birlashtirish (ikki marta yozilgan bo‘ladi)
+result = tuple1 + tuple1
+
+# Natijani chiqaramiz
+print(result)  # (1, 2, 3, 1, 2, 3)
+</code></pre>
+<h3 id="tupleni-kopaytirish-takrorlash">❇️ TUPLENI KO'PAYTIRISH (TAKRORLASH)</h3>
+<p>📌 Tuple o‘zgarmas bo‘lsa ham, uni bir nechta marta takrorlab yangi tuple yaratish mumkin. Buning uchun <code>*</code> operatoridan foydalaniladi.</p>
+<pre><code class="language-python"># Bitta elementdan iborat tuple yaratilmoqda
+tuple1 = (&quot;hello&quot;,)
+
+# Bu tuple 3 marta takrorlanmoqda
+new_tuple = tuple1 * 3
+
+# Natijada yangi tuple hosil bo‘ladi
+print(new_tuple)  # ('hello', 'hello', 'hello')
+</code></pre>
+<h3 id="tuple-uzunligini-aniqlash">❇️ TUPLE UZUNLIGINI ANIQLASH</h3>
+<p>📌 Tuple ichida nechta element borligini bilish uchun <code>len()</code> funksiyasidan foydalaniladi. Bu funksiya tuple uzunligini, ya’ni elementlar sonini qaytaradi.</p>
+<pre><code class="language-python"># 5 ta elementdan iborat tuple yaratilmoqda
+my_tuple = (1, 2, 3, 4, 5)
+
+# len() funksiyasi tuple ichidagi elementlar sonini hisoblaydi
+print(len(my_tuple))  # 5
+</code></pre>
+<h3 id="in-operatori">❇️ in OPERATORI</h3>
+<p>📌 in operatori yordamida biror qiymat tuple ichida bor yoki yo‘qligini tekshirish mumkin. Natija True yoki False ko‘rinishida chiqadi.</p>
+<pre><code class="language-python"># Mevalar saqlangan tuple yaratilmoqda
+my_tuple = (&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;)
+
+# &quot;banana&quot; tuple ichida bormi? degan savolga javob tekshirilmoqda
+print(&quot;banana&quot; in my_tuple)  # True
+</code></pre>
+<h3 id="tupleni-qiymatlarga-ajratishunpacking">❇️ TUPLENI QIYMATLARGA AJRATISH(<code>Unpacking</code>)</h3>
+<p>📌 Tuple ichidagi har bir qiymatni alohida o‘zgaruvchiga ajratib olish mumkin. Bunga Pythonda <code>unpacking</code> deyiladi.</p>
+<pre><code class="language-python"># 3 ta meva nomidan iborat tuple yaratilmoqda
+my_tuple = (&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;)
+
+# Tuple ichidagi har bir qiymat alohida o‘zgaruvchiga ajratilmoqda
+(fruit1, fruit2, fruit3) = my_tuple
+
+# Har bir o‘zgaruvchidagi qiymat ekranga chiqariladi
+print(fruit1)  # 'apple'
+print(fruit2)  # 'banana'
+print(fruit3)  # 'cherry'
+</code></pre>
+<h3 id="nested-tuple">❇️ NESTED TUPLE</h3>
+<p>📌 Tuple ichida yana boshqa tuple ham saqlanishi mumkin. Bunga <strong>ichma-ich</strong> tuple yoki <strong>nested tuple</strong> deyiladi.</p>
+<pre><code class="language-python"># Bu yerda talaba haqida ma'lumotlar saqlanmoqda:
+# ism, yosh, va baholar (baholar alohida tuple ichida)
+student = (&quot;Ali&quot;, 20, (85, 90, 95))
+
+# Indeks 0 — ismni beradi
+print(student[0])  # Ali
+
+# Indeks 1 — yoshni beradi
+print(student[1])  # 20
+
+# Indeks 2 — baholar joylashgan ichki tuple
+print(student[2])  # (85, 90, 95)
+
+# Ichki tuple ichidagi ikkinchi bahoni olish
+print(student[2][1])  # 90
+</code></pre>
+<h3 id="tuple-bilan-ishlashda-foydali-metodlar">❇️ TUPLE BILAN ISHLASHDA FOYDALI METODLAR</h3>
+<h4 id="count">✳️ .count()</h4>
+<p>📌 Bu funksiya siz bergan qiymatni tuple ichida qidiradi va nechta marta borligini sanaydi. Agar qiymat topilmasa, 0 qaytaradi.</p>
+<pre><code class="language-python"># Bir nechta takrorlanuvchi sonlardan iborat tuple
+my_tuple = (1, 2, 2, 3, 2)
+
+# 2 soni tuple ichida necha marta borligini hisoblaydi
+print(my_tuple.count(2))  # 3
+</code></pre>
+<h4 id="index">✳️ .index()</h4>
+<p>📌 Bu metod tuple ichida berilgan qiymat qayerda turganini aniqlaydi, ya’ni indeks raqamini qaytaradi.</p>
+<pre><code class="language-python"># Elementlar ketma-ketligi
+my_tuple = (1, 2, 3, 2, 4)
+
+# 2 soni birinchi bo‘lib qayerda uchraganini topadi (indeks 1)
+print(my_tuple.index(2))  # 1
+</code></pre>
+<h1 id="amaliyot">✅ AMALIYOT</h1>
+<h3 id="1-topshiriq">✅ 1-topshiriq:</h3>
+<p>Quyidagi 3 ta hayvon nomidan iborat <code>animals</code> degan tuple yarating va ekranga chiqaring:<br />
+- <code>"quyon"</code>, <code>"mushuk"</code>, <code>"it"</code></p>
+<hr />
+<h3 id="2-topshiriq">✅ 2-topshiriq:</h3>
+<p>Faqat <code>"apple"</code> qiymatidan iborat tuple yarating.<br />
+- Vergul qo‘yilmasa, bu oddiy <code>string</code> bo‘lib qoladi. To‘g‘ri tuple yarating.</p>
+<hr />
+<h3 id="3-topshiriq">✅ 3-topshiriq:</h3>
+<p>Quyidagi tupledagi ikkinchi elementni ekranga chiqaring:</p>
+<pre><code class="language-python">colors = (&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;)
+</code></pre>
+<hr />
+<h3 id="4-topshiriq">✅ 4-topshiriq:</h3>
+<p>Quyidagi tupledan oxirgi elementni <code>-1</code> indeks yordamida chiqaring:</p>
+<pre><code class="language-python">numbers = (5, 10, 15, 20)
+</code></pre>
+<hr />
+<h3 id="5-topshiriq">✅ 5-topshiriq:</h3>
+<p>Quyidagi ikki tupleni <code>+</code> operatori yordamida birlashtiring va yangi <code>result</code> nomli tuple yarating:</p>
+<pre><code class="language-python">a = (1, 2)
+b = (3, 4)
+</code></pre>
+<hr />
+<h3 id="6-topshiriq">✅ 6-topshiriq:</h3>
+<p>Quyidagi tuple 3 marta takrorlab <code>new_tuple</code> degan yangi tuple yarating:</p>
+<pre><code class="language-python">word = (&quot;Hi&quot;,)
+</code></pre>
+<hr />
+<h3 id="7-topshiriq">✅ 7-topshiriq:</h3>
+<p>Quyidagi tuple ichida nechta element borligini <code>len()</code> yordamida aniqlang:</p>
+<pre><code class="language-python">digits = (1, 2, 3, 4, 5, 6)
+</code></pre>
+<hr />
+<h3 id="8-topshiriq">✅ 8-topshiriq:</h3>
+<p>Quyidagi tupleda <code>"banana"</code> bor yoki yo‘qligini <code>in</code> operatori yordamida tekshirib chiqaring:</p>
+<pre><code class="language-python">fruits = (&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;)
+</code></pre>
+<hr />
+<h3 id="9-topshiriq">✅ 9-topshiriq:</h3>
+<p>Quyidagi tupledagi qiymatlarni alohida 3 ta o‘zgaruvchiga ajrating (<code>unpacking</code> qiling):</p>
+<pre><code class="language-python">person = (&quot;Ali&quot;, 25, &quot;Toshkent&quot;)
+</code></pre>
+<hr />
+<h3 id="10-topshiriq">✅ 10-topshiriq:</h3>
+<p>Quyidagi nested tupledan 90 sonini alohida olib ekranga chiqaring:</p>
+<pre><code class="language-python">student = (&quot;Ali&quot;, 20, (85, 90, 95))
+</code></pre>
+<hr />
+<h3 id="11-topshiriq">✅ 11-topshiriq:</h3>
+<p>Quyidagi tupleda <code>2</code> soni nechta marta qatnashganini <code>.count()</code> yordamida aniqlang:</p>
+<pre><code class="language-python">data = (1, 2, 3, 2, 4, 2)
+</code></pre>
+<hr />
+<h3 id="12-topshiriq">✅ 12-topshiriq:</h3>
+<p>Quyidagi tupleda <code>3</code> soni birinchi marta qaysi indeksda turganini <code>.index()</code> yordamida aniqlang:</p>
+<pre><code class="language-python">nums = (5, 3, 7, 3, 9)
+</code></pre>
+<hr />
+<h3 id="13-topshiriq">✅ 13-topshiriq:</h3>
+<p>Quyidagi kodda tuple emas, string yaratilgan. Uni tuzatib, haqiqiy tuple holatiga keltiring:</p>
+<pre><code class="language-python">item = (&quot;book&quot;)
+</code></pre>
+<hr />
+<h3 id="14-topshiriq">✅ 14-topshiriq:</h3>
+<p>Quyidagi tupledan <code>"Python"</code> so‘zini indeks yordamida ajratib oling:</p>
+<pre><code class="language-python">langs = (&quot;C++&quot;, &quot;Python&quot;, &quot;Java&quot;)
+</code></pre>
+<hr />
+<h3 id="15-topshiriq">✅ 15-topshiriq:</h3>
+<p>Quyidagi ikki tupleni <code>+</code> operatori yordamida birlashtiring va <code>new_tuple</code> nomli yangi tuplega saqlang:</p>
+<pre><code class="language-python">tuple1 = (&quot;a&quot;, &quot;b&quot;)
+tuple2 = (&quot;c&quot;, &quot;d&quot;, &quot;e&quot;)
+</code></pre>
+<hr />
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../lists/" class="btn btn-neutral float-left" title="Lists"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../sets/" class="btn btn-neutral float-right" title="Sets">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../lists/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../sets/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
