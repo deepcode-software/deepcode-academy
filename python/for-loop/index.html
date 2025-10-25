@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>For Loop - DeepCode Academy</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "For Loop";
+        var mkdocs_page_input_path = "python\\for-loop.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> DeepCode Academy
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Python</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../what-is-python/">What is Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../variables/">Variables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../data-types/">Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../operators/">Operatos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../lists/">Lists</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tuples/">Tuples</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sets/">Sets</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../dictionaries/">Dictionaries</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../conditional-statements/">Conditional Statements</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">For Loop</a>
+    <ul class="current">
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../while-loop/">While Loop</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../functions/">Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../exception-handling/">Exception Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../moduls/">Moduls</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../file-handling/">File Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../database/">Database</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../third-party-packages/">Third Party Packages</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../oop/">OOP</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">DeepCode Academy</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Python</li>
+      <li class="breadcrumb-item active">For Loop</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="python-dasturlash-asoslari">🐍 PYTHON DASTURLASH ASOSLARI</h1>
+<h1 id="9-dars-for-loop">🧩 9-DARS FOR LOOP</h1>
+<p>📌 for – bu <strong>tsikl operatori</strong>, ya’ni <strong>takrorlovchi kod</strong>. Agar sizda bir nechta qiymatlar bo‘lsa (masalan, ro‘yxat, sonlar, harflar), for tsikli ularni <strong>birma-bir</strong> olib, har biriga bir xil amalni bajarish uchun ishlatiladi.</p>
+<pre><code class="language-python"># 'salom' degan matnli o'zgaruvchi yaratildi
+soz = &quot;salom&quot;
+
+# soz o'zgaruvchisidagi har bir harf bo'yicha yuramiz
+for harf in soz:
+    # Har bir harfni alohida qilib ekranga chiqaramiz
+    print(harf)
+</code></pre>
+<h2 id="listlar-bilan-ishlash">✅ LISTLAR BILAN ISHLASH</h2>
+<p>📌 Ro'yxatlar eng keng tarqalgan takrorlanadigan obyektlardan biri hisoblanadi.</p>
+<p>🎯 Buyurtmalar ro‘yxatini ekranga chiqarish</p>
+<pre><code class="language-python"># Buyurtma qilingan mahsulotlar ro'yxati
+orders = [&quot;bread&quot;, &quot;milk&quot;, &quot;eggs&quot;, &quot;cheese&quot;]
+
+# Har bir mahsulot bo'yicha yurib chiqamiz
+for item in orders:
+    # Mahsulot nomini ekranga chiqaramiz
+    print(f&quot;Ordered item: {item}&quot;)
+</code></pre>
+<p>🎯 Narxlar ro'yxati bilan umumiy xarajatni hisoblash</p>
+<pre><code class="language-python"># Har bir mahsulot narxi (dollar)
+prices = [2.5, 1.0, 3.2, 4.8]
+
+# Umumiy summa uchun o'zgaruvchi
+total_cost = 0
+
+# Har bir narx ustida yuramiz
+for price in prices:
+    # Narxni umumiy summaga qo'shamiz
+    total_cost += price
+
+# Umumiy narxni ekranga chiqaramiz
+print(f&quot;Total cost: ${total_cost}&quot;)
+</code></pre>
+<p>🎯 Email ro'yxatidan foydalanuvchilarga xabar yuborish (simulyatsiya)</p>
+<pre><code class="language-python"># Email manzillar ro'yxati
+emails = [&quot;ali@example.com&quot;, &quot;vali@example.com&quot;, &quot;sara@example.com&quot;]
+
+# Har bir foydalanuvchiga xabar yuboramiz (simulyatsiya)
+for email in emails:
+    # Xabar yuborilganini bildiruvchi matn
+    print(f&quot;Sending email to: {email}&quot;)
+</code></pre>
+<p>🎯 Login bo‘lgan foydalanuvchilarni filtrlash</p>
+<pre><code class="language-python"># Foydalanuvchilar va ularning login statusi (True - tizimga kirgan)
+users = [
+    {&quot;username&quot;: &quot;admin&quot;, &quot;logged_in&quot;: True},
+    {&quot;username&quot;: &quot;john&quot;, &quot;logged_in&quot;: False},
+    {&quot;username&quot;: &quot;alice&quot;, &quot;logged_in&quot;: True},
+]
+
+# Faqat login bo'lgan foydalanuvchilarni chiqaramiz
+for user in users:
+    if user[&quot;logged_in&quot;]:
+        print(f&quot;{user['username']} is currently online.&quot;)
+</code></pre>
+<p>🎯 Mahsulot narxlarini chegirma bilan yangilash</p>
+<pre><code class="language-python"># Mahsulotlar va ularning narxlari ro'yxati
+products = [
+    {&quot;name&quot;: &quot;laptop&quot;, &quot;price&quot;: 1000},
+    {&quot;name&quot;: &quot;keyboard&quot;, &quot;price&quot;: 100},
+    {&quot;name&quot;: &quot;mouse&quot;, &quot;price&quot;: 50},
+]
+
+# Har bir mahsulotga 10% chegirma beramiz
+for product in products:
+    # Chegirma miqdorini hisoblaymiz
+    discount = product[&quot;price&quot;] * 0.1
+    # Narxni yangilaymiz
+    product[&quot;price&quot;] -= discount
+
+# Natijani chiqaramiz
+print(&quot;Discounted products:&quot;)
+for product in products:
+    print(f&quot;{product['name']}: ${product['price']}&quot;)
+</code></pre>
+<p>🎯 Foydalanuvchi ismlarini bosh harf bilan yozib chiqish</p>
+<pre><code class="language-python"># Foydalanuvchilar ismlari ro'yxati (kichik harflarda)
+usernames = [&quot;ali&quot;, &quot;sara&quot;, &quot;bekzod&quot;, &quot;nigora&quot;]
+
+# Har bir ismni bosh harf bilan yangilaymiz
+for i in range(len(usernames)):
+    # `.capitalize()` birinchi harfni katta qiladi
+    usernames[i] = usernames[i].capitalize()
+
+# Natijani chiqaramiz
+print(&quot;Capitalized usernames:&quot;, usernames)
+</code></pre>
+<p>🎯 Sonlar ro'yxatidan faqat toq sonlarni ajratib olish</p>
+<pre><code class="language-python"># Sonlar ro'yxati
+numbers = [4, 7, 12, 9, 15, 2, 8]
+
+# Faqat toq sonlar uchun yangi ro'yxat
+odd_numbers = []
+
+# Har bir sonni tekshiramiz
+for number in numbers:
+    if number % 2 != 0:
+        # Toq bo'lsa yangi ro'yxatga qo'shamiz
+        odd_numbers.append(number)
+
+# Natijani chiqaramiz
+print(&quot;Odd numbers:&quot;, odd_numbers)
+</code></pre>
+<h2 id="range">✅ RANGE</h2>
+<p>📌 Python dasturlash tilida <code>range()</code> funksiyasi ketma-ket sonlar qatorini yaratish uchun ishlatiladi. Bu funksiya odatda <code>for</code> loop bilan birga ishlatiladi va bizga ma’lum bir sonlar oralig‘ida takrorlash (aylanib chiqish) imkonini beradi.</p>
+<p>🎯 Oddiy <strong>range()</strong> ishlatilishi</p>
+<pre><code class="language-python"># 0 dan 4 gacha (5 kirmaydi)
+for i in range(5):
+    print(i)
+</code></pre>
+<p>🎯 Belgilangan oraliqdagi qiymatlar</p>
+<pre><code class="language-python"># 3 dan 8 gacha bo'lgan sonlarni chiqaramiz
+for i in range(3, 9):
+    print(i)
+</code></pre>
+<p>🎯 Step bilan yurish</p>
+<pre><code class="language-python"># 0 dan 10 gacha bo'lgan juft sonlarni chiqaramiz (2 qadam bilan)
+for index in range(0, 11, 2):
+    print(index)
+</code></pre>
+<p>🎯 Orqaga qarab sanash</p>
+<pre><code class="language-python"># 10 dan 1 gacha orqaga qarab
+for i in range(10, 0, -1):
+    print(i)
+</code></pre>
+<p>🎯 Har bir foydalanuvchiga ID berish</p>
+<pre><code class="language-python"># 3 ta foydalanuvchi nomi
+users = [&quot;Ali&quot;, &quot;Vali&quot;, &quot;Sardor&quot;]
+
+# Foydalanuvchilarga ID raqam berish (1 dan boshlab)
+for i in range(len(users)):
+    print(f&quot;User ID: {i+1} - Name: {users[i]}&quot;)
+</code></pre>
+<h2 id="dictionary-bilan-ishlash">✅ DICTIONARY BILAN ISHLASH</h2>
+<p>🎯 Foydalanuvchi profillari ro‘yxati</p>
+<pre><code class="language-python"># Bir nechta foydalanuvchilarning profillari
+users = [
+    {&quot;username&quot;: &quot;ali&quot;, &quot;email&quot;: &quot;ali@example.com&quot;, &quot;is_active&quot;: True},
+    {&quot;username&quot;: &quot;sara&quot;, &quot;email&quot;: &quot;sara@example.com&quot;, &quot;is_active&quot;: False},
+    {&quot;username&quot;: &quot;diyor&quot;, &quot;email&quot;: &quot;diyor@example.com&quot;, &quot;is_active&quot;: True},
+]
+
+# Faqat aktiv foydalanuvchilarni chiqaramiz
+for user in users:
+    if user[&quot;is_active&quot;]:
+        print(f&quot;{user['username']} (email: {user['email']}) is active.&quot;)
+</code></pre>
+<p>🎯 Savatdagi mahsulotlar va umumiy narxni hisoblash</p>
+<pre><code class="language-python"># Xarid savatidagi mahsulotlar
+cart = [
+    {&quot;name&quot;: &quot;laptop&quot;, &quot;price&quot;: 850.0, &quot;quantity&quot;: 1},
+    {&quot;name&quot;: &quot;mouse&quot;, &quot;price&quot;: 25.0, &quot;quantity&quot;: 2},
+    {&quot;name&quot;: &quot;keyboard&quot;, &quot;price&quot;: 45.0, &quot;quantity&quot;: 1},
+]
+
+# Umumiy narxni hisoblaymiz
+total = 0
+for item in cart:
+    total += item[&quot;price&quot;] * item[&quot;quantity&quot;]
+
+print(f&quot;Umumiy summa: ${total}&quot;)
+</code></pre>
+<p>🎯 Talabalar baholari bo‘yicha statistika</p>
+<pre><code class="language-python"># Talabalar va ularning baholari
+grades = {
+    &quot;Ali&quot;: 87,
+    &quot;Sardor&quot;: 92,
+    &quot;Nigora&quot;: 78,
+    &quot;Lola&quot;: 85
+}
+
+# O‘rtacha bahoni hisoblaymiz
+average = sum(grades.values()) / len(grades)
+print(f&quot;O‘rtacha baho: {average}&quot;)
+</code></pre>
+<p>🎯 Chegirma tizimi (promo code)</p>
+<pre><code class="language-python"># Promo kodlar va ularning chegirmalari (%)
+promo_codes = {
+    &quot;SALE10&quot;: 10,
+    &quot;WELCOME15&quot;: 15,
+    &quot;VIP20&quot;: 20
+}
+
+code = input(&quot;Promo kodni kiriting: &quot;).upper()
+
+# Kodni tekshirib chegirma beramiz
+if code in promo_codes:
+    print(f&quot;Sizga {promo_codes[code]}% chegirma berildi!&quot;)
+else:
+    print(&quot;Noto‘g‘ri promo kod!&quot;)
+</code></pre>
+<p>🎯 API javobini tahlil qilish (dictionary ko‘rinishida)</p>
+<pre><code class="language-python"># API dan kelgan javob
+response = {
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: 102,
+        &quot;title&quot;: &quot;New blog post&quot;,
+        &quot;author&quot;: &quot;Umid&quot;,
+        &quot;views&quot;: 1234
+    }
+}
+
+# Ma'lumotni tahlil qilish
+if response[&quot;status&quot;] == &quot;success&quot;:
+    blog = response[&quot;data&quot;]
+    print(f&quot;Post: {blog['title']} (Author: {blog['author']}) — {blog['views']} views&quot;)
+else:
+    print(&quot;Xatolik yuz berdi.&quot;)
+</code></pre>
+<h2 id="sets-bilan-ishlash">✅ SETS BILAN ISHLASH</h2>
+<p>🎯 Foydalanuvchi kirgan sahifalarni yagona ro‘yxatga olish</p>
+<pre><code class="language-python"># Sahifalar bo'yicha foydalanuvchi harakati (ba'zilari takrorlangan)
+visited_pages = [&quot;home&quot;, &quot;about&quot;, &quot;contact&quot;, &quot;home&quot;, &quot;products&quot;, &quot;contact&quot;]
+
+# Takrorlangan sahifalarni set orqali avtomatik chiqarib tashlaymiz
+unique_pages = set(visited_pages)
+
+print(&quot;Foydalanuvchi kirgan noyob sahifalar:&quot;)
+for page in unique_pages:
+    print(page)
+</code></pre>
+<p>🎯 Email ro'yxatlaridagi dublikatlarni olib tashlash</p>
+<pre><code class="language-python"># Ro'yxatda takrorlanuvchi email manzillar bor
+emails = [
+    &quot;ali@example.com&quot;,
+    &quot;sara@example.com&quot;,
+    &quot;ali@example.com&quot;,
+    &quot;jamshid@example.com&quot;,
+    &quot;sara@example.com&quot;
+]
+
+# set yordamida faqat noyob email manzillarni olamiz
+unique_emails = set(emails)
+
+print(&quot;Yagona email manzillar:&quot;)
+for email in unique_emails:
+    print(email)
+</code></pre>
+<p>🎯 Ikkita foydalanuvchi orasidagi umumiy do‘stlarni topish</p>
+<pre><code class="language-python"># Foydalanuvchilarning do'stlari
+friends_1 = {&quot;Ali&quot;, &quot;Sara&quot;, &quot;Lola&quot;, &quot;Bekzod&quot;}
+friends_2 = {&quot;Lola&quot;, &quot;Sardor&quot;, &quot;Ali&quot;, &quot;Diyor&quot;}
+
+# Umumiy do'stlar: kesishma (intersection)
+common_friends = friends_1 &amp; friends_2
+
+print(&quot;Umumiy do'stlar:&quot;)
+print(common_friends)
+</code></pre>
+<p>🎯 Ro‘yxatdan o‘tgan foydalanuvchilar va online foydalanuvchilar orasidagi farq</p>
+<pre><code class="language-python"># Ro'yxatdan o‘tgan foydalanuvchilar
+registered_users = {&quot;ali&quot;, &quot;sara&quot;, &quot;diyor&quot;, &quot;nigora&quot;}
+
+# Hozir online bo'lgan foydalanuvchilar
+online_users = {&quot;ali&quot;, &quot;sardor&quot;}
+
+# Faqat ro'yxatdan o‘tgan, lekin online bo'lmaganlar
+offline_users = registered_users - online_users
+
+print(&quot;Hozir offline foydalanuvchilar:&quot;)
+print(offline_users)
+</code></pre>
+<h2 id="tuple-bilan-ishlash">✅ TUPLE BILAN ISHLASH</h2>
+<p>🎯 Oddiy tuple ustidan for tsik</p>
+<pre><code class="language-python"># Koordinatalar (o'zgarmas qiymatlar)
+coordinates = (10, 20, 30)
+
+# Har bir koordinatani chiqarish
+for coordinate in coordinates:
+    print(coordinate)
+</code></pre>
+<p>🎯 Mahsulotlar ro‘yxati tupleda (ID, nomi, narxi)</p>
+<pre><code class="language-python"># Har bir mahsulot: (id, nomi, narxi)
+products = (
+    (1, &quot;Laptop&quot;, 1200),
+    (2, &quot;Mouse&quot;, 30),
+    (3, &quot;Keyboard&quot;, 50),
+)
+
+# Mahsulotlar haqida to‘liq ma’lumot chiqaramiz
+for product_id, name, price in products:
+    print(f&quot;ID: {product_id}, Nomi: {name}, Narxi: ${price}&quot;)
+</code></pre>
+<h2 id="nested-loops">✅ NESTED LOOPS</h2>
+<p>🎯 2D ro'yxat (matritsa) elementlarini ko‘rsatish</p>
+<pre><code class="language-python">matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+for row in matrix:
+    for element in row:
+        print(element, end=&quot; &quot;)
+    print()  # Qator oxirida yangi qatorga o'tish
+</code></pre>
+<p>📌 Python dasturlash tilida <code>print()</code> funksiyasi biror narsani ekranga chiqargandan so‘ng avtomatik tarzda yangi qatorga o‘tadi. Bu yangi qator belgisi <code>\n</code> deb ataladi. Ammo ba’zida har bir chiqishdan keyin yangi qatorga o‘tmasdan, boshqa belgi (masalan, bo‘sh joy yoki vergul) qo‘yishni xohlaysiz. Shu holatda <code>print()</code> funksiyasida <code>end</code> parametri ishlatiladi.</p>
+<p>🎯 Foydalanuvchilar va ularning telefon raqamlari</p>
+<pre><code class="language-python"># Har bir foydalanuvchining bir nechta telefon raqami bor
+users = {
+    &quot;Ali&quot;: [&quot;+998901112233&quot;, &quot;+998912223344&quot;],
+    &quot;Sara&quot;: [&quot;+998933445566&quot;],
+    &quot;Diyor&quot;: [&quot;+998935551234&quot;, &quot;+998998887766&quot;]
+}
+
+# Har bir foydalanuvchi va raqamlarini chiqaramiz
+for name, phones in users.items():
+    print(f&quot;{name}ning raqamlari:&quot;)
+    for phone in phones:
+        print(f&quot; - {phone}&quot;)
+</code></pre>
+<p>🎯 Kategoriya va mahsulotlar</p>
+<pre><code class="language-python"># Mahsulotlar toifalar bo'yicha guruhlangan
+categories = {
+    &quot;Elektronika&quot;: [&quot;Telefon&quot;, &quot;Noutbuk&quot;, &quot;Smart soat&quot;],
+    &quot;Kiyim&quot;: [&quot;Ko‘ylak&quot;, &quot;Shim&quot;, &quot;Poyabzal&quot;],
+    &quot;Oziq-ovqat&quot;: [&quot;Non&quot;, &quot;Sut&quot;, &quot;Yog‘&quot;]
+}
+
+# Har bir kategoriya va mahsulotlarini chiqaramiz
+for category, items in categories.items():
+    print(f&quot;{category}:&quot;)
+    for item in items:
+        print(f&quot; - {item}&quot;)
+</code></pre>
+<p>🎯 Sayt menyusini chiqarish (asosiy bo‘lim + ichki bo‘limlar)</p>
+<pre><code class="language-python"># Sayt menyusi
+menu = {
+    &quot;Bosh sahifa&quot;: [],
+    &quot;Kurslar&quot;: [&quot;Python&quot;, &quot;Django&quot;, &quot;Flask&quot;],
+    &quot;Aloqa&quot;: [&quot;Biz haqimizda&quot;, &quot;Bog‘lanish&quot;]
+}
+
+# Menyuni chiqaramiz
+for main_menu, submenus in menu.items():
+    print(main_menu)
+    for submenu in submenus:
+        print(f&quot;  - {submenu}&quot;)
+</code></pre>
+<h2 id="for-else">✅ FOR ELSE</h2>
+<p>📌 Python dasturlash tilida <code>for...else</code> bu — <code>for</code> tsikli bilan birga ishlatiladigan maxsus konstruktsiya bo‘lib, u orqali loop muvaffaqiyatli tugaganidan keyin <code>else</code> qismi bajariladi.</p>
+<p>🎯 Foydalanuvchi ro‘yxatida admin borligini tekshirish</p>
+<pre><code class="language-python">users = [&quot;ali&quot;, &quot;sara&quot;, &quot;lola&quot;, &quot;jamshid&quot;]
+
+for user in users:
+    if user == &quot;admin&quot;:
+        print(&quot;Admin foydalanuvchi topildi.&quot;)
+        break
+else:
+    print(&quot;Admin foydalanuvchi ro'yxatda yo'q.&quot;)
+</code></pre>
+<p>🎯 Parol to‘g‘riligini tekshirish</p>
+<pre><code class="language-python"># Parollar bazasi
+correct_passwords = [&quot;pass123&quot;, &quot;admin456&quot;, &quot;qwerty789&quot;]
+
+user_input = &quot;admin456&quot;
+
+for password in correct_passwords:
+    if user_input == password:
+        print(&quot;Parol to'g'ri.&quot;)
+        break
+else:
+    print(&quot;Parol noto'g'ri.&quot;)
+</code></pre>
+<h2 id="break">✅ BREAK</h2>
+<p>📌 <code>break</code> operatori loopni to'xtatadi. Bu operator <code>for</code> yoki <code>while</code> loopda ishlatilishi mumkin. <code>break</code> loopning bajarilishini to'xtatadi va loopdan chiqadi, hatto loop to'liq tugamagan bo'lsa ham.</p>
+<p>🎯 Ma’lumotlar bazasidan kerakli foydalanuvchini topish</p>
+<pre><code class="language-python"># Foydalanuvchilar ro'yxatini lug'atlar ko'rinishida yaratdik
+users = [
+    {&quot;id&quot;: 1, &quot;name&quot;: &quot;Ali&quot;},
+    {&quot;id&quot;: 2, &quot;name&quot;: &quot;Sara&quot;},
+    {&quot;id&quot;: 3, &quot;name&quot;: &quot;Diyor&quot;}
+]
+
+# Qidirilayotgan foydalanuvchining ID raqamini belgiladik
+searched_id = 2
+
+# users ro'yxatidagi har bir element (ya'ni foydalanuvchi) bo'yicha yuramiz
+for user in users:
+    # Agar foydalanuvchining 'id' qiymati qidirilayotgan id ga teng bo'lsa
+    if user[&quot;id&quot;] == searched_id:
+        # Foydalanuvchi topilganini ekranga chiqaramiz
+        print(f&quot;Foydalanuvchi topildi: {user['name']}&quot;)
+        # Qolgan elementlarni tekshirishning hojati yo'q, loop ni to'xtatamiz
+        break
+</code></pre>
+<p>🎯 API javobidan kerakli postni topish</p>
+<pre><code class="language-python"># Postlar listini yaratdik, har bir post dictionary ko'rinishida berilgan
+posts = [
+    {&quot;id&quot;: 1, &quot;title&quot;: &quot;Salom&quot;},
+    {&quot;id&quot;: 2, &quot;title&quot;: &quot;Python haqida&quot;},
+    {&quot;id&quot;: 3, &quot;title&quot;: &quot;Xayr&quot;}
+]
+
+# Qidirilayotgan postning sarlavhasini belgiladik
+search_title = &quot;Python haqida&quot;
+
+# posts listdagi har bir post bo'yicha yuramiz
+for post in posts:
+    # Agar postning 'title' qiymati qidirilayotgan sarlavhaga teng bo'lsa
+    if post[&quot;title&quot;] == search_title:
+        # Post topilganini ekranga chiqaramiz
+        print(&quot;Post topildi:&quot;, post)
+        # Endi qolgan postlarni tekshirishning hojati yo'q, loop ni to'xtatamiz
+        break
+</code></pre>
+<p>🎯 for + else bilan birga break ishlatish</p>
+<pre><code class="language-python"># Shaharlar nomlari yozilgan ro'yxat yaratildi
+cities = [&quot;Toshkent&quot;, &quot;Samarqand&quot;, &quot;Buxoro&quot;, &quot;Xiva&quot;]
+
+# Qidirilayotgan shahar nomi belgilanmoqda
+search = &quot;Andijon&quot;
+
+# cities ro'yxatidagi har bir shahar ustida yurib chiqamiz
+for city in cities:
+    # Agar ro'yxatdagi shahar nomi qidirilayotgan nomga teng bo‘lsa
+    if city == search:
+        # Ekranga topilganligi haqida xabar chiqaramiz
+        print(&quot;Shahar topildi!&quot;)
+        # Endi boshqa shaharlarni tekshirish shart emas, loop to‘xtatiladi
+        break
+# Agar loop oxirigacha borib chiqqan bo‘lsa va break ishlamagan bo‘lsa
+else:
+    # Demak shahar ro'yxatda yo‘q, degan xabar chiqariladi
+    print(&quot;Shahar ro'yxatda yo'q.&quot;)
+</code></pre>
+<h2 id="continue">✅ CONTINUE</h2>
+<p>📌 Python dasturlash tilida continue operatori tsikl ichida ishlatiladigan boshqaruvchi buyruq bo‘lib, u ishga tushganda tsikldagi shu takrorlanishning qolgan qismini o‘tkazib yuboradi va keyingi takrorlanishga (iteration) o‘tadi.</p>
+<pre><code class="language-python"># Sonlardan iborat ro'yxat yaratildi
+sonlar = [1, 2, 3, 4, 5]
+
+# sonlar ro'yxatidagi har bir son bo'yicha yuramiz
+for son in sonlar:
+    # Agar hozirgi son 2 ga bo‘linganda qoldiq 0 bo‘lsa, ya’ni juft bo‘lsa
+    if son % 2 == 0:
+        # Bu sonni tashlab o‘tamiz va loop keyingi son bilan davom etadi
+        continue
+    # Agar son toq bo‘lsa (ya’ni yuqoridagi shart bajarilmagan bo‘lsa), uni chiqaramiz
+    print(son)
+</code></pre>
+<p>🎯 Faqat musbat sonlarni chiqarish</p>
+<pre><code class="language-python"># Musbat va manfiy sonlardan iborat ro'yxat yaratildi
+sonlar = [-1, 2, -3, 4, -5]
+
+# sonlar ro'yxatidagi har bir son bo'yicha yuramiz
+for son in sonlar:
+    # Agar hozirgi son 0 dan kichik bo‘lsa, ya’ni manfiy bo‘lsa
+    if son &lt; 0:
+        # Manfiy sonni chiqarib o‘tib ketamiz, ya’ni pastdagi qator bajarilmaydi
+        continue
+    # Faqat musbat sonlar (0 va undan katta) shu yerda ekranga chiqariladi
+    print(son)
+</code></pre>
+<p>🎯 Faqat juft indeksli mevalarni chiqarish</p>
+<pre><code class="language-python"># Mevalardan iborat ro'yxat yaratildi
+mevalar = ['olma', 'banan', 'apelsin', 'anjir']
+
+# range() funksiyasi orqali indekslar bo'yicha 0 dan len(mevalar) gacha yuramiz
+for i in range(len(mevalar)):
+    # Agar hozirgi indeks toq bo‘lsa (ya'ni 1, 3, ...)
+    if i % 2 != 0:
+        # Bu indeksdagi elementni o‘tkazib yuboramiz va loop davom etadi
+        continue
+    # Faqat juft indeks (0, 2, ...) dagi mevalar ekranga chiqariladi
+    print(mevalar[i])
+</code></pre>
+<h2 id="pass">✅ PASS</h2>
+<p>📌 Python dasturlash tilida pass operatori — bu hech qanday amal bajarmaydigan buyruq. Ya’ni, u bo‘sh kod blokini vaqtincha to‘ldirish uchun ishlatiladi.</p>
+<pre><code class="language-python"># 0 dan 4 gacha bo‘lgan sonlar ustida aylanuvchi for tsikli
+for son in range(5):
+    # Agar son 3 ga teng bo‘lsa
+    if son == 3:
+        pass  # Hech qanday amal bajarmaymiz, faqat kod sintaksisini saqlab qolamiz
+    else:
+        print(son)  # Aks holda, sonni ekranga chiqaramiz
+</code></pre>
+<p>🎯 Kod hali yozilmagan, lekin struktura tayyor bo‘lishi kerak</p>
+<pre><code class="language-python">def validate_user_input():
+    # Bu funksiya foydalanuvchi kiritgan ma'lumotni tekshiradi
+    pass  # Keyinroq bu yerga tekshirish kodi yoziladi
+</code></pre>
+<p>🎯 Bo‘sh class yaratish</p>
+<pre><code class="language-python">class PaymentSystem:
+    pass  # Bu class keyin to‘ldiriladi
+</code></pre>
+<p>🎯 Exception (xatolik)ni vaqtincha e'tiborga olmaslik</p>
+<pre><code class="language-python">try:
+    x = 10 / 0
+except ZeroDivisionError:
+    pass  # Hozircha xatoni ko‘rsatmaymiz, faqat chetlab o‘tamiz
+</code></pre>
+<p>🎯 Bo‘sh if yoki for bloklarida sintaksis xatosidan saqlanish</p>
+<pre><code class="language-python">users = [&quot;admin&quot;, &quot;user&quot;, &quot;guest&quot;]
+
+for user in users:
+    if user == &quot;admin&quot;:
+        pass  # Hozircha admin uchun alohida ish yo‘q
+    else:
+        print(f&quot;{user} uchun oddiy xush kelibsiz&quot;)
+</code></pre>
+<h1 id="amaliyot">✅ AMALIYOT</h1>
+<h2 id="1-topshiriq">✅ 1-topshiriq:</h2>
+<p>Foydalanuvchi kiritgan natural son uchun 1 dan shu songacha bo‘lgan sonlar yig‘indisini for loop orqali hisoblang.</p>
+<hr />
+<h2 id="2-topshiriq">✅ 2-topshiriq:</h2>
+<p>Quyidagi ro‘yxatda nechta elementda eng kamida 2 ta unli harf borligini aniqlang:</p>
+<pre><code class="language-python">words = [&quot;apple&quot;, &quot;sky&quot;, &quot;queue&quot;, &quot;book&quot;, &quot;cry&quot;]
+</code></pre>
+<hr />
+<h2 id="3-topshiriq">✅ 3-topshiriq:</h2>
+<p>Ro‘yxatda eng katta va eng kichik sonning farqini toping:</p>
+<pre><code class="language-python">numbers = [7, 12, -3, 8, 0, 15]
+</code></pre>
+<hr />
+<h2 id="4-topshiriq">✅ 4-topshiriq:</h2>
+<p>Foydalanuvchi 10 ta son kiritadi. For loop orqali faqat musbat va toq sonlarni yangi ro‘yxatga yozing.</p>
+<hr />
+<h2 id="5-topshiriq">✅ 5-topshiriq:</h2>
+<p>Quyidagi ro‘yxatdagi har bir so‘zning birinchi va oxirgi harfini birlashtirib yangi ro‘yxat hosil qiling:</p>
+<pre><code class="language-python">words = [&quot;python&quot;, &quot;apple&quot;, &quot;code&quot;, &quot;loop&quot;]
+# natija: [&quot;pn&quot;, &quot;ae&quot;, &quot;ce&quot;, &quot;lp&quot;]
+</code></pre>
+<hr />
+<h2 id="6-topshiriq">✅ 6-topshiriq:</h2>
+<p>Ro‘yxatdan faqat 3 ga va 5 ga bo‘linadigan sonlarni ajratib, ularning o‘rtacha qiymatini hisoblang:</p>
+<pre><code class="language-python">nums = [5, 9, 15, 20, 22, 30, 35]
+</code></pre>
+<hr />
+<h2 id="7-topshiriq">✅ 7-topshiriq:</h2>
+<p>Foydalanuvchi matn kiritadi. Matndagi raqamlarni topib, ularni son sifatida yig‘indisini hisoblang.</p>
+<blockquote>
+<p>Masalan: "salom12dunyo3" =&gt; natija: 15</p>
+</blockquote>
+<hr />
+<h2 id="8-topshiriq">✅ 8-topshiriq:</h2>
+<p>Berilgan ro‘yxatdan elementlarning indekslari juft bo‘lganlarini alohida ro‘yxatga chiqarib bering:</p>
+<pre><code class="language-python">fruits = [&quot;olma&quot;, &quot;banan&quot;, &quot;gilos&quot;, &quot;anor&quot;, &quot;nok&quot;, &quot;shaftoli&quot;]
+</code></pre>
+<hr />
+<h2 id="9-topshiriq">✅ 9-topshiriq:</h2>
+<p>Ro‘yxatda ketma-ket 2 marta uchraydigan elementlarni aniqlang:</p>
+<pre><code class="language-python">items = [1, 2, 2, 3, 4, 4, 4, 5]
+# natija: 2, 4
+</code></pre>
+<hr />
+<h2 id="10-topshiriq">✅ 10-topshiriq:</h2>
+<p>Foydalanuvchi kiritgan matndan faqat bosh harflarni ajratib, bitta string qilib chiqaring.</p>
+<blockquote>
+<p>Masalan: "Salom DunYo" =&gt; "SDY"</p>
+</blockquote>
+<hr />
+<h2 id="11-topshiriq">✅ 11-topshiriq:</h2>
+<p>Quyidagi ro‘yxatdan palindrom (teskari o‘qilganda ham bir xil) so‘zlarni ajratib chiqaring:</p>
+<pre><code class="language-python">words = [&quot;anna&quot;, &quot;python&quot;, &quot;level&quot;, &quot;loop&quot;, &quot;radar&quot;]
+</code></pre>
+<hr />
+<h2 id="12-topshiriq">✅ 12-topshiriq:</h2>
+<p>for loop yordamida 100 dan kichik Fibonacci sonlarini ro‘yxatga yig‘ing.</p>
+<hr />
+<h2 id="13-topshiriq">✅ 13-topshiriq:</h2>
+<p>Ro‘yxatda nechta elementda harflar soni raqamlar sonidan ko‘p ekanini hisoblang:</p>
+<pre><code class="language-python">elements = [&quot;abc123&quot;, &quot;hello&quot;, &quot;42&quot;, &quot;py2025&quot;, &quot;test&quot;]
+</code></pre>
+<hr />
+<h2 id="14-topshiriq">✅ 14-topshiriq:</h2>
+<p>Ro‘yxatdagi sonlardan har birining raqamlari yig‘indisini hisoblab, yangi ro‘yxatga joylang:</p>
+<pre><code class="language-python">nums = [12, 305, 47, 88]
+# natija: [3, 8, 11, 16]
+</code></pre>
+<hr />
+<h2 id="15-topshiriq">✅ 15-topshiriq:</h2>
+<p>Ro‘yxatdagi elementlardan faqat birinchi harfi har doim katta, qolganlari kichik bo‘lgan yangi ro‘yxat yarating:</p>
+<pre><code class="language-python">names = [&quot;aNVAR&quot;, &quot;mUROD&quot;, &quot;dILSHOD&quot;]
+# natija: [&quot;Anvar&quot;, &quot;Murod&quot;, &quot;Dilshod&quot;]
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../conditional-statements/" class="btn btn-neutral float-left" title="Conditional Statements"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../while-loop/" class="btn btn-neutral float-right" title="While Loop">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../conditional-statements/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../while-loop/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

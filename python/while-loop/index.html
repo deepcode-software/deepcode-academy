@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>While Loop - DeepCode Academy</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "While Loop";
+        var mkdocs_page_input_path = "python\\while-loop.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> DeepCode Academy
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Python</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../what-is-python/">What is Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../variables/">Variables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../data-types/">Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../operators/">Operatos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../lists/">Lists</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tuples/">Tuples</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sets/">Sets</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../dictionaries/">Dictionaries</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../conditional-statements/">Conditional Statements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../for-loop/">For Loop</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">While Loop</a>
+    <ul class="current">
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../functions/">Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../exception-handling/">Exception Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../moduls/">Moduls</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../file-handling/">File Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../database/">Database</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../third-party-packages/">Third Party Packages</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../oop/">OOP</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">DeepCode Academy</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Python</li>
+      <li class="breadcrumb-item active">While Loop</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="python-dasturlash-asoslari">🐍 PYTHON DASTURLASH ASOSLARI</h1>
+<h1 id="10-dars-while-loop">🧩 10-DARS WHILE LOOP</h1>
+<p>📌 <code>while</code> — bu tsikl operatori, ya’ni biror shart True bo‘lganida kodni qayta-qayta bajaradi. Agar shart False bo‘lsa, while tsikli to‘xtaydi va keyingi kodga o‘tadi.</p>
+<pre><code class="language-python"># son degan o'zgaruvchiga 1 qiymatini beramiz
+son = 1
+
+# while tsikli: son 5 dan kichik yoki teng bo‘lguncha davom etadi
+while son &lt;= 5:
+    # hozirgi son qiymatini ekranga chiqaramiz
+    print(son)
+
+    # son qiymatini 1 ga oshiramiz, shunda tsikl keyingi son bilan davom etadi
+    son += 1
+</code></pre>
+<p>🎯 Foydalanuvchidan ma'lumot olish (stop deb yozmaguncha)</p>
+<pre><code class="language-python"># Foydalanuvchi kiritgan matnni saqlash uchun bo‘sh o‘zgaruvchi yaratamiz
+user_input = &quot;&quot;
+
+# while tsikli: foydalanuvchi 'stop' deb yozmaguncha davom etadi
+while user_input.lower() != &quot;stop&quot;:
+    # Foydalanuvchidan matn kiritishni so‘raymiz
+    user_input = input(&quot;So'z kiriting (to‘xtatish uchun 'stop'): &quot;)
+
+    # Foydalanuvchi kiritgan so‘zni ekranga chiqaramiz
+    print(f&quot;Siz '{user_input}' kiritdingiz&quot;)
+</code></pre>
+<p>🎯 Foydalanuvchi parolni to‘g‘ri kiritmaguncha bajariladi.</p>
+<pre><code class="language-python"># Foydalanuvchi kiritgan matnni saqlash uchun bo‘sh o‘zgaruvchi yaratamiz
+user_input = &quot;&quot;
+
+# while tsikli: foydalanuvchi 'stop' deb yozmaguncha davom etadi
+while user_input.lower() != &quot;stop&quot;:
+    # Foydalanuvchidan matn kiritishni so‘raymiz
+    user_input = input(&quot;So'z kiriting (to‘xtatish uchun 'stop'): &quot;)
+
+    # Foydalanuvchi kiritgan so‘zni ekranga chiqaramiz
+    print(f&quot;Siz '{user_input}' kiritdingiz&quot;)
+</code></pre>
+<p>🎯 Ro‘yxatda kerakli qiymatni topish (break bilan)</p>
+<pre><code class="language-python"># Mahsulotlar ro'yxatini yaratamiz
+products = [&quot;apple&quot;, &quot;banana&quot;, &quot;lemon&quot;, &quot;melon&quot;, &quot;grapes&quot;]
+
+# Indeksni 0 dan boshlaymiz
+i = 0
+
+# Tsikl: indeks ro'yxat uzunligidan kichik bo‘lsa davom etadi
+while i &lt; len(products):
+    # Agar hozirgi element 'lemon' bo‘lsa
+    if products[i] == &quot;lemon&quot;:
+        # 'lemon' topilganini ekranga chiqaramiz
+        print(&quot;✅ 'lemon' mahsuloti topildi!&quot;)
+        # Tsiklni to‘xtatamiz
+        break
+    # Indeksni 1 ga oshiramiz, keyingi elementga o‘tamiz
+    i += 1
+</code></pre>
+<p>🎯 Manfiy va nol sonlarni tashlab ketish (continue bilan)</p>
+<pre><code class="language-python"># Sonlar ro'yxatini yaratamiz
+numbers = [-3, -1, 0, 2, 4, 6]
+
+# Indeksni 0 dan boshlaymiz
+i = 0
+
+# Tsikl: indeks ro'yxat uzunligidan kichik bo‘lsa davom etadi
+while i &lt; len(numbers):
+    # Agar hozirgi son 0 yoki manfiy bo‘lsa
+    if numbers[i] &lt;= 0:
+        # Indeksni 1 ga oshiramiz, keyingi songa o‘tamiz
+        i += 1
+        # Ushbu davrani tashlab, tsikl boshiga qaytamiz
+        continue
+
+    # Agar son musbat bo‘lsa, uni ekranga chiqaramiz
+    print(numbers[i])
+
+    # Indeksni 1 ga oshirib, keyingi elementga o‘tamiz
+    i += 1
+</code></pre>
+<p>🎯 Foydalanuvchi login tizimi</p>
+<pre><code class="language-python">correct_username = &quot;admin&quot;  # To‘g‘ri login
+correct_password = &quot;12345&quot;  # To‘g‘ri parol
+
+login_attempts = 0  # Urinishlar soni
+
+while login_attempts &lt; 3:  # Faqat 3 marta urinib ko‘rish huquqi
+    username = input(&quot;Login kiriting: &quot;)  # Login so‘rashi
+    password = input(&quot;Parol kiriting: &quot;)  # Parol so‘rashi
+
+    if username == correct_username and password == correct_password:
+        print(&quot;✅ Xush kelibsiz, tizimga kirildi!&quot;)
+        break  # To‘g‘ri kirilgan bo‘lsa, tsikl tugaydi
+    else:
+        print(&quot;❌ Login yoki parol noto‘g‘ri.&quot;)
+        login_attempts += 1  # Urinishlar sonini oshirish
+
+if login_attempts == 3:  # 3 marta noto‘g‘ri kirilgan bo‘lsa
+    print(&quot;🚫 Urinishlar tugadi, kirish bloklandi.&quot;)
+</code></pre>
+<p>🎯 Infinite Loop (Cheksiz tsikl) va undan himoyalanish</p>
+<p>📌 Har doim shart o‘zgaruvchisini yangilashni unutmang</p>
+<pre><code class="language-python"># num o'zgaruvchiga 1 qiymati beriladi
+num = 1
+
+# Tsikl: num 5 dan kichik bo‘lsa davom etadi
+while num &lt; 5:
+    # num qiymatini chiqaradi
+    print(num)
+
+    # ❌ Indeks oshirilmayapti, shuning uchun num har doim 1 bo‘lib qoladi
+    # num += 1 YO‘Q! =&gt; bu yerda indeksni oshirish yo‘q, shuning uchun bu tsikl hech qachon tugamaydi
+</code></pre>
+<h1 id="amaliyot">✅ AMALIYOT</h1>
+<h2 id="1-topshiriq">✅ 1-topshiriq:</h2>
+<p>Foydalanuvchi kiritgan natural son uchun 1 dan shu songacha bo‘lgan sonlar yig‘indisini while loop orqali hisoblang.</p>
+<hr />
+<h2 id="2-topshiriq">✅ 2-topshiriq:</h2>
+<p>Quyidagi ro‘yxatda nechta elementda eng kamida 2 ta unli harf borligini aniqlang (while loopdan foydalaning):</p>
+<pre><code class="language-python">words = [&quot;apple&quot;, &quot;sky&quot;, &quot;queue&quot;, &quot;book&quot;, &quot;cry&quot;]
+</code></pre>
+<hr />
+<h2 id="3-topshiriq">✅ 3-topshiriq:</h2>
+<p>Ro‘yxatda eng katta va eng kichik sonning farqini while loop yordamida toping:</p>
+<pre><code class="language-python">numbers = [7, 12, -3, 8, 0, 15]
+</code></pre>
+<hr />
+<h2 id="4-topshiriq">✅ 4-topshiriq:</h2>
+<p>Foydalanuvchi 10 ta son kiritadi. While loop orqali faqat musbat va toq sonlarni yangi ro‘yxatga yozing.</p>
+<hr />
+<h2 id="5-topshiriq">✅ 5-topshiriq:</h2>
+<p>Quyidagi ro‘yxatdagi har bir so‘zning birinchi va oxirgi harfini birlashtirib yangi ro‘yxat hosil qiling (while loop bilan):</p>
+<pre><code class="language-python">words = [&quot;python&quot;, &quot;apple&quot;, &quot;code&quot;, &quot;loop&quot;]
+# natija: [&quot;pn&quot;, &quot;ae&quot;, &quot;ce&quot;, &quot;lp&quot;]
+</code></pre>
+<hr />
+<h2 id="6-topshiriq">✅ 6-topshiriq:</h2>
+<p>Ro‘yxatdan faqat 3 ga va 5 ga bo‘linadigan sonlarni ajratib, ularning o‘rtacha qiymatini while loopda hisoblang:</p>
+<pre><code class="language-python">nums = [5, 9, 15, 20, 22, 30, 35]
+</code></pre>
+<hr />
+<h2 id="7-topshiriq">✅ 7-topshiriq:</h2>
+<p>Foydalanuvchi matn kiritadi. While loop yordamida matndagi raqamlarni topib, ularni son sifatida yig‘indisini hisoblang.</p>
+<blockquote>
+<p>Masalan: "salom12dunyo3" =&gt; natija: 15</p>
+</blockquote>
+<hr />
+<h2 id="8-topshiriq">✅ 8-topshiriq:</h2>
+<p>Berilgan ro‘yxatdan elementlarning indekslari juft bo‘lganlarini while loop bilan alohida ro‘yxatga chiqarib bering:</p>
+<pre><code class="language-python">fruits = [&quot;olma&quot;, &quot;banan&quot;, &quot;gilos&quot;, &quot;anor&quot;, &quot;nok&quot;, &quot;shaftoli&quot;]
+</code></pre>
+<hr />
+<h2 id="9-topshiriq">✅ 9-topshiriq:</h2>
+<p>Ro‘yxatda ketma-ket 2 marta uchraydigan elementlarni while loop yordamida aniqlang:</p>
+<pre><code class="language-python">items = [1, 2, 2, 3, 4, 4, 4, 5]
+# natija: 2, 4
+</code></pre>
+<hr />
+<h2 id="10-topshiriq">✅ 10-topshiriq:</h2>
+<p>Foydalanuvchi kiritgan matndan while loop yordamida faqat bosh harflarni ajratib, bitta string qilib chiqaring.</p>
+<blockquote>
+<p>Masalan: "Salom DunYo" =&gt; "SDY"</p>
+</blockquote>
+<hr />
+<h2 id="11-topshiriq">✅ 11-topshiriq:</h2>
+<p>Quyidagi ro‘yxatdan palindrom (teskari o‘qilganda ham bir xil) so‘zlarni while loop bilan ajratib chiqaring:</p>
+<pre><code class="language-python">words = [&quot;anna&quot;, &quot;python&quot;, &quot;level&quot;, &quot;loop&quot;, &quot;radar&quot;]
+</code></pre>
+<hr />
+<h2 id="12-topshiriq">✅ 12-topshiriq:</h2>
+<p>While loop yordamida 100 dan kichik Fibonacci sonlarini ro‘yxatga yig‘ing.</p>
+<hr />
+<h2 id="13-topshiriq">✅ 13-topshiriq:</h2>
+<p>Ro‘yxatda nechta elementda harflar soni raqamlar sonidan ko‘p ekanini while loop yordamida hisoblang:</p>
+<pre><code class="language-python">elements = [&quot;abc123&quot;, &quot;hello&quot;, &quot;42&quot;, &quot;py2025&quot;, &quot;test&quot;]
+</code></pre>
+<hr />
+<h2 id="14-topshiriq">✅ 14-topshiriq:</h2>
+<p>Ro‘yxatdagi sonlardan har birining raqamlari yig‘indisini while loop bilan hisoblab, yangi ro‘yxatga joylang:</p>
+<pre><code class="language-python">nums = [12, 305, 47, 88]
+# natija: [3, 8, 11, 16]
+</code></pre>
+<hr />
+<h2 id="15-topshiriq">✅ 15-topshiriq:</h2>
+<p>Ro‘yxatdagi elementlardan faqat birinchi harfi har doim katta, qolganlari kichik bo‘lgan yangi ro‘yxatni while loop orqali yarating:</p>
+<pre><code class="language-python">names = [&quot;aNVAR&quot;, &quot;mUROD&quot;, &quot;dILSHOD&quot;]
+# natija: [&quot;Anvar&quot;, &quot;Murod&quot;, &quot;Dilshod&quot;]
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../for-loop/" class="btn btn-neutral float-left" title="For Loop"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../functions/" class="btn btn-neutral float-right" title="Functions">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../for-loop/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../functions/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
