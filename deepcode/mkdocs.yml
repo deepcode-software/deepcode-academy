@@ -1,5 +1,8 @@
 site_name: DeepCode Academy
 
+theme:
+  name: mkdocs
+
 nav:
   # - Home: index.md
   - Python:
