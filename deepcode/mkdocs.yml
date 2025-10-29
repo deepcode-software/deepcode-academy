@@ -1,7 +1,8 @@
 site_name: DeepCode Academy
 
 theme:
-  name: windmill
+  name: readthedocs
+
 
 nav:
   # - Home: index.md

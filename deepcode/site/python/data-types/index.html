@@ -1,108 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="writer-html5" lang="en" >
 <head>
-  
-  
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
-    
-    <link rel="shortcut icon" href="../../img/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
     <title>Data Types - DeepCode Academy</title>
-    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
-    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
-    <link href="../../css/base.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/highlight.css">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-
-    <script src="../../js/jquery-3.2.1.min.js"></script>
-    <script src="../../js/bootstrap-3.3.7.min.js"></script>
-    <script src="../../js/highlight.pack.js"></script>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
-    <base target="_top">
-    <script>
-      var base_url = '../..';
-      var is_top_frame = false;
-        
-        var pageToc = [
-          {title: "\ud83e\udde9 2-DARS DATA TYPES", url: "#_top", children: [
-              {title: "\u2705 MA\u0027LUMOT TURLARI", url: "#malumot-turlari" },
-              {title: "\u2705 STRING", url: "#string" },
-              {title: "\u2705 NUMBERS", url: "#numbers" },
-              {title: "\u2705 COMPLEX", url: "#complex" },
-              {title: "\u2705 KONSTANTA", url: "#konstanta" },
-          ]},
-          {title: "\u2705 AMALIYOT", url: "#amaliyot", children: [
-              {title: "\u2705 1-topshiriq: String birlashtirish", url: "#1-topshiriq-string-birlashtirish" },
-              {title: "\u2705 2-topshiriq: String uzunligini topish", url: "#2-topshiriq-string-uzunligini-topish" },
-              {title: "\u2705 3-topshiriq: String indekslash va kesish", url: "#3-topshiriq-string-indekslash-va-kesish" },
-              {title: "\u2705 4-topshiriq: String ko\u2018paytirish", url: "#4-topshiriq-string-kopaytirish" },
-              {title: "\u2705 5-topshiriq: F-stringdan foydalanish", url: "#5-topshiriq-f-stringdan-foydalanish" },
-              {title: "\u2705 6-topshiriq: String metodlari bilan ishlash", url: "#6-topshiriq-string-metodlari-bilan-ishlash" },
-              {title: "\u2705 7-topshiriq: .replace() va .split() metodi", url: "#7-topshiriq-replace-va-split-metodi" },
-              {title: "\u2705 8-topshiriq: .join() va .count()", url: "#8-topshiriq-join-va-count" },
-              {title: "\u2705 9-topshiriq: .find(), .startswith(), .endswith()", url: "#9-topshiriq-find-startswith-endswith" },
-              {title: "\u2705 10-topshiriq: Integer va float ustida amallar", url: "#10-topshiriq-integer-va-float-ustida-amallar" },
-              {title: "\u2705 11-topshiriq: Uzoq sonni guruhlash", url: "#11-topshiriq-uzoq-sonni-guruhlash" },
-              {title: "\u2705 12-topshiriq: Type casting (turini o\u2018zgartirish)", url: "#12-topshiriq-type-casting-turini-ozgartirish" },
-              {title: "\u2705 13-topshiriq: Kompleks son", url: "#13-topshiriq-kompleks-son" },
-              {title: "\u2705 14-topshiriq: Konstantadan foydalanish", url: "#14-topshiriq-konstantadan-foydalanish" },
-              {title: "\u2705 15-topshiriq: Foydalanuvchi yoshi va input", url: "#15-topshiriq-foydalanuvchi-yoshi-va-input" },
-          ]},
-        ];
-
-    </script>
-    <script src="../../js/base.js"></script> 
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Data Types";
+        var mkdocs_page_input_path = "python\\data-types.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
-<body>
-<script>
-if (is_top_frame) { $('body').addClass('wm-top-page'); }
-</script>
+<body class="wy-body-for-nav" role="document">
 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> DeepCode Academy
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
 
-
-<div class="container-fluid wm-page-content">
-  <a name="_top"></a>
-    
-
-    
-    
-      
-    
-
-  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
-    
-    <div class="wm-article-nav pull-right">
-      <a href="../operators/" class="btn btn-xs btn-default pull-right">
-        Next
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-      </a>
-      <a href="../operators/" class="btn btn-xs btn-link">
-        Operatos
-      </a>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Python</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../what-is-python/">What is Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../variables/">Variables</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Data Types</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#malumot-turlari">✅ MA'LUMOT TURLARI</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#string">✅ STRING</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#string-ustida-amallar">❇️ STRING USTIDA AMALLAR</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#string-uzunligini-aniqlash">❇️ STRING UZUNLIGINI ANIQLASH</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#string-elementlariga-murojat-qilish">❇️ STRING E'LEMENTLARIGA MUROJAT QILISH</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#stringlarni-kopaytirish">❇️ STRINGLARNI KO'PAYTIRISH</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#f-stringpython-36">❇️ F-STRING(Python 3.6+)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#string-metodlari">❇️ STRING METODLARI</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#numbers">✅ NUMBERS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#integer">❇️ INTEGER</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#integer-ustida-amallar">✅ INTEGER USTIDA AMALLAR</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#uzun-sonlarni-kiritish">✅ UZUN SONLARNI KIRITISH</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bir-nechta-ozgaruvchiga-qiymat-berish">✅ BIR NECHTA O'ZGARUVCHIGA QIYMAT BERISH</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ozgaruvchi-turini-almashtirish">✅ O'ZGARUVCHI TURINI ALMASHTIRISH</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#input">✅ INPUT</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#float">❇️ FLOAT</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#float-ustida-amallar">❇️ FLOAT USTIDA AMALLAR</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#complex">✅ COMPLEX</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#complex-son-yaratish">❇️ COMPLEX SON YARATISH</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#konstanta">✅ KONSTANTA</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../operators/">Operatos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../lists/">Lists</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tuples/">Tuples</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sets/">Sets</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../dictionaries/">Dictionaries</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../conditional-statements/">Conditional Statements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../for-loop/">For Loop</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../while-loop/">While Loop</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../functions/">Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../exception-handling/">Exception Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../moduls/">Moduls</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../file-handling/">File Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../database/">Database</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../third-party-packages/">Third Party Packages</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../oop/">OOP</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                </li>
+              </ul>
+      </div>
     </div>
-    
-    <div class="wm-article-nav">
-      <a href="../variables/" class="btn btn-xs btn-default pull-left">
-        <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../variables/" class="btn btn-xs btn-link">
-        Variables
-      </a>
-    </div>
-    
-  </div>
+    </nav>
 
-    
-
-    <h1 id="2-dars-data-types">🧩 2-DARS DATA TYPES</h1>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">DeepCode Academy</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Python</li>
+      <li class="breadcrumb-item active">Data Types</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="2-dars-data-types">🧩 2-DARS DATA TYPES</h1>
 <h2 id="malumot-turlari">✅ MA'LUMOT TURLARI</h2>
 <p>📌 Python dasturlash tilida har bir qiymat (value) — o‘zining ma'lumot turiga (data type) ega. Bu tur qiymatga qanday ishlov berishni aniqlaydi.</p>
 <p>📌 Python dasturlash tilida <code>8</code> ta ma'lumot turi bor, ular quyidagilar:</p>
@@ -791,43 +843,51 @@ o‘zgartirib, har birini alohida ekranga chiqaring.</p>
 <p>Foydalanuvchidan tug‘ilgan yilini input orqali olib, yoshini hisoblab chiqaring (hozirgi yilni o‘zingiz yozing).<br />
 Misol: <code>Siz 20 yoshdasiz.</code></p>
 <hr />
-
-  <br>
-    
-
-    
-    
-      
-    
-
-  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
-    
-    <div class="wm-article-nav pull-right">
-      <a href="../operators/" class="btn btn-xs btn-default pull-right">
-        Next
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-      </a>
-      <a href="../operators/" class="btn btn-xs btn-link">
-        Operatos
-      </a>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../variables/" class="btn btn-neutral float-left" title="Variables"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../operators/" class="btn btn-neutral float-right" title="Operatos">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
-    
-    <div class="wm-article-nav">
-      <a href="../variables/" class="btn btn-xs btn-default pull-left">
-        <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../variables/" class="btn btn-xs btn-link">
-        Variables
-      </a>
-    </div>
-    
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
   </div>
 
-    <br>
-</div>
-
-<footer class="container-fluid wm-page-content">
-  <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../variables/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../operators/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
 
 </body>
 </html>
