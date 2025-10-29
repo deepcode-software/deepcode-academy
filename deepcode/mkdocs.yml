@@ -1,1 +1,27 @@
-site_name: My Docs
+site_name: DeepCode Academy
+theme: readthedocs
+
+nav:
+  # - Home: index.md
+  - Python:
+      - What is Python: python/what-is-python.md
+      - Variables: python/variables.md
+      - Data Types: python/data-types.md
+      - Operatos: python/operators.md
+      - Lists: python/lists.md
+      - Tuples: python/tuples.md
+      - Sets: python/sets.md
+      - Dictionaries: python/dictionaries.md
+      - Conditional Statements: python/conditional-statements.md
+      - For Loop: python/for-loop.md
+      - While Loop: python/while-loop.md
+      - Functions: python/functions.md
+      - Exception Handling: python/exception-handling.md
+      - Moduls: python/moduls.md
+      - File Handling: python/file-handling.md
+      - Database: python/database.md
+      - Third Party Packages: python/third-party-packages.md
+      - OOP: python/oop.md
+
+      
+  - About: about.md
