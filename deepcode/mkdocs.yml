@@ -1,5 +1,5 @@
 site_name: DeepCode Academy
-theme: readthedocs
+theme: mkdocs
 
 nav:
   # - Home: index.md
