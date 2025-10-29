@@ -1,5 +1,3 @@
-# 🐍 PYTHON DASTURLASH ASOSLARI
-
 # 🧩 9-DARS FOR LOOP
 
 📌 for – bu **tsikl operatori**, ya’ni **takrorlovchi kod**. Agar sizda bir nechta qiymatlar bo‘lsa (masalan, ro‘yxat, sonlar, harflar), for tsikli ularni **birma-bir** olib, har biriga bir xil amalni bajarish uchun ishlatiladi.

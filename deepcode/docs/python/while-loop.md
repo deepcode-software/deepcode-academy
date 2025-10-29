@@ -1,5 +1,3 @@
-# 🐍 PYTHON DASTURLASH ASOSLARI
-
 # 🧩 10-DARS WHILE LOOP
 
 📌 `while` — bu tsikl operatori, ya’ni biror shart True bo‘lganida kodni qayta-qayta bajaradi. Agar shart False bo‘lsa, while tsikli to‘xtaydi va keyingi kodga o‘tadi.

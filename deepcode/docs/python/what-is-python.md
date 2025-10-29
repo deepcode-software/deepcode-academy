@@ -1,5 +1,3 @@
-# 🐍 PYTHON DASTURLASH ASOSLARI
-
 # 🧩 WHAT IS PYTHON?
 
 📌 Python — bu yuqori darajadagi, umumiy maqsadli, interpreted dasturlash tili. U soddaligi, oson sintaksisi, o‘qilishi qulayligi bilan mashhur.

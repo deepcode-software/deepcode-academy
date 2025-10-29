@@ -1,5 +1,3 @@
-# 🐍 PYTHON DASTURLASH ASOSLARI
-
 # 🧩 3-DARS OPERATORS
 
 - Python operatorlarini quyidagi guruhlarga bo'lish mumkin:

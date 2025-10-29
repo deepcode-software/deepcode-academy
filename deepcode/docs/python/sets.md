@@ -1,5 +1,3 @@
-# 🐍 PYTHON DASTURLASH ASOSLARI
-
 # 🧩 6-DARS SETS
 
 📌 Set — bu noyob (takrorlanmaydigan) elementlar dan tashkil topgan, tartibsiz va indekssiz ma’lumot turi.

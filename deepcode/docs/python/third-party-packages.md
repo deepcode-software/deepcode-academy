@@ -1,5 +1,3 @@
-# 🐍 PYTHON DASTURLASH ASOSLARI  
-
 # 🧩 16-DARS THIRD PARTY PACKAGES
 
 📌 Python kutubxonalari 3 guruhga bo‘linadi:
