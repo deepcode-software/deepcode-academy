@@ -1,7 +1,7 @@
 site_name: DeepCode Academy
 
 theme:
-  name: simple-blog
+  name: windmill
 
 nav:
   # - Home: index.md
