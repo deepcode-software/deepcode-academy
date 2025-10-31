@@ -1,4 +1,8 @@
 site_name: DeepCode Academy
+site_url: https://deepcode-academy.vercel.app/
+site_author: Umid
+site_description: Mukammal hujjatlar sayti 🎯
+
 
 theme:
   name: mkdocs
@@ -26,5 +30,11 @@ nav:
       - Third Party Packages: python/third-party-packages.md
       - OOP: python/oop.md
 
+  - PostgreSQL:
+    - Introduction: psql/introduction.md
       
-  - About: about.md
+  - Django:
+    - Introduction to Django: django/introduction-to-django.md
+
+  - Django REST Framework:
+    - Introduction to DRF: django/introduction.md
