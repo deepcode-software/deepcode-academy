@@ -1,5 +1,3 @@
-# 🌐 DJANGO REST FRAMEWORK ASOSLARI
-
 # 🧩 5-DARS: GENERIC API VIEWS BILAN ISHLASH
 
 Bu darsda Django REST Framework (DRF) yordamida Generic API Views yordamida CRUD (Create, Read, Update, Delete) operatsiyalarini bosqichma-bosqich amalga oshiramiz. Generic API Views kod yozishni soddalashtiradi va takrorlanadigan logikani kamaytiradi. Har bir qadam tushunarli va faqat Generic API Views ga qaratilgan bo'ladi. Oldingi darslarda sozlangan `myproject` loyihasi va `myapp` ilovasidagi `Task` modeli asosida davom etamiz.
