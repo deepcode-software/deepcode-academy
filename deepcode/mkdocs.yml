@@ -64,4 +64,23 @@ nav:
 
 
   - Django REST Framework:
-    - Introduction to DRF: django/introduction.md
+    - Introduction to DRF: drf/introduction.md
+    - Setting Up a Django Project and DRF: drf/setting-up-django-project-and-drf.md
+    - Creating the First API: drf/creating-the-first-api.md
+    - Implementing CRUD Operations: drf/implementing-crud-operations.md
+    - Working with ModelSerializer: drf/working-with-modelserializer.md
+    - Using Generic API Views: drf/using-generic-api-views.md
+    - ViewSets and Routers: drf/viewsets-and-routers.md
+    - Authentication (Token-Based Authentication): drf/authentication-token-based.md
+    - Working with Permissions: drf/working-with-permissions.md
+    - Throttling and Rate Limiting: drf/throttling-and-rate-limiting.md
+    - Filtering, Searching, and Ordering: drf/filtering-searching-and-ordering.md
+    - Working with Pagination: drf/working-with-pagination.md
+    - JWT Authentication: drf/jwt-authentication.md
+    - Signals and DRF: drf/signals-and-drf.md
+    - Background Tasks and Celery: drf/background-tasks-and-celery.md
+    - API Testing and Unit Testing: drf/api-testing-and-unit-testing.md
+    - Caching and Performance Optimization: drf/caching-and-performance-optimization.md
+    - WebSockets and Django Channels: drf/websockets-and-django-channels.md
+    - Deployment and Docker: drf/deployment-and-docker.md
+    - Advanced Concepts and Best Practices: drf/advanced-concepts-and-best-practices.md

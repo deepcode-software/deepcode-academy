@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Umid">
+        <link rel="canonical" href="https://deepcode-academy.vercel.app/drf/deployment-and-docker/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Deployment and Docker - DeepCode Academy</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">DeepCode Academy</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/what-is-python/" class="dropdown-item">What is Python</a>
+</li>
+                                    
+<li>
+    <a href="../../python/variables/" class="dropdown-item">Variables</a>
+</li>
+                                    
+<li>
+    <a href="../../python/data-types/" class="dropdown-item">Data Types</a>
+</li>
+                                    
+<li>
+    <a href="../../python/operators/" class="dropdown-item">Operatos</a>
+</li>
+                                    
+<li>
+    <a href="../../python/lists/" class="dropdown-item">Lists</a>
+</li>
+                                    
+<li>
+    <a href="../../python/tuples/" class="dropdown-item">Tuples</a>
+</li>
+                                    
+<li>
+    <a href="../../python/sets/" class="dropdown-item">Sets</a>
+</li>
+                                    
+<li>
+    <a href="../../python/dictionaries/" class="dropdown-item">Dictionaries</a>
+</li>
+                                    
+<li>
+    <a href="../../python/conditional-statements/" class="dropdown-item">Conditional Statements</a>
+</li>
+                                    
+<li>
+    <a href="../../python/for-loop/" class="dropdown-item">For Loop</a>
+</li>
+                                    
+<li>
+    <a href="../../python/while-loop/" class="dropdown-item">While Loop</a>
+</li>
+                                    
+<li>
+    <a href="../../python/functions/" class="dropdown-item">Functions</a>
+</li>
+                                    
+<li>
+    <a href="../../python/exception-handling/" class="dropdown-item">Exception Handling</a>
+</li>
+                                    
+<li>
+    <a href="../../python/moduls/" class="dropdown-item">Moduls</a>
+</li>
+                                    
+<li>
+    <a href="../../python/file-handling/" class="dropdown-item">File Handling</a>
+</li>
+                                    
+<li>
+    <a href="../../python/database/" class="dropdown-item">Database</a>
+</li>
+                                    
+<li>
+    <a href="../../python/third-party-packages/" class="dropdown-item">Third Party Packages</a>
+</li>
+                                    
+<li>
+    <a href="../../python/oop/" class="dropdown-item">OOP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PostgreSQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../psql/introduction/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/postgresql/" class="dropdown-item">PostgreSQL</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/basic-commands/" class="dropdown-item">Basic Commands</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/data-retrieval-end-filtering/" class="dropdown-item">Data Retrieval and Filtering</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/function-and-aggregation/" class="dropdown-item">Function and Aggregation</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/data-manipulation/" class="dropdown-item">Data Manipulation</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/joins-and-advanced-queries/" class="dropdown-item">Joins and Advanced Queries</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/psql-connect-in-python/" class="dropdown-item">PostgreSQL connect in Python</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Django</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../django/introduction-to-django/" class="dropdown-item">Introduction to Django</a>
+</li>
+                                    
+<li>
+    <a href="../../django/django-project-structure/" class="dropdown-item">Django Project Structure</a>
+</li>
+                                    
+<li>
+    <a href="../../django/url-dispatcher-and-views/" class="dropdown-item">Url Dispatcher and Views</a>
+</li>
+                                    
+<li>
+    <a href="../../django/templates/" class="dropdown-item">Templates (Working with HTML)</a>
+</li>
+                                    
+<li>
+    <a href="../../django/static-files-and-bootstrap/" class="dropdown-item">Static Files and Bootstrap</a>
+</li>
+                                    
+<li>
+    <a href="../../django/django-orm-and-models/" class="dropdown-item">Django ORM and Models</a>
+</li>
+                                    
+<li>
+    <a href="../../django/django-admin-panel/" class="dropdown-item">Django Admin Panel</a>
+</li>
+                                    
+<li>
+    <a href="../../django/django-forms/" class="dropdown-item">Django Forms</a>
+</li>
+                                    
+<li>
+    <a href="../../django/crud-operations/" class="dropdown-item">CRUD Operations</a>
+</li>
+                                    
+<li>
+    <a href="../../django/queryset-and-filtering/" class="dropdown-item">QuerySet and Filtering</a>
+</li>
+                                    
+<li>
+    <a href="../../django/django-authentication-system/" class="dropdown-item">Django Authentication System</a>
+</li>
+                                    
+<li>
+    <a href="../../django/middleware-and-sessions/" class="dropdown-item">Middleware and Sessions</a>
+</li>
+                                    
+<li>
+    <a href="../../django/class-based-views/" class="dropdown-item">Class-Based Views (CBV)</a>
+</li>
+                                    
+<li>
+    <a href="../../django/django-messages-framework/" class="dropdown-item">Django Messages Framework</a>
+</li>
+                                    
+<li>
+    <a href="../../django/file-upload-and-media-files/" class="dropdown-item">File Upload and Media Files</a>
+</li>
+                                    
+<li>
+    <a href="../../django/project-planning/" class="dropdown-item">Project Planning</a>
+</li>
+                                    
+<li>
+    <a href="../../django/build-models-and-database/" class="dropdown-item">Build Models and Database</a>
+</li>
+                                    
+<li>
+    <a href="../../django/designing-and-frontend/" class="dropdown-item">Designing and Frontend</a>
+</li>
+                                    
+<li>
+    <a href="../../django/authentication-and-user-pages/" class="dropdown-item">Authentication and User Pages</a>
+</li>
+                                    
+<li>
+    <a href="../../django/deploy-and-finalizations/" class="dropdown-item">Deploy and Finalizations</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Django REST Framework</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../introduction/" class="dropdown-item">Introduction to DRF</a>
+</li>
+                                    
+<li>
+    <a href="../setting-up-django-project-and-drf/" class="dropdown-item">Setting Up a Django Project and DRF</a>
+</li>
+                                    
+<li>
+    <a href="../creating-the-first-api/" class="dropdown-item">Creating the First API</a>
+</li>
+                                    
+<li>
+    <a href="../implementing-crud-operations/" class="dropdown-item">Implementing CRUD Operations</a>
+</li>
+                                    
+<li>
+    <a href="../working-with-modelserializer/" class="dropdown-item">Working with ModelSerializer</a>
+</li>
+                                    
+<li>
+    <a href="../using-generic-api-views/" class="dropdown-item">Using Generic API Views</a>
+</li>
+                                    
+<li>
+    <a href="../viewsets-and-routers/" class="dropdown-item">ViewSets and Routers</a>
+</li>
+                                    
+<li>
+    <a href="../authentication-token-based/" class="dropdown-item">Authentication (Token-Based Authentication)</a>
+</li>
+                                    
+<li>
+    <a href="../working-with-permissions/" class="dropdown-item">Working with Permissions</a>
+</li>
+                                    
+<li>
+    <a href="../throttling-and-rate-limiting/" class="dropdown-item">Throttling and Rate Limiting</a>
+</li>
+                                    
+<li>
+    <a href="../filtering-searching-and-ordering/" class="dropdown-item">Filtering, Searching, and Ordering</a>
+</li>
+                                    
+<li>
+    <a href="../working-with-pagination/" class="dropdown-item">Working with Pagination</a>
+</li>
+                                    
+<li>
+    <a href="../jwt-authentication/" class="dropdown-item">JWT Authentication</a>
+</li>
+                                    
+<li>
+    <a href="../signals-and-drf/" class="dropdown-item">Signals and DRF</a>
+</li>
+                                    
+<li>
+    <a href="../background-tasks-and-celery/" class="dropdown-item">Background Tasks and Celery</a>
+</li>
+                                    
+<li>
+    <a href="../api-testing-and-unit-testing/" class="dropdown-item">API Testing and Unit Testing</a>
+</li>
+                                    
+<li>
+    <a href="../caching-and-performance-optimization/" class="dropdown-item">Caching and Performance Optimization</a>
+</li>
+                                    
+<li>
+    <a href="../websockets-and-django-channels/" class="dropdown-item">WebSockets and Django Channels</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Deployment and Docker</a>
+</li>
+                                    
+<li>
+    <a href="../advanced-concepts-and-best-practices/" class="dropdown-item">Advanced Concepts and Best Practices</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../websockets-and-django-channels/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../advanced-concepts-and-best-practices/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#django-rest-framework-asoslari" class="nav-link">🌐 DJANGO REST FRAMEWORK ASOSLARI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#18-dars-joylashtirish-va-docker-bilan-ishlash" class="nav-link">🧩 18-DARS: JOYLASHTIRISH VA DOCKER BILAN ISHLASH</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1-tayyorlov-ishlari" class="nav-link">✅ 1. TAYYORLOV ISHLARI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-docker-va-joylashtirish-ni-tushunish" class="nav-link">✅ 2. DOCKER VA JOYLASHTIRISH NI TUSHUNISH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-docker-va-docker-compose-ni-ornatish" class="nav-link">✅ 3. DOCKER VA DOCKER COMPOSE NI O'RNATISH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-postgresql-uchun-sozlamalar" class="nav-link">✅ 4. POSTGRESQL UCHUN SOZLAMALAR</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-dockerfile-yaratish" class="nav-link">✅ 5. DOCKERFILE YARATISH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6-requirementstxt-yaratish" class="nav-link">✅ 6. REQUIREMENTS.TXT YARATISH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7-docker-compose-sozlash" class="nav-link">✅ 7. DOCKER COMPOSE SOZLASH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#8-nginx-sozlash" class="nav-link">✅ 8. NGINX SOZLASH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#9-loyihani-joylashtirish" class="nav-link">✅ 9. LOYIHANI JOYLASHTIRISH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#10-joylashtirishni-sinab-korish" class="nav-link">✅ 10. JOYLASHTIRISHNI SINAB KO'RISH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#11-testlarni-dockerda-ishga-tushirish" class="nav-link">✅ 11. TESTLARNI DOCKERDA ISHGA TUSHIRISH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#12-sinov-uchun-masalalar" class="nav-link">✅ 12. SINOV UCHUN MASALALAR</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="django-rest-framework-asoslari">🌐 DJANGO REST FRAMEWORK ASOSLARI</h1>
+<h1 id="18-dars-joylashtirish-va-docker-bilan-ishlash">🧩 18-DARS: JOYLASHTIRISH VA DOCKER BILAN ISHLASH</h1>
+<p>Bu darsda Django REST Framework (DRF) loyihasini Docker yordamida joylashtirishni bosqichma-bosqich o'rganamiz. Docker loyihani izolyatsiya qilingan konteynerlarda ishlatish imkonini beradi, bu esa uni turli muhitlarda barqaror ishlashini ta'minlaydi. Har bir qadam tushunarli va faqat joylashtirish va Docker ga qaratilgan bo'ladi. Oldingi darslarda sozlangan <code>myproject</code> loyihasi va <code>myapp</code> ilovasidagi <code>Task</code> modeli, JWT autentifikatsiyasi, ruxsatlar, sahifalash, Celery, keshlash va WebSocket (Django Channels) asosida davom etamiz.</p>
+<h2 id="1-tayyorlov-ishlari">✅ 1. TAYYORLOV ISHLARI</h2>
+<p>📌 Loyiha va ilova allaqachon sozlangan deb hisoblaymiz (<code>myproject</code>, <code>myapp</code>, va <code>Task</code> modeli). Quyidagi sozlamalar mavjud bo'lishi kerak:
+- <code>Task</code> modeli <code>myapp/models.py</code> faylida belgilangan (shu jumladan <code>owner</code> maydoni).
+- <code>TaskSerializer</code> <code>myapp/serializers.py</code> faylida yaratilgan.
+- <code>TaskViewSet</code> <code>myapp/views.py</code> faylida sozlangan (JWT autentifikatsiyasi, ruxsatlar, filtrlash, sahifalash, keshlash va WebSocket bilan).
+- Signallar, Celery va WebSocket <code>myapp/signals.py</code>, <code>myapp/tasks.py</code> va <code>myapp/consumers.py</code> fayllarida sozlangan.
+- <code>/tasks/</code> va <code>/ws/tasks/</code> endpointlari <code>myproject/urls.py</code> va <code>myapp/routing.py</code> fayllarida sozlangan.
+📌 Agar bu sozlamalar hali amalga oshirilmagan bo'lsa, avvalgi darslarga qayting.</p>
+<h2 id="2-docker-va-joylashtirish-ni-tushunish">✅ 2. DOCKER VA JOYLASHTIRISH NI TUSHUNISH</h2>
+<p>📌 <strong>Docker</strong>: Ilovalarni konteynerlarga joylashtirib, ularni mustaqil va moslashuvchan muhitda ishlatish imkonini beradi.
+📌 <strong>Joylashtirish</strong>: Loyihani ishlab chiqarish (production) muhitida foydalanuvchilarga ochiq qilish jarayoni.
+📌 Biz quyidagi komponentlarni Docker konteynerlarida joylashtiramiz:
+- Django (Daphne bilan WebSocket uchun).
+- Redis (Celery, keshlash va Channels uchun).
+- PostgreSQL (ma'lumotlar bazasi sifatida).
+- Celery worker.
+📌 Nginx ni reverse proxy sifatida ishlatamiz.</p>
+<h2 id="3-docker-va-docker-compose-ni-ornatish">✅ 3. DOCKER VA DOCKER COMPOSE NI O'RNATISH</h2>
+<p>📌 Docker va Docker Compose ni o'rnatish:
+- <strong>Docker</strong>: <a href="https://docs.docker.com/get-docker/">Rasmiy saytdan</a> o'rnatiladi.
+- <strong>Docker Compose</strong>: Docker bilan birga keladi yoki alohida o'rnatiladi:
+  <code>bash
+  sudo apt-get install docker-compose  # Ubuntu uchun</code>
+📌 Docker ishlayotganligini tekshiring:</p>
+<pre><code class="language-bash">docker --version
+docker-compose --version
+</code></pre>
+<h2 id="4-postgresql-uchun-sozlamalar">✅ 4. POSTGRESQL UCHUN SOZLAMALAR</h2>
+<p>📌 Loyiha SQLite dan PostgreSQL ga o'tkaziladi. <code>myproject/settings.py</code> faylini yangilaymiz:</p>
+<pre><code class="language-python">INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'django_filters',
+    'channels',
+    'myapp.apps.MyappConfig',
+]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle',
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '10/hour',
+        'user': '20/hour',
+    },
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 5,
+}
+
+# PostgreSQL sozlamalari
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mydb',
+        'USER': 'myuser',
+        'PASSWORD': 'mypassword',
+        'HOST': 'db',
+        'PORT': '5432',
+    }
+}
+
+# Celery sozlamalari
+CELERY_BROKER_URL = 'redis://redis:6379/0'
+CELERY_RESULT_BACKEND = 'redis://redis:6379/0'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Asia/Tashkent'
+CELERY_TASK_ALWAYS_EAGER = False  # Ishlab chiqarishda sinxron emas
+
+# Keshlash sozlamalari
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'redis://redis:6379/1',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        }
+    }
+}
+
+# Channels sozlamalari
+ASGI_APPLICATION = 'myproject.asgi.application'
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('redis', 6379)],
+        },
+    },
+}
+</code></pre>
+<p>📌 <strong>Tushuntirish</strong>:
+- <code>DATABASES</code>: PostgreSQL sozlamalari qo'shildi. <code>db</code> — Docker Compose dagi PostgreSQL xizmati nomi.
+- <code>CELERY_BROKER_URL</code> va <code>CACHES</code>: <code>redis</code> xizmati nomiga o'zgartirildi.
+- <code>CELERY_TASK_ALWAYS_EAGER = False</code>: Ishlab chiqarishda Celery asinxron ishlaydi.</p>
+<h2 id="5-dockerfile-yaratish">✅ 5. DOCKERFILE YARATISH</h2>
+<p>📌 Loyiha ildizida <code>Dockerfile</code> yarating:</p>
+<pre><code class="language-dockerfile">FROM python:3.9-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+ENV PYTHONUNBUFFERED=1
+
+CMD [&quot;daphne&quot;, &quot;-b&quot;, &quot;0.0.0.0&quot;, &quot;-p&quot;, &quot;8000&quot;, &quot;myproject.asgi:application&quot;]
+</code></pre>
+<p>📌 <strong>Tushuntirish</strong>:
+- <code>python:3.9-slim</code>: Yengil Python tasviri.
+- <code>requirements.txt</code>: Loyiha bog'liqliklarini o'rnatadi.
+- <code>daphne</code>: WebSocket uchun ASGI serveri sifatida ishlaydi.</p>
+<h2 id="6-requirementstxt-yaratish">✅ 6. REQUIREMENTS.TXT YARATISH</h2>
+<p>📌 Loyiha ildizida <code>requirements.txt</code> faylini yarating:</p>
+<pre><code>django==4.2
+djangorestframework==3.14
+django-filter==23.2
+djangorestframework-simplejwt==5.2
+channels==4.0
+channels-redis==4.0
+django-redis==5.2
+celery==5.2
+redis==4.5
+psycopg2-binary==2.9
+daphne==4.0
+</code></pre>
+<p>📌 <strong>Eslatma</strong>: Versiyalar sizning loyihangizga mos kelishi kerak.</p>
+<h2 id="7-docker-compose-sozlash">✅ 7. DOCKER COMPOSE SOZLASH</h2>
+<p>📌 Loyiha ildizida <code>docker-compose.yml</code> faylini yarating:</p>
+<pre><code class="language-yaml">version: '3.8'
+
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: mydb
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:6
+    volumes:
+      - redis_data:/data
+
+  web:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - &quot;8000:8000&quot;
+    depends_on:
+      - db
+      - redis
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: &gt;
+      sh -c &quot;python manage.py migrate &amp;&amp;
+             daphne -b 0.0.0.0 -p 8000 myproject.asgi:application&quot;
+
+  celery:
+    build: .
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+      - db
+    command: celery -A myproject worker --loglevel=info
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - &quot;80:80&quot;
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - web
+
+volumes:
+  postgres_data:
+  redis_data:
+</code></pre>
+<p>📌 <strong>Tushuntirish</strong>:
+- <code>db</code>: PostgreSQL xizmati.
+- <code>redis</code>: Redis xizmati.
+- <code>web</code>: Django va Daphne xizmati.
+- <code>celery</code>: Celery worker xizmati.
+- <code>nginx</code>: Reverse proxy sifatida ishlaydi.</p>
+<h2 id="8-nginx-sozlash">✅ 8. NGINX SOZLASH</h2>
+<p>📌 Loyiha ildizida <code>nginx.conf</code> faylini yarating:</p>
+<pre><code class="language-nginx">events {}
+
+http {
+    server {
+        listen 80;
+
+        location / {
+            proxy_pass http://web:8000;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+
+        location /ws/ {
+            proxy_pass http://web:8000;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection &quot;upgrade&quot;;
+            proxy_set_header Host $host;
+        }
+    }
+}
+</code></pre>
+<p>📌 <strong>Tushuntirish</strong>:
+- <code>/</code>: HTTP so'rovlarini <code>web</code> xizmatiga yo'naltiradi.
+- <code>/ws/</code>: WebSocket so'rovlarini qo'llab-quvvatlaydi.</p>
+<h2 id="9-loyihani-joylashtirish">✅ 9. LOYIHANI JOYLASHTIRISH</h2>
+<p>📌 Docker Compose bilan loyihani ishga tushirish:</p>
+<pre><code class="language-bash">docker-compose up --build
+</code></pre>
+<p>📌 Migratsiyalarni amalga oshirish (birinchi marta):</p>
+<pre><code class="language-bash">docker-compose exec web python manage.py migrate
+</code></pre>
+<p>📌 Superuser yaratish:</p>
+<pre><code class="language-bash">docker-compose exec web python manage.py createsuperuser
+</code></pre>
+<h2 id="10-joylashtirishni-sinab-korish">✅ 10. JOYLASHTIRISHNI SINAB KO'RISH</h2>
+<p>📌 Brauzerda <code>http://localhost</code> yoki <code>http://localhost/ws/</code> manzilini oching.
+📌 API ni sinash:</p>
+<pre><code class="language-bash">curl -X POST http://localhost/api/token/ -H &quot;Content-Type: application/json&quot; -d '{&quot;username&quot;: &quot;testuser&quot;, &quot;password&quot;: &quot;testpass123&quot;}'
+</code></pre>
+<pre><code class="language-bash">curl -X POST http://localhost/tasks/ -H &quot;Authorization: Bearer &lt;access_token&gt;&quot; -H &quot;Content-Type: application/json&quot; -d '{&quot;title&quot;: &quot;Yangi vazifa&quot;, &quot;description&quot;: &quot;Test&quot;}'
+</code></pre>
+<p>📌 WebSocket sinovi:
+- <code>http://localhost/ws/</code> manzilida WebSocket sahifasini oching.
+- Yangi vazifa qo'shing va bildirishnoma oling.</p>
+<h2 id="11-testlarni-dockerda-ishga-tushirish">✅ 11. TESTLARNI DOCKERDA ISHGA TUSHIRISH</h2>
+<p>📌 Testlarni Docker ichida ishga tushirish:</p>
+<pre><code class="language-bash">docker-compose exec web python manage.py test
+</code></pre>
+<h2 id="12-sinov-uchun-masalalar">✅ 12. SINOV UCHUN MASALALAR</h2>
+<p>📌 Joylashtirishni sinash uchun quyidagi amallarni bajarib ko'ring:
+1. <code>docker-compose up --build</code> bilan loyihani ishga tushiring va <code>http://localhost/tasks/</code> manzilini sinang.
+2. WebSocket ni <code>http://localhost/ws/</code> manzilida sinab, vazifa qo'shishda bildirishnoma oling.
+3. Testlarni <code>docker-compose exec web python manage.py test</code> bilan ishga tushiring.
+4. PostgreSQL ga ulanishni <code>docker-compose exec db psql -U myuser -d mydb</code> bilan tekshiring.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Umid">
+        <link rel="canonical" href="https://deepcode-academy.vercel.app/drf/filtering-searching-and-ordering/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Filtering, Searching, and Ordering - DeepCode Academy</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">DeepCode Academy</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/what-is-python/" class="dropdown-item">What is Python</a>
+</li>
+                                    
+<li>
+    <a href="../../python/variables/" class="dropdown-item">Variables</a>
+</li>
+                                    
+<li>
+    <a href="../../python/data-types/" class="dropdown-item">Data Types</a>
+</li>
+                                    
+<li>
+    <a href="../../python/operators/" class="dropdown-item">Operatos</a>
+</li>
+                                    
+<li>
+    <a href="../../python/lists/" class="dropdown-item">Lists</a>
+</li>
+                                    
+<li>
+    <a href="../../python/tuples/" class="dropdown-item">Tuples</a>
+</li>
+                                    
+<li>
+    <a href="../../python/sets/" class="dropdown-item">Sets</a>
+</li>
+                                    
+<li>
+    <a href="../../python/dictionaries/" class="dropdown-item">Dictionaries</a>
+</li>
+                                    
+<li>
+    <a href="../../python/conditional-statements/" class="dropdown-item">Conditional Statements</a>
+</li>
+                                    
+<li>
+    <a href="../../python/for-loop/" class="dropdown-item">For Loop</a>
+</li>
+                                    
+<li>
+    <a href="../../python/while-loop/" class="dropdown-item">While Loop</a>
+</li>
+                                    
+<li>
+    <a href="../../python/functions/" class="dropdown-item">Functions</a>
+</li>
+                                    
+<li>
+    <a href="../../python/exception-handling/" class="dropdown-item">Exception Handling</a>
+</li>
+                                    
+<li>
+    <a href="../../python/moduls/" class="dropdown-item">Moduls</a>
+</li>
+                                    
+<li>
+    <a href="../../python/file-handling/" class="dropdown-item">File Handling</a>
+</li>
+                                    
+<li>
+    <a href="../../python/database/" class="dropdown-item">Database</a>
+</li>
+                                    
+<li>
+    <a href="../../python/third-party-packages/" class="dropdown-item">Third Party Packages</a>
+</li>
+                                    
+<li>
+    <a href="../../python/oop/" class="dropdown-item">OOP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PostgreSQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../psql/introduction/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/postgresql/" class="dropdown-item">PostgreSQL</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/basic-commands/" class="dropdown-item">Basic Commands</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/data-retrieval-end-filtering/" class="dropdown-item">Data Retrieval and Filtering</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/function-and-aggregation/" class="dropdown-item">Function and Aggregation</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/data-manipulation/" class="dropdown-item">Data Manipulation</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/joins-and-advanced-queries/" class="dropdown-item">Joins and Advanced Queries</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/psql-connect-in-python/" class="dropdown-item">PostgreSQL connect in Python</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Django</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../django/introduction-to-django/" class="dropdown-item">Introduction to Django</a>
+</li>
+                                    
+<li>
+    <a href="../../django/django-project-structure/" class="dropdown-item">Django Project Structure</a>
+</li>
+                                    
+<li>
+    <a href="../../django/url-dispatcher-and-views/" class="dropdown-item">Url Dispatcher and Views</a>
+</li>
+                                    
+<li>
+    <a href="../../django/templates/" class="dropdown-item">Templates (Working with HTML)</a>
+</li>
+                                    
+<li>
+    <a href="../../django/static-files-and-bootstrap/" class="dropdown-item">Static Files and Bootstrap</a>
+</li>
+                                    
+<li>
+    <a href="../../django/django-orm-and-models/" class="dropdown-item">Django ORM and Models</a>
+</li>
+                                    
+<li>
+    <a href="../../django/django-admin-panel/" class="dropdown-item">Django Admin Panel</a>
+</li>
+                                    
+<li>
+    <a href="../../django/django-forms/" class="dropdown-item">Django Forms</a>
+</li>
+                                    
+<li>
+    <a href="../../django/crud-operations/" class="dropdown-item">CRUD Operations</a>
+</li>
+                                    
+<li>
+    <a href="../../django/queryset-and-filtering/" class="dropdown-item">QuerySet and Filtering</a>
+</li>
+                                    
+<li>
+    <a href="../../django/django-authentication-system/" class="dropdown-item">Django Authentication System</a>
+</li>
+                                    
+<li>
+    <a href="../../django/middleware-and-sessions/" class="dropdown-item">Middleware and Sessions</a>
+</li>
+                                    
+<li>
+    <a href="../../django/class-based-views/" class="dropdown-item">Class-Based Views (CBV)</a>
+</li>
+                                    
+<li>
+    <a href="../../django/django-messages-framework/" class="dropdown-item">Django Messages Framework</a>
+</li>
+                                    
+<li>
+    <a href="../../django/file-upload-and-media-files/" class="dropdown-item">File Upload and Media Files</a>
+</li>
+                                    
+<li>
+    <a href="../../django/project-planning/" class="dropdown-item">Project Planning</a>
+</li>
+                                    
+<li>
+    <a href="../../django/build-models-and-database/" class="dropdown-item">Build Models and Database</a>
+</li>
+                                    
+<li>
+    <a href="../../django/designing-and-frontend/" class="dropdown-item">Designing and Frontend</a>
+</li>
+                                    
+<li>
+    <a href="../../django/authentication-and-user-pages/" class="dropdown-item">Authentication and User Pages</a>
+</li>
+                                    
+<li>
+    <a href="../../django/deploy-and-finalizations/" class="dropdown-item">Deploy and Finalizations</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Django REST Framework</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../introduction/" class="dropdown-item">Introduction to DRF</a>
+</li>
+                                    
+<li>
+    <a href="../setting-up-django-project-and-drf/" class="dropdown-item">Setting Up a Django Project and DRF</a>
+</li>
+                                    
+<li>
+    <a href="../creating-the-first-api/" class="dropdown-item">Creating the First API</a>
+</li>
+                                    
+<li>
+    <a href="../implementing-crud-operations/" class="dropdown-item">Implementing CRUD Operations</a>
+</li>
+                                    
+<li>
+    <a href="../working-with-modelserializer/" class="dropdown-item">Working with ModelSerializer</a>
+</li>
+                                    
+<li>
+    <a href="../using-generic-api-views/" class="dropdown-item">Using Generic API Views</a>
+</li>
+                                    
+<li>
+    <a href="../viewsets-and-routers/" class="dropdown-item">ViewSets and Routers</a>
+</li>
+                                    
+<li>
+    <a href="../authentication-token-based/" class="dropdown-item">Authentication (Token-Based Authentication)</a>
+</li>
+                                    
+<li>
+    <a href="../working-with-permissions/" class="dropdown-item">Working with Permissions</a>
+</li>
+                                    
+<li>
+    <a href="../throttling-and-rate-limiting/" class="dropdown-item">Throttling and Rate Limiting</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Filtering, Searching, and Ordering</a>
+</li>
+                                    
+<li>
+    <a href="../working-with-pagination/" class="dropdown-item">Working with Pagination</a>
+</li>
+                                    
+<li>
+    <a href="../jwt-authentication/" class="dropdown-item">JWT Authentication</a>
+</li>
+                                    
+<li>
+    <a href="../signals-and-drf/" class="dropdown-item">Signals and DRF</a>
+</li>
+                                    
+<li>
+    <a href="../background-tasks-and-celery/" class="dropdown-item">Background Tasks and Celery</a>
+</li>
+                                    
+<li>
+    <a href="../api-testing-and-unit-testing/" class="dropdown-item">API Testing and Unit Testing</a>
+</li>
+                                    
+<li>
+    <a href="../caching-and-performance-optimization/" class="dropdown-item">Caching and Performance Optimization</a>
+</li>
+                                    
+<li>
+    <a href="../websockets-and-django-channels/" class="dropdown-item">WebSockets and Django Channels</a>
+</li>
+                                    
+<li>
+    <a href="../deployment-and-docker/" class="dropdown-item">Deployment and Docker</a>
+</li>
+                                    
+<li>
+    <a href="../advanced-concepts-and-best-practices/" class="dropdown-item">Advanced Concepts and Best Practices</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../throttling-and-rate-limiting/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../working-with-pagination/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#django-rest-framework-asoslari" class="nav-link">🌐 DJANGO REST FRAMEWORK ASOSLARI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#10-dars-filtrlash-qidirish-va-tartiblash" class="nav-link">🧩 10-DARS: FILTRLASH, QIDIRISH VA TARTIBLASH</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1-tayyorlov-ishlari" class="nav-link">✅ 1. TAYYORLOV ISHLARI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-filtrlash-qidirish-va-tartiblash-ni-tushunish" class="nav-link">✅ 2. FILTRLASH, QIDIRISH VA TARTIBLASH NI TUSHUNISH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-model-va-serializerni-tekshirish" class="nav-link">✅ 3. MODEL VA SERIALIZERNI TEKSHIRISH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-filtrlash-uchun-django-filter-ornatish" class="nav-link">✅ 4. FILTRLASH UCHUN DJANGO-FILTER O'RNATISH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-viewset-ni-filtrlash-qidirish-va-tartiblash-bilan-yangilash" class="nav-link">✅ 5. VIEWSET NI FILTRLASH, QIDIRISH VA TARTIBLASH BILAN YANGILASH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6-loyiha-sozlamalarini-yangilash" class="nav-link">✅ 6. LOYIHA SOZLAMALARINI YANGILASH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7-url-sozlash" class="nav-link">✅ 7. URL SOZLASH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#8-filtrlash-qidirish-va-tartiblash-ni-sinab-korish" class="nav-link">✅ 8. FILTRLASH, QIDIRISH VA TARTIBLASH NI SINAB KO'RISH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#9-admin-paneli-orqali-sinov-ixtiyoriy" class="nav-link">✅ 9. ADMIN PANELI ORQALI SINOV (IXTIYORIY)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#10-sinov-uchun-masalalar" class="nav-link">✅ 10. SINOV UCHUN MASALALAR</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="django-rest-framework-asoslari">🌐 DJANGO REST FRAMEWORK ASOSLARI</h1>
+<h1 id="10-dars-filtrlash-qidirish-va-tartiblash">🧩 10-DARS: FILTRLASH, QIDIRISH VA TARTIBLASH</h1>
+<p>Bu darsda Django REST Framework (DRF) yordamida ma'lumotlarni filtrlash, qidirish va tartiblash funksiyalarini sozlashni bosqichma-bosqich o'rganamiz. Bu funksiyalar API dan olingan ma'lumotlarni foydalanuvchi ehtiyojlariga moslashtirishga yordam beradi. Har bir qadam tushunarli va faqat filtrlash, qidirish va tartiblashga qaratilgan bo'ladi. Oldingi darslarda sozlangan <code>myproject</code> loyihasi va <code>myapp</code> ilovasidagi <code>Task</code> modeli, token autentifikatsiyasi va ruxsatlar asosida davom etamiz.</p>
+<h2 id="1-tayyorlov-ishlari">✅ 1. TAYYORLOV ISHLARI</h2>
+<p>📌 Loyiha va ilova allaqachon sozlangan deb hisoblaymiz (<code>myproject</code>, <code>myapp</code>, va <code>Task</code> modeli). Quyidagi sozlamalar mavjud bo'lishi kerak:
+- <code>Task</code> modeli <code>myapp/models.py</code> faylida belgilangan (shu jumladan <code>owner</code> maydoni).
+- <code>TaskSerializer</code> <code>myapp/serializers.py</code> faylida yaratilgan.
+- <code>TaskViewSet</code> <code>myapp/views.py</code> faylida sozlangan (autentifikatsiya va ruxsatlar bilan).
+- Token autentifikatsiyasi va <code>/tasks/</code> endpointi <code>myproject/urls.py</code> faylida sozlangan.
+📌 Agar bu sozlamalar hali amalga oshirilmagan bo'lsa, avvalgi darslarga qayting.</p>
+<h2 id="2-filtrlash-qidirish-va-tartiblash-ni-tushunish">✅ 2. FILTRLASH, QIDIRISH VA TARTIBLASH NI TUSHUNISH</h2>
+<p>📌 <strong>Filtrlash</strong>: Ma'lumotlarni muayyan shartlar asosida cheklash (masalan, faqat bajarilgan vazifalarni ko'rsatish).
+📌 <strong>Qidirish</strong>: Ma'lumotlarni kalit so'z bo'yicha izlash (masalan, sarlavhada muayyan so'zni qidirish).
+📌 <strong>Tartiblash</strong>: Ma'lumotlarni muayyan maydon bo'yicha tartiblash (masalan, yaratilgan sana bo'yicha).
+📌 DRF bu funksiyalarni <code>django-filter</code>, <code>SearchFilter</code> va <code>OrderingFilter</code> kabi vositalar orqali qo'llab-quvvatlaydi.</p>
+<h2 id="3-model-va-serializerni-tekshirish">✅ 3. MODEL VA SERIALIZERNI TEKSHIRISH</h2>
+<p>📌 Quyidagi sozlamalar oldingi darslarda amalga oshirilgan, lekin ularni qayta ko'rib chiqamiz:</p>
+<h3 id="model-tekshirish">❇️ <strong>Model tekshirish</strong>:</h3>
+<p>📌 <code>myapp/models.py</code> faylida <code>Task</code> modeli quyidagicha bo'lishi kerak:</p>
+<pre><code class="language-python">from django.db import models
+
+class Task(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField(blank=True, null=True)
+    completed = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    owner = models.ForeignKey('auth.User', related_name='tasks', on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return self.title
+</code></pre>
+<h3 id="serializer-tekshirish">❇️ <strong>Serializer tekshirish</strong>:</h3>
+<p>📌 <code>myapp/serializers.py</code> faylida <code>TaskSerializer</code> quyidagicha bo'lishi kerak:</p>
+<pre><code class="language-python">from rest_framework import serializers
+from .models import Task
+
+class TaskSerializer(serializers.ModelSerializer):
+    status = serializers.SerializerMethodField()
+    owner = serializers.ReadOnlyField(source='owner.username')
+
+    class Meta:
+        model = Task
+        fields = ['id', 'title', 'description', 'completed', 'created_at', 'status', 'owner']
+        read_only_fields = ['id', 'created_at', 'owner']
+
+    def get_status(self, obj):
+        return &quot;Bajarilgan&quot; if obj.completed else &quot;Bajarilmagan&quot;
+
+    def validate_title(self, value):
+        if len(value) &lt; 3:
+            raise serializers.ValidationError(&quot;Sarlavha kamida 3 ta belgidan iborat bo'lishi kerak.&quot;)
+        return value
+</code></pre>
+<h2 id="4-filtrlash-uchun-django-filter-ornatish">✅ 4. FILTRLASH UCHUN DJANGO-FILTER O'RNATISH</h2>
+<p>📌 Filtrlash uchun <code>django-filter</code> paketini o'rnatamiz:</p>
+<pre><code class="language-bash">pip install django-filter
+</code></pre>
+<p>📌 <code>myproject/settings.py</code> faylida <code>django-filter</code> ni qo'shing:</p>
+<pre><code class="language-python">INSTALLED_APPS = [
+    ...
+    'rest_framework',
+    'rest_framework.authtoken',
+    'django_filters',
+    'myapp',
+]
+</code></pre>
+<h2 id="5-viewset-ni-filtrlash-qidirish-va-tartiblash-bilan-yangilash">✅ 5. VIEWSET NI FILTRLASH, QIDIRISH VA TARTIBLASH BILAN YANGILASH</h2>
+<p>📌 <code>myapp/views.py</code> faylida <code>TaskViewSet</code> ni yangilaymiz va filtrlash, qidirish va tartiblash funksiyalarini qo'shamiz:</p>
+<pre><code class="language-python">from rest_framework import viewsets
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.filters import SearchFilter, OrderingFilter
+from .models import Task
+from .serializers import TaskSerializer
+from .permissions import IsOwnerOrReadOnly
+from rest_framework.permissions import IsAuthenticated
+
+class TaskViewSet(viewsets.ModelViewSet):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
+    permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_fields = ['completed', 'owner']  # Filtrlash uchun maydonlar
+    search_fields = ['title', 'description']   # Qidirish uchun maydonlar
+    ordering_fields = ['created_at', 'completed']  # Tartiblash uchun maydonlar
+    ordering = ['created_at']  # Standart tartiblash
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+</code></pre>
+<p>📌 <strong>Tushuntirish</strong>:
+- <code>filter_backends</code>: <code>DjangoFilterBackend</code>, <code>SearchFilter</code> va <code>OrderingFilter</code> ni qo'shadi.
+- <code>filterset_fields</code>: <code>completed</code> va <code>owner</code> bo'yicha filtrlash imkonini beradi.
+- <code>search_fields</code>: <code>title</code> va <code>description</code> maydonlarida qidirish imkonini beradi.
+- <code>ordering_fields</code>: <code>created_at</code> va <code>completed</code> bo'yicha tartiblash imkonini beradi.
+- <code>ordering</code>: Standart tartiblash <code>created_at</code> bo'yicha.</p>
+<h2 id="6-loyiha-sozlamalarini-yangilash">✅ 6. LOYIHA SOZLAMALARINI YANGILASH</h2>
+<p>📌 <code>myproject/settings.py</code> faylida <code>REST_FRAMEWORK</code> sozlamalarini yangilang:</p>
+<pre><code class="language-python">REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle',
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '10/hour',
+        'user': '20/hour',
+    },
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ],
+}
+</code></pre>
+<h2 id="7-url-sozlash">✅ 7. URL SOZLASH</h2>
+<p>📌 <code>myproject/urls.py</code> faylida URL marshrutlari oldingi darsdagidek qoladi:</p>
+<pre><code class="language-python">from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from rest_framework.authtoken.views import obtain_auth_token
+from myapp.views import TaskViewSet
+
+router = DefaultRouter()
+router.register(r'tasks', TaskViewSet)
+
+urlpatterns = [
+    path('', include(router.urls)),
+    path('api-token-auth/', obtain_auth_token, name='api_token_auth'),
+]
+</code></pre>
+<h2 id="8-filtrlash-qidirish-va-tartiblash-ni-sinab-korish">✅ 8. FILTRLASH, QIDIRISH VA TARTIBLASH NI SINAB KO'RISH</h2>
+<p>📌 Serverni ishga tushiring:</p>
+<pre><code class="language-bash">python manage.py runserver
+</code></pre>
+<p>📌 API so'rovlarida tokenni <code>Authorization</code> sarlavhasida yuboring: <code>Token &lt;token&gt;</code>.</p>
+<h3 id="foydalanuvchi-va-token-yaratish">❇️ <strong>Foydalanuvchi va token yaratish</strong>:</h3>
+<p>📌 Agar hali yaratilmagan bo'lsa, foydalanuvchi yarating:</p>
+<pre><code class="language-bash">python manage.py createsuperuser  # username: user1, password: pass123
+</code></pre>
+<p>📌 Token oling:</p>
+<pre><code class="language-bash">curl -X POST http://127.0.0.1:8000/api-token-auth/ -d &quot;username=user1&amp;password=pass123&quot;
+</code></pre>
+<h3 id="filtrlash-sinovi">❇️ <strong>Filtrlash sinovi</strong>:</h3>
+<ul>
+<li><strong>Faqat bajarilgan vazifalarni ko'rish</strong>:
+  📌 <strong>Manzil</strong>: <code>http://127.0.0.1:8000/tasks/?completed=true</code><br />
+  📌 <strong>Usul</strong>: GET<br />
+  📌 Masalan:
+  <code>bash
+  curl http://127.0.0.1:8000/tasks/?completed=true -H "Authorization: Token &lt;user1_token&gt;"</code></li>
+<li><strong>Muayyan foydalanuvchi vazifalarini ko'rish</strong>:
+  📌 <strong>Manzil</strong>: <code>http://127.0.0.1:8000/tasks/?owner=1</code> (1 — foydalanuvchi ID si)<br />
+  📌 <strong>Usul</strong>: GET<br />
+  📌 Masalan:
+  <code>bash
+  curl http://127.0.0.1:8000/tasks/?owner=1 -H "Authorization: Token &lt;user1_token&gt;"</code></li>
+</ul>
+<h3 id="qidirish-sinovi">❇️ <strong>Qidirish sinovi</strong>:</h3>
+<p>📌 <strong>Manzil</strong>: <code>http://127.0.0.1:8000/tasks/?search=test</code><br />
+📌 <strong>Usul</strong>: GET<br />
+📌 <code>title</code> yoki <code>description</code> da "test" so'zini qidiradi:</p>
+<pre><code class="language-bash">curl http://127.0.0.1:8000/tasks/?search=test -H &quot;Authorization: Token &lt;user1_token&gt;&quot;
+</code></pre>
+<h3 id="tartiblash-sinovi">❇️ <strong>Tartiblash sinovi</strong>:</h3>
+<ul>
+<li><strong>Yaratilgan sana bo'yicha teskari tartiblash</strong>:
+  📌 <strong>Manzil</strong>: <code>http://127.0.0.1:8000/tasks/?ordering=-created_at</code><br />
+  📌 <strong>Usul</strong>: GET<br />
+  📌 Masalan:
+  <code>bash
+  curl http://127.0.0.1:8000/tasks/?ordering=-created_at -H "Authorization: Token &lt;user1_token&gt;"</code></li>
+<li><strong>Bajarilgan holati bo'yicha tartiblash</strong>:
+  📌 <strong>Manzil</strong>: <code>http://127.0.0.1:8000/tasks/?ordering=completed</code><br />
+  📌 <strong>Usul</strong>: GET<br />
+<code>bash
+  curl http://127.0.0.1:8000/tasks/?ordering=completed -H "Authorization: Token &lt;user1_token&gt;"</code></li>
+</ul>
+<h2 id="9-admin-paneli-orqali-sinov-ixtiyoriy">✅ 9. ADMIN PANELI ORQALI SINOV (IXTIYORIY)</h2>
+<p>📌 Ma'lumotlarni qo'lda sinash uchun admin panelidan foydalaning:</p>
+<h3 id="admin-foydalanuvchisini-tekshirish">❇️ <strong>Admin foydalanuvchisini tekshirish</strong>:</h3>
+<pre><code class="language-bash">python manage.py createsuperuser
+</code></pre>
+<h3 id="modelni-admin-panelida-royxatdan-otkazish">❇️ <strong>Modelni admin panelida ro'yxatdan o'tkazish</strong>:</h3>
+<p>📌 <code>myapp/admin.py</code> faylida:</p>
+<pre><code class="language-python">from django.contrib import admin
+from .models import Task
+
+admin.site.register(Task)
+</code></pre>
+<p>📌 <code>http://127.0.0.1:8000/admin/</code> manzilida vazifalarni qo'shing yoki tahrirlang.</p>
+<h2 id="10-sinov-uchun-masalalar">✅ 10. SINOV UCHUN MASALALAR</h2>
+<p>📌 Filtrlash, qidirish va tartiblashni sinash uchun quyidagi amallarni bajarib ko'ring:
+1. <code>/tasks/?completed=true</code> manzilidan faqat bajarilgan vazifalarni oling.
+2. <code>/tasks/?search=vazifa</code> manzilidan "vazifa" so'zini o'z ichiga olgan vazifalarni qidiring.
+3. <code>/tasks/?ordering=-created_at</code> manzilidan eng so'nggi vazifalarni birinchi ko'ring.
+4. Admin panelida bir nechta vazifa qo'shing va filtrlash/qidirishni sinab ko'ring.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

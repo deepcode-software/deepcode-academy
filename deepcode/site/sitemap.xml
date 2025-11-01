@@ -85,7 +85,83 @@
          <lastmod>2025-11-01</lastmod>
     </url>
     <url>
+         <loc>https://deepcode-academy.vercel.app/drf/advanced-concepts-and-best-practices/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/drf/api-testing-and-unit-testing/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/drf/authentication-token-based/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/drf/background-tasks-and-celery/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/drf/caching-and-performance-optimization/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/drf/creating-the-first-api/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/drf/deployment-and-docker/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/drf/filtering-searching-and-ordering/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/drf/implementing-crud-operations/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
          <loc>https://deepcode-academy.vercel.app/drf/introduction/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/drf/jwt-authentication/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/drf/setting-up-django-project-and-drf/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/drf/signals-and-drf/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/drf/throttling-and-rate-limiting/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/drf/using-generic-api-views/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/drf/viewsets-and-routers/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/drf/websockets-and-django-channels/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/drf/working-with-modelserializer/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/drf/working-with-pagination/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/drf/working-with-permissions/</loc>
          <lastmod>2025-11-01</lastmod>
     </url>
     <url>

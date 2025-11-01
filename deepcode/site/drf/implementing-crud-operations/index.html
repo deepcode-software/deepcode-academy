@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Umid">
+        <link rel="canonical" href="https://deepcode-academy.vercel.app/drf/implementing-crud-operations/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Implementing CRUD Operations - DeepCode Academy</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">DeepCode Academy</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/what-is-python/" class="dropdown-item">What is Python</a>
+</li>
+                                    
+<li>
+    <a href="../../python/variables/" class="dropdown-item">Variables</a>
+</li>
+                                    
+<li>
+    <a href="../../python/data-types/" class="dropdown-item">Data Types</a>
+</li>
+                                    
+<li>
+    <a href="../../python/operators/" class="dropdown-item">Operatos</a>
+</li>
+                                    
+<li>
+    <a href="../../python/lists/" class="dropdown-item">Lists</a>
+</li>
+                                    
+<li>
+    <a href="../../python/tuples/" class="dropdown-item">Tuples</a>
+</li>
+                                    
+<li>
+    <a href="../../python/sets/" class="dropdown-item">Sets</a>
+</li>
+                                    
+<li>
+    <a href="../../python/dictionaries/" class="dropdown-item">Dictionaries</a>
+</li>
+                                    
+<li>
+    <a href="../../python/conditional-statements/" class="dropdown-item">Conditional Statements</a>
+</li>
+                                    
+<li>
+    <a href="../../python/for-loop/" class="dropdown-item">For Loop</a>
+</li>
+                                    
+<li>
+    <a href="../../python/while-loop/" class="dropdown-item">While Loop</a>
+</li>
+                                    
+<li>
+    <a href="../../python/functions/" class="dropdown-item">Functions</a>
+</li>
+                                    
+<li>
+    <a href="../../python/exception-handling/" class="dropdown-item">Exception Handling</a>
+</li>
+                                    
+<li>
+    <a href="../../python/moduls/" class="dropdown-item">Moduls</a>
+</li>
+                                    
+<li>
+    <a href="../../python/file-handling/" class="dropdown-item">File Handling</a>
+</li>
+                                    
+<li>
+    <a href="../../python/database/" class="dropdown-item">Database</a>
+</li>
+                                    
+<li>
+    <a href="../../python/third-party-packages/" class="dropdown-item">Third Party Packages</a>
+</li>
+                                    
+<li>
+    <a href="../../python/oop/" class="dropdown-item">OOP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PostgreSQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../psql/introduction/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/postgresql/" class="dropdown-item">PostgreSQL</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/basic-commands/" class="dropdown-item">Basic Commands</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/data-retrieval-end-filtering/" class="dropdown-item">Data Retrieval and Filtering</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/function-and-aggregation/" class="dropdown-item">Function and Aggregation</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/data-manipulation/" class="dropdown-item">Data Manipulation</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/joins-and-advanced-queries/" class="dropdown-item">Joins and Advanced Queries</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/psql-connect-in-python/" class="dropdown-item">PostgreSQL connect in Python</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Django</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../django/introduction-to-django/" class="dropdown-item">Introduction to Django</a>
+</li>
+                                    
+<li>
+    <a href="../../django/django-project-structure/" class="dropdown-item">Django Project Structure</a>
+</li>
+                                    
+<li>
+    <a href="../../django/url-dispatcher-and-views/" class="dropdown-item">Url Dispatcher and Views</a>
+</li>
+                                    
+<li>
+    <a href="../../django/templates/" class="dropdown-item">Templates (Working with HTML)</a>
+</li>
+                                    
+<li>
+    <a href="../../django/static-files-and-bootstrap/" class="dropdown-item">Static Files and Bootstrap</a>
+</li>
+                                    
+<li>
+    <a href="../../django/django-orm-and-models/" class="dropdown-item">Django ORM and Models</a>
+</li>
+                                    
+<li>
+    <a href="../../django/django-admin-panel/" class="dropdown-item">Django Admin Panel</a>
+</li>
+                                    
+<li>
+    <a href="../../django/django-forms/" class="dropdown-item">Django Forms</a>
+</li>
+                                    
+<li>
+    <a href="../../django/crud-operations/" class="dropdown-item">CRUD Operations</a>
+</li>
+                                    
+<li>
+    <a href="../../django/queryset-and-filtering/" class="dropdown-item">QuerySet and Filtering</a>
+</li>
+                                    
+<li>
+    <a href="../../django/django-authentication-system/" class="dropdown-item">Django Authentication System</a>
+</li>
+                                    
+<li>
+    <a href="../../django/middleware-and-sessions/" class="dropdown-item">Middleware and Sessions</a>
+</li>
+                                    
+<li>
+    <a href="../../django/class-based-views/" class="dropdown-item">Class-Based Views (CBV)</a>
+</li>
+                                    
+<li>
+    <a href="../../django/django-messages-framework/" class="dropdown-item">Django Messages Framework</a>
+</li>
+                                    
+<li>
+    <a href="../../django/file-upload-and-media-files/" class="dropdown-item">File Upload and Media Files</a>
+</li>
+                                    
+<li>
+    <a href="../../django/project-planning/" class="dropdown-item">Project Planning</a>
+</li>
+                                    
+<li>
+    <a href="../../django/build-models-and-database/" class="dropdown-item">Build Models and Database</a>
+</li>
+                                    
+<li>
+    <a href="../../django/designing-and-frontend/" class="dropdown-item">Designing and Frontend</a>
+</li>
+                                    
+<li>
+    <a href="../../django/authentication-and-user-pages/" class="dropdown-item">Authentication and User Pages</a>
+</li>
+                                    
+<li>
+    <a href="../../django/deploy-and-finalizations/" class="dropdown-item">Deploy and Finalizations</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Django REST Framework</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../introduction/" class="dropdown-item">Introduction to DRF</a>
+</li>
+                                    
+<li>
+    <a href="../setting-up-django-project-and-drf/" class="dropdown-item">Setting Up a Django Project and DRF</a>
+</li>
+                                    
+<li>
+    <a href="../creating-the-first-api/" class="dropdown-item">Creating the First API</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Implementing CRUD Operations</a>
+</li>
+                                    
+<li>
+    <a href="../working-with-modelserializer/" class="dropdown-item">Working with ModelSerializer</a>
+</li>
+                                    
+<li>
+    <a href="../using-generic-api-views/" class="dropdown-item">Using Generic API Views</a>
+</li>
+                                    
+<li>
+    <a href="../viewsets-and-routers/" class="dropdown-item">ViewSets and Routers</a>
+</li>
+                                    
+<li>
+    <a href="../authentication-token-based/" class="dropdown-item">Authentication (Token-Based Authentication)</a>
+</li>
+                                    
+<li>
+    <a href="../working-with-permissions/" class="dropdown-item">Working with Permissions</a>
+</li>
+                                    
+<li>
+    <a href="../throttling-and-rate-limiting/" class="dropdown-item">Throttling and Rate Limiting</a>
+</li>
+                                    
+<li>
+    <a href="../filtering-searching-and-ordering/" class="dropdown-item">Filtering, Searching, and Ordering</a>
+</li>
+                                    
+<li>
+    <a href="../working-with-pagination/" class="dropdown-item">Working with Pagination</a>
+</li>
+                                    
+<li>
+    <a href="../jwt-authentication/" class="dropdown-item">JWT Authentication</a>
+</li>
+                                    
+<li>
+    <a href="../signals-and-drf/" class="dropdown-item">Signals and DRF</a>
+</li>
+                                    
+<li>
+    <a href="../background-tasks-and-celery/" class="dropdown-item">Background Tasks and Celery</a>
+</li>
+                                    
+<li>
+    <a href="../api-testing-and-unit-testing/" class="dropdown-item">API Testing and Unit Testing</a>
+</li>
+                                    
+<li>
+    <a href="../caching-and-performance-optimization/" class="dropdown-item">Caching and Performance Optimization</a>
+</li>
+                                    
+<li>
+    <a href="../websockets-and-django-channels/" class="dropdown-item">WebSockets and Django Channels</a>
+</li>
+                                    
+<li>
+    <a href="../deployment-and-docker/" class="dropdown-item">Deployment and Docker</a>
+</li>
+                                    
+<li>
+    <a href="../advanced-concepts-and-best-practices/" class="dropdown-item">Advanced Concepts and Best Practices</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../creating-the-first-api/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../working-with-modelserializer/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#django-rest-framework-asoslari" class="nav-link">🌐 DJANGO REST FRAMEWORK ASOSLARI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#3-dars-crud-operatsiyalarini-function-based-views-bilan-amalga-oshirish" class="nav-link">🧩 3-DARS: CRUD OPERATSIYALARINI FUNCTION-BASED VIEWS BILAN AMALGA OSHIRISH</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1-tayyorlov-ishlari" class="nav-link">✅ 1. TAYYORLOV ISHLARI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-crud-operatsiyalarini-tushunish" class="nav-link">✅ 2. CRUD OPERATSIYALARINI TUSHUNISH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-model-va-serializerni-tekshirish" class="nav-link">✅ 3. MODEL VA SERIALIZERNI TEKSHIRISH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-function-based-views-yaratish" class="nav-link">✅ 4. FUNCTION-BASED VIEWS YARATISH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-url-sozlash" class="nav-link">✅ 5. URL SOZLASH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6-crud-operatsiyalarini-sinab-korish" class="nav-link">✅ 6. CRUD OPERATSIYALARINI SINAB KO'RISH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7-admin-paneli-orqali-sinov-ixtiyoriy" class="nav-link">✅ 7. ADMIN PANELI ORQALI SINOV (IXTIYORIY)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#8-crud-sinovi-uchun-masalalar" class="nav-link">✅ 8. CRUD SINOVI UCHUN MASALALAR</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="django-rest-framework-asoslari">🌐 DJANGO REST FRAMEWORK ASOSLARI</h1>
+<h1 id="3-dars-crud-operatsiyalarini-function-based-views-bilan-amalga-oshirish">🧩 3-DARS: CRUD OPERATSIYALARINI FUNCTION-BASED VIEWS BILAN AMALGA OSHIRISH</h1>
+<p>Bu darsda Django REST Framework (DRF) yordamida CRUD (Create, Read, Update, Delete) operatsiyalarini function-based views (FBV) yordamida bosqichma-bosqich amalga oshiramiz. Har bir qadam tushunarli va faqat CRUD operatsiyalariga qaratilgan bo'ladi. Oldingi darslarda sozlangan <code>myproject</code> loyihasi va <code>myapp</code> ilovasidagi <code>Task</code> modeli asosida davom etamiz.</p>
+<h2 id="1-tayyorlov-ishlari">✅ 1. TAYYORLOV ISHLARI</h2>
+<p>📌 Loyiha va ilova allaqachon sozlangan deb hisoblaymiz (<code>myproject</code>, <code>myapp</code>, va <code>Task</code> modeli). Quyidagi sozlamalar mavjud bo'lishi kerak:
+- <code>Task</code> modeli <code>myapp/models.py</code> faylida belgilangan.
+- <code>TaskSerializer</code> <code>myapp/serializers.py</code> faylida yaratilgan.
+- Ma'lumotlar bazasi migratsiyalari qo'llanilgan.
+📌 Agar bu sozlamalar hali amalga oshirilmagan bo'lsa, avvalgi darslarga qayting.</p>
+<h2 id="2-crud-operatsiyalarini-tushunish">✅ 2. CRUD OPERATSIYALARINI TUSHUNISH</h2>
+<p>📌 CRUD operatsiyalari quyidagilarni o'z ichiga oladi:
+- <strong>Create</strong>: Yangi ma'lumot qo'shish.
+- <strong>Read</strong>: Mavjud ma'lumotlarni o'qish (ro'yxat yoki bitta ob'ekt).
+- <strong>Update</strong>: Mavjud ma'lumotlarni yangilash.
+- <strong>Delete</strong>: Ma'lumotlarni o'chirish.</p>
+<p>📌 Function-based views yordamida har bir operatsiyani alohida funksiya sifatida yozamiz.</p>
+<h2 id="3-model-va-serializerni-tekshirish">✅ 3. MODEL VA SERIALIZERNI TEKSHIRISH</h2>
+<p>📌 Quyidagi sozlamalar oldingi darslarda amalga oshirilgan, lekin ularni qayta ko'rib chiqamiz:</p>
+<h3 id="model-tekshirish">❇️ <strong>Model tekshirish</strong>:</h3>
+<p>📌 <code>myapp/models.py</code> faylida <code>Task</code> modeli quyidagicha bo'lishi kerak:</p>
+<pre><code class="language-python">from django.db import models
+
+class Task(models.Model):
+    title = models.CharField(max_length=200)
+    completed = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+</code></pre>
+<h3 id="serializer-tekshirish">❇️ <strong>Serializer tekshirish</strong>:</h3>
+<p>📌 <code>myapp/serializers.py</code> faylida <code>TaskSerializer</code> quyidagicha bo'lishi kerak:</p>
+<pre><code class="language-python">from rest_framework import serializers
+from .models import Task
+
+class TaskSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Task
+        fields = ['id', 'title', 'completed', 'created_at']
+</code></pre>
+<h2 id="4-function-based-views-yaratish">✅ 4. FUNCTION-BASED VIEWS YARATISH</h2>
+<p>📌 <code>myapp/views.py</code> faylini yangilaymiz va CRUD operatsiyalari uchun function-based views yozamiz:</p>
+<pre><code class="language-python">from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
+from .models import Task
+from .serializers import TaskSerializer
+
+@api_view(['GET', 'POST'])
+def task_list(request):
+    if request.method == 'GET':
+        tasks = Task.objects.all()
+        serializer = TaskSerializer(tasks, many=True)
+        return Response(serializer.data)
+
+    elif request.method == 'POST':
+        serializer = TaskSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET', 'PUT', 'DELETE'])
+def task_detail(request, pk):
+    try:
+        task = Task.objects.get(pk=pk)
+    except Task.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = TaskSerializer(task)
+        return Response(serializer.data)
+
+    elif request.method == 'PUT':
+        serializer = TaskSerializer(task, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        task.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+</code></pre>
+<p>📌 <strong>Tushuntirish</strong>:
+- <code>task_list</code>: GET (barcha vazifalarni o'qish) va POST (yangi vazifa qo'shish) so'rovlarini boshqaradi.
+- <code>task_detail</code>: GET (bitta vazifani o'qish), PUT (vazifani yangilash) va DELETE (vazifani o'chirish) so'rovlarini boshqaradi.
+- <code>@api_view</code> dekoratori DRFning API funksiyalarini yoqadi.</p>
+<h2 id="5-url-sozlash">✅ 5. URL SOZLASH</h2>
+<p>📌 <code>myproject/urls.py</code> faylini yangilaymiz va function-based views uchun URL marshrutlarini qo'shamiz:</p>
+<pre><code class="language-python">from django.urls import path
+from myapp.views import task_list, task_detail
+
+urlpatterns = [
+    path('tasks/', task_list, name='task-list'),
+    path('tasks/&lt;int:pk&gt;/', task_detail, name='task-detail'),
+]
+</code></pre>
+<p>📌 <strong>Tushuntirish</strong>:
+- <code>/tasks/</code> manzili vazifalar ro'yxatini ko'rish va yangi vazifa qo'shish uchun.
+- <code>/tasks/&lt;pk&gt;/</code> manzili bitta vazifani ko'rish, yangilash yoki o'chirish uchun.</p>
+<h2 id="6-crud-operatsiyalarini-sinab-korish">✅ 6. CRUD OPERATSIYALARINI SINAB KO'RISH</h2>
+<p>📌 Serverni ishga tushiring:</p>
+<pre><code class="language-bash">python manage.py runserver
+</code></pre>
+<p>📌 Brauzerda yoki Postman kabi vositalar yordamida quyidagi manzillarni sinab ko'ring:</p>
+<h3 id="create-yangi-vazifa-qoshish">❇️ <strong>Create (Yangi vazifa qo'shish)</strong>:</h3>
+<p>📌 <strong>Manzil</strong>: <code>http://127.0.0.1:8000/tasks/</code><br />
+📌 <strong>Usul</strong>: POST<br />
+📌 <strong>Masalan</strong> (Postman orqali):</p>
+<pre><code class="language-bash">curl -X POST http://127.0.0.1:8000/tasks/ -H &quot;Content-Type: application/json&quot; -d '{&quot;title&quot;: &quot;Yangi vazifa&quot;, &quot;completed&quot;: false}'
+</code></pre>
+<p>📌 DRF interfeysi orqali ham yangi vazifa qo'shishingiz mumkin.</p>
+<h3 id="read-malumotlarni-oqish">❇️ <strong>Read (Ma'lumotlarni o'qish)</strong>:</h3>
+<ul>
+<li><strong>Barcha vazifalarni ko'rish</strong>:<br />
+  📌 <strong>Manzil</strong>: <code>http://127.0.0.1:8000/tasks/</code><br />
+  📌 <strong>Usul</strong>: GET<br />
+  📌 Brauzerda bu manzilga o'tsangiz, barcha vazifalar JSON formatida chiqadi.</li>
+<li><strong>Bitta vazifani ko'rish</strong>:<br />
+  📌 <strong>Manzil</strong>: <code>http://127.0.0.1:8000/tasks/1/</code> (1 - vazifa ID si)<br />
+  📌 <strong>Usul</strong>: GET<br />
+  📌 Masalan:
+  <code>bash
+  curl http://127.0.0.1:8000/tasks/1/</code></li>
+</ul>
+<h3 id="update-malumotlarni-yangilash">❇️ <strong>Update (Ma'lumotlarni yangilash)</strong>:</h3>
+<p>📌 <strong>Manzil</strong>: <code>http://127.0.0.1:8000/tasks/1/</code><br />
+📌 <strong>Usul</strong>: PUT<br />
+📌 <strong>Masalan</strong> (vazifani yangilash uchun):</p>
+<pre><code class="language-bash">curl -X PUT http://127.0.0.1:8000/tasks/1/ -H &quot;Content-Type: application/json&quot; -d '{&quot;title&quot;: &quot;Yangilangan vazifa&quot;, &quot;completed&quot;: true}'
+</code></pre>
+<h3 id="delete-malumotlarni-ochirish">❇️ <strong>Delete (Ma'lumotlarni o'chirish)</strong>:</h3>
+<p>📌 <strong>Manzil</strong>: <code>http://127.0.0.1:8000/tasks/1/</code><br />
+📌 <strong>Usul</strong>: DELETE<br />
+📌 <strong>Masalan</strong>:</p>
+<pre><code class="language-bash">curl -X DELETE http://127.0.0.1:8000/tasks/1/
+</code></pre>
+<p>📌 Bu 1-ID li vazifani o'chiradi.</p>
+<h2 id="7-admin-paneli-orqali-sinov-ixtiyoriy">✅ 7. ADMIN PANELI ORQALI SINOV (IXTIYORIY)</h2>
+<p>📌 Ma'lumotlarni qo'lda sinash uchun admin panelidan foydalaning:</p>
+<h3 id="admin-foydalanuvchisini-tekshirish">❇️ <strong>Admin foydalanuvchisini tekshirish</strong>:</h3>
+<p>📌 Agar hali yaratilmagan bo'lsa:</p>
+<pre><code class="language-bash">python manage.py createsuperuser
+</code></pre>
+<h3 id="modelni-admin-panelida-royxatdan-otkazish">❇️ <strong>Modelni admin panelida ro'yxatdan o'tkazish</strong>:</h3>
+<p>📌 <code>myapp/admin.py</code> faylida quyidagi kod bo'lishi kerak:</p>
+<pre><code class="language-python">from django.contrib import admin
+from .models import Task
+
+admin.site.register(Task)
+</code></pre>
+<p>📌 <code>http://127.0.0.1:8000/admin/</code> manzilida admin paneliga kiring va vazifalarni qo'shing, tahrirlang yoki o'chiring.</p>
+<h2 id="8-crud-sinovi-uchun-masalalar">✅ 8. CRUD SINOVI UCHUN MASALALAR</h2>
+<p>📌 API funksionalligini sinash uchun quyidagi amallarni bajarib ko'ring:
+1. Brauzer orqali <code>/tasks/</code> manzilida vazifalar ro'yxatini ko'ring.
+2. Postman yoki DRF interfeysi yordamida yangi vazifa qo'shing (masalan, <code>title: "Test vazifa", completed: False</code>).
+3. <code>/tasks/1/</code> manzilida bitta vazifani yangilang (masalan, <code>completed</code> ni <code>true</code> ga o'zgartiring).
+4. <code>/tasks/1/</code> manzilidan foydalanib, 1-ID li vazifani o'chiring.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
