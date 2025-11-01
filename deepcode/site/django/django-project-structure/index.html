@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Umid">
+        <link rel="canonical" href="https://deepcode-academy.vercel.app/django/django-project-structure/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Django Project Structure - DeepCode Academy</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">DeepCode Academy</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/what-is-python/" class="dropdown-item">What is Python</a>
+</li>
+                                    
+<li>
+    <a href="../../python/variables/" class="dropdown-item">Variables</a>
+</li>
+                                    
+<li>
+    <a href="../../python/data-types/" class="dropdown-item">Data Types</a>
+</li>
+                                    
+<li>
+    <a href="../../python/operators/" class="dropdown-item">Operatos</a>
+</li>
+                                    
+<li>
+    <a href="../../python/lists/" class="dropdown-item">Lists</a>
+</li>
+                                    
+<li>
+    <a href="../../python/tuples/" class="dropdown-item">Tuples</a>
+</li>
+                                    
+<li>
+    <a href="../../python/sets/" class="dropdown-item">Sets</a>
+</li>
+                                    
+<li>
+    <a href="../../python/dictionaries/" class="dropdown-item">Dictionaries</a>
+</li>
+                                    
+<li>
+    <a href="../../python/conditional-statements/" class="dropdown-item">Conditional Statements</a>
+</li>
+                                    
+<li>
+    <a href="../../python/for-loop/" class="dropdown-item">For Loop</a>
+</li>
+                                    
+<li>
+    <a href="../../python/while-loop/" class="dropdown-item">While Loop</a>
+</li>
+                                    
+<li>
+    <a href="../../python/functions/" class="dropdown-item">Functions</a>
+</li>
+                                    
+<li>
+    <a href="../../python/exception-handling/" class="dropdown-item">Exception Handling</a>
+</li>
+                                    
+<li>
+    <a href="../../python/moduls/" class="dropdown-item">Moduls</a>
+</li>
+                                    
+<li>
+    <a href="../../python/file-handling/" class="dropdown-item">File Handling</a>
+</li>
+                                    
+<li>
+    <a href="../../python/database/" class="dropdown-item">Database</a>
+</li>
+                                    
+<li>
+    <a href="../../python/third-party-packages/" class="dropdown-item">Third Party Packages</a>
+</li>
+                                    
+<li>
+    <a href="../../python/oop/" class="dropdown-item">OOP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PostgreSQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../psql/introduction/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/postgresql/" class="dropdown-item">PostgreSQL</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/basic-commands/" class="dropdown-item">Basic Commands</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/data-retrieval-end-filtering/" class="dropdown-item">Data Retrieval and Filtering</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/function-and-aggregation/" class="dropdown-item">Function and Aggregation</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/data-manipulation/" class="dropdown-item">Data Manipulation</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/joins-and-advanced-queries/" class="dropdown-item">Joins and Advanced Queries</a>
+</li>
+                                    
+<li>
+    <a href="../../psql/psql-connect-in-python/" class="dropdown-item">PostgreSQL connect in Python</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Django</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../introduction-to-django/" class="dropdown-item">Introduction to Django</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Django Project Structure</a>
+</li>
+                                    
+<li>
+    <a href="../url-dispatcher-and-views/" class="dropdown-item">Url Dispatcher and Views</a>
+</li>
+                                    
+<li>
+    <a href="../templates/" class="dropdown-item">Templates (Working with HTML)</a>
+</li>
+                                    
+<li>
+    <a href="../static-files-and-bootstrap/" class="dropdown-item">Static Files and Bootstrap</a>
+</li>
+                                    
+<li>
+    <a href="../django-orm-and-models/" class="dropdown-item">Django ORM and Models</a>
+</li>
+                                    
+<li>
+    <a href="../django-admin-panel/" class="dropdown-item">Django Admin Panel</a>
+</li>
+                                    
+<li>
+    <a href="../django-forms/" class="dropdown-item">Django Forms</a>
+</li>
+                                    
+<li>
+    <a href="../crud-operations/" class="dropdown-item">CRUD Operations</a>
+</li>
+                                    
+<li>
+    <a href="../queryset-and-filtering/" class="dropdown-item">QuerySet and Filtering</a>
+</li>
+                                    
+<li>
+    <a href="../django-authentication-system/" class="dropdown-item">Django Authentication System</a>
+</li>
+                                    
+<li>
+    <a href="../middleware-and-sessions/" class="dropdown-item">Middleware and Sessions</a>
+</li>
+                                    
+<li>
+    <a href="../class-based-views/" class="dropdown-item">Class-Based Views (CBV)</a>
+</li>
+                                    
+<li>
+    <a href="../django-messages-framework/" class="dropdown-item">Django Messages Framework</a>
+</li>
+                                    
+<li>
+    <a href="../file-upload-and-media-files/" class="dropdown-item">File Upload and Media Files</a>
+</li>
+                                    
+<li>
+    <a href="../project-planning/" class="dropdown-item">Project Planning</a>
+</li>
+                                    
+<li>
+    <a href="../build-models-and-database/" class="dropdown-item">Build Models and Database</a>
+</li>
+                                    
+<li>
+    <a href="../designing-and-frontend/" class="dropdown-item">Designing and Frontend</a>
+</li>
+                                    
+<li>
+    <a href="../authentication-and-user-pages/" class="dropdown-item">Authentication and User Pages</a>
+</li>
+                                    
+<li>
+    <a href="../deploy-and-finalizations/" class="dropdown-item">Deploy and Finalizations</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Django REST Framework</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../introduction.md" class="dropdown-item">Introduction to DRF</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../introduction-to-django/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../url-dispatcher-and-views/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#django-web-framework-asoslari" class="nav-link">🌐 DJANGO WEB FRAMEWORK ASOSLARI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#django-project-structure" class="nav-link">🧩 DJANGO PROJECT STRUCTURE</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#loyiha-tuzilmasi" class="nav-link">✅ LOYIHA TUZILMASI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#django-loyihaproject-yaratish" class="nav-link">✅ DJANGO LOYIHA(PROJECT) YARATISH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#django-ilovaapp-yaratish" class="nav-link">✅ DJANGO ILOVA(APP) YARATISH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#ilovaappni-loyihaprojectga-ulash" class="nav-link">✅ ILOVA(APP)NI LOYIHA(PROJECT)GA ULASH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#ilovaapp-urlsni-loyihaproject-urlsga-ulash" class="nav-link">✅ ILOVA(APP) URLSNI LOYIHA(PROJECT) URLSGA ULASH</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#include-nima-qiladi" class="nav-link">❇️ include() nima qiladi?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#loyihaning-asosiy-fayllari-va-papkalari" class="nav-link">✅ LOYIHANING ASOSIY FAYLLARI VA PAPKALARI</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#managepy" class="nav-link">❇️ manage.py</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#loyiha-papkasi-myproject" class="nav-link">❇️ Loyiha papkasi (myproject/)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#django-application-tuzilmasi-myapp" class="nav-link">❇️ Django application tuzilmasi (myapp/)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#django-loyihasi-qanday-ishlaydi" class="nav-link">Django loyihasi qanday ishlaydi?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="django-web-framework-asoslari">🌐 DJANGO WEB FRAMEWORK ASOSLARI</h1>
+<h1 id="django-project-structure">🧩 DJANGO PROJECT STRUCTURE</h1>
+<ul>
+<li><strong>Django loyihasi MTV (Model-Template-View) arxitekturasiga asoslanadi:</strong><ul>
+<li><strong>Model:</strong> Ma'lumotlar bazasi bilan ishlash uchun jadvallar va logikani belgilaydi.</li>
+<li><strong>Template:</strong> Foydalanuvchi interfeysi uchun HTML shablonlar.</li>
+<li><strong>View:</strong> So‘rovlar va javoblar o‘rtasidagi mantiqiy bog‘lovchi.</li>
+</ul>
+</li>
+</ul>
+<h1 id="loyiha-tuzilmasi">✅ LOYIHA TUZILMASI</h1>
+<p>📌 Django loyihasi(project) va ilovasi(app) yaratilganda quyidagi fayl va papkalar hosil bo‘ladi:</p>
+<pre><code class="language-markdown">project_folder/
+│── manage.py
+│── project_name/
+│   │── __init__.py
+│   │── settings.py
+│   │── urls.py
+│   │── asgi.py
+│   └── wsgi.py
+│── app_name/
+│   │── __init__.py
+│   │── admin.py
+│   │── apps.py
+│   │── models.py
+│   │── tests.py
+│   │── views.py
+│   │── migrations/
+│   │── templates/
+│   └── static/
+</code></pre>
+<h1 id="django-loyihaproject-yaratish">✅ DJANGO LOYIHA(PROJECT) YARATISH</h1>
+<p>📌 Django loyihasini yaratish uchun quyidagi buyruq ishlatiladi:</p>
+<pre><code class="language-shell">django-admin startproject project_name .
+</code></pre>
+<p>🎯 Bu buyruq project_name nomli loyiha papkasini yaratadi. Loyiha ichida asosiy konfiguratsiya fayllari joylashadi.</p>
+<h1 id="django-ilovaapp-yaratish">✅ DJANGO ILOVA(APP) YARATISH</h1>
+<p>📌 Loyiha ichida ilova yaratish uchun quyidagi buyruq ishlatiladi:</p>
+<pre><code class="language-shell">python manage.py startapp app_name
+</code></pre>
+<p>🎯 Bu buyruq myapp nomli ilova yaratadi va loyiha tuzilmasiga yangi papka qo‘shadi. Har bir ilova o‘ziga xos funksionallikni ta'minlaydi (masalan, blog, base yoki foydalanuvchi boshqaruvi).</p>
+<h1 id="ilovaappni-loyihaprojectga-ulash">✅ ILOVA(APP)NI LOYIHA(PROJECT)GA ULASH</h1>
+<p>📌 Yangi yaratilgan ilovani loyihaga qo‘shish uchun <code>settings.py</code> faylidagi <code>INSTALLED_APPS</code> ro‘yxatini oxiriga ilova nomi qo‘shiladi:</p>
+<pre><code class="language-python">INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'app_name',  # Yangi ilova
+</code></pre>
+<h1 id="ilovaapp-urlsni-loyihaproject-urlsga-ulash">✅ ILOVA(APP) URLSNI LOYIHA(PROJECT) URLSGA ULASH</h1>
+<ul>
+<li>Djangoda project va app <strong>urls.py</strong> fayllari marshrutlashni (URL routing) boshqaradi:<ul>
+<li>Project <strong>urls.py</strong> – butun loyiha uchun asosiy URL xaritasi </li>
+<li>App <strong>urls.py</strong> – faqat shu app ichidagi URL manzillarni boshqaradi</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">from django.contrib import admin
+from django.urls import path, include  # include() import qilinadi
+
+urlpatterns = [
+    path('admin/', admin.site.urls),     
+    path('', include('myapp.urls')),     # MyApp URL’larini qo‘shish
+]
+</code></pre>
+<p>🎯 <code>include</code> Djangoda project <strong>urls.py</strong> ichida boshqa URL konfiguratsiyalarni qo‘shish uchun ishlatiladi, shuning uchun uni import qilish shart.</p>
+<h2 id="include-nima-qiladi">❇️ <code>include()</code> nima qiladi?</h2>
+<ul>
+<li><code>include()</code> Djangoga “borib, boshqa <strong>urls.py</strong> faylini ichiga qo‘sh” deb aytadi.</li>
+<li>Bu kattaroq loyihalarda tartibni saqlash va URLlarni modullar bo‘yicha ajratish uchun juda foydali.</li>
+</ul>
+<h1 id="loyihaning-asosiy-fayllari-va-papkalari">✅ LOYIHANING ASOSIY FAYLLARI VA PAPKALARI</h1>
+<h2 id="managepy">❇️ <code>manage.py</code></h2>
+<p>📌 <code>manage.py</code> fayli — bu Django loyihasining asosiy boshqaruv fayli, ya’ni u orqali turli xil buyruqlarni bajarish mumkin. Siz aytgan uchta (runserver, startapp, migrate) eng ko‘p ishlatiladigani, lekin bundan tashqari juda ko‘p imkoniyatlar bor.</p>
+<p>📌 Django <code>manage.py</code> yordamida qo‘shimcha buyruqlar</p>
+<h3 id="1-superuser-yaratish">✳️ 1. Superuser yaratish</h3>
+<p>📌 Admin paneliga kirish uchun foydalanuvchi yaratadi:</p>
+<pre><code class="language-shell">python manage.py createsuperuser
+</code></pre>
+<h3 id="2-yangi-migration-fayl-yaratish">✳️ 2. Yangi migration fayl yaratish</h3>
+<p>📌 Modeldagi o‘zgarishlarni migration fayliga yozib qo‘yadi:</p>
+<pre><code class="language-shell">python manage.py makemigrations
+</code></pre>
+<h3 id="3-shell-rejimiga-kirish">✳️ 3. Shell rejimiga kirish</h3>
+<p>📌 Django muhitida Python interaktiv shellini ishga tushiradi:</p>
+<pre><code class="language-shell">python manage.py shell
+</code></pre>
+<h3 id="4-baza-malumotlarini-kochirish-dumplar">✳️ 4. Baza ma’lumotlarini ko‘chirish (dumplar)</h3>
+<p>📌 Ma’lumotlarni JSON faylga saqlash:</p>
+<pre><code class="language-shell">python manage.py dumpdata &gt; data.json
+</code></pre>
+<p>📌 Saqlangan ma’lumotni bazaga qayta yuklash:</p>
+<pre><code class="language-shell">python manage.py loaddata data.json
+</code></pre>
+<h3 id="5-statik-fayllarni-yigish">✳️ 5. Statik fayllarni yig‘ish</h3>
+<p>📌 Barcha statik fayllarni bitta joyga yig‘ib beradi (deploymentda kerak bo‘ladi):</p>
+<pre><code class="language-shell">python manage.py collectstatic
+</code></pre>
+<h3 id="6-buyruqlar-royxatini-korish">✳️ 6. Buyruqlar ro‘yxatini ko‘rish</h3>
+<p>📌 Django’da mavjud barcha buyruqlarni ko‘rish:</p>
+<pre><code class="language-shell">python manage.py help
+</code></pre>
+<h3 id="7-migrationlarni-tekshirish">✳️ 7. Migrationlarni tekshirish</h3>
+<p>📌 Bazaga migration qo‘llanadimi yoki yo‘qmi, tekshiradi:</p>
+<pre><code class="language-shell">python manage.py showmigrations
+</code></pre>
+<h3 id="8-parolni-ozgartirish-foydalanuvchi-uchun">✳️ 8. Parolni o‘zgartirish (foydalanuvchi uchun)</h3>
+<pre><code class="language-shell">python manage.py changepassword username
+</code></pre>
+<h3 id="9-serverni-boshqa-port-yoki-ip-da-ishga-tushirish">✳️ 9. Serverni boshqa port yoki IP da ishga tushirish</h3>
+<p>📌 Masalan, 8001-portda:</p>
+<pre><code class="language-shell">python manage.py runserver 8001
+</code></pre>
+<p>📌 yoki lokal tarmoqdagi boshqa qurilmalardan ham kirish uchun:</p>
+<pre><code class="language-shell">python manage.py runserver 0.0.0.0:8000
+</code></pre>
+<h3 id="10-oz-buyruqlaringizni-yaratish">✳️ 10. O‘z buyruqlaringizni yaratish</h3>
+<p>📌 <code>management/commands/</code> papkasi ichida yangi buyruq yozish mumkin. Masalan:</p>
+<pre><code class="language-shell">python manage.py mycommand
+</code></pre>
+<h3 id="11-migrate-bu-fayldagi-ozgarishlarni-real-malumotlar-bazasiga-qollaydi">✳️ 11. migrate bu fayldagi o‘zgarishlarni real ma’lumotlar bazasiga qo‘llaydi.</h3>
+<pre><code class="language-shell">python manage.py migrate
+</code></pre>
+<h2 id="loyiha-papkasi-myproject">❇️ Loyiha papkasi (myproject/)</h2>
+<p>📌 Bu papka loyihaning asosiy konfiguratsiyalarini o'z ichiga oladi.</p>
+<h3 id="__init__py">✳️ <code>__init__.py</code></h3>
+<p>📌 Bu fayl papkani <strong>Python paketi</strong> sifatida belgilaydi.</p>
+<h3 id="settingspy">✳️ <code>settings.py</code></h3>
+<p>📌 Loyiha konfiguratsiyalari shu yerda.
+- Muhim bo‘limlar:
+    - <strong>DATABASES</strong> – ma’lumotlar bazasi sozlamalari
+    - <strong>INSTALLED_APPS</strong> – ulanishi kerak bo‘lgan app’lar ro‘yxati
+    - <strong>MIDDLEWARE</strong> – request/response jarayonlarini boshqaruvchi qavatlar
+    - <strong>STATIC_URL</strong>, <strong>MEDIA_URL</strong> – statik va media fayllar yo‘llari</p>
+<h3 id="urlspy">✳️ <code>urls.py</code></h3>
+<p>📌 Loyiha darajasida URL'larni boshqarish uchun ishlatiladi.</p>
+<pre><code class="language-python">from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('myapp/', include('myapp.urls')),  # myapp URL'larini ulash
+]
+</code></pre>
+<h3 id="asgipy-va-wsgipy">✳️ <code>asgi.py</code> va <code>wsgi.py</code></h3>
+<ul>
+<li><code>wsgi.py</code> – WSGI server uchun loyiha konfiguratsiyasi (Apache, Gunicorn uchun kerak).</li>
+<li><code>asgi.py</code> – ASGI server uchun loyiha konfiguratsiyasi (async, WebSocket'lar uchun).</li>
+</ul>
+<h2 id="django-application-tuzilmasi-myapp">❇️ Django application tuzilmasi (myapp/)</h2>
+<p>📌 Har bir app odatda quyidagi fayllardan iborat bo‘ladi:</p>
+<h3 id="modelspy">✳️ <code>models.py</code></h3>
+<p>📌 Ma’lumotlar bazasi jadvallari shu yerda yoziladi.</p>
+<pre><code class="language-python">from django.db import models
+
+class UserProfile(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField(unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+</code></pre>
+<h3 id="viewspy">✳️ <code>views.py</code></h3>
+<p>📌 Brauzerdan kelgan so'rovlarni qayta ishlaydi.</p>
+<pre><code class="language-python">from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse(&quot;Hello, World!&quot;)
+</code></pre>
+<h3 id="urlspy_1">✳️ <code>urls.py</code></h3>
+<p>📌 Ilova darajasidagi URL'larni boshqaradi.</p>
+<pre><code class="language-python">from django.urls import path
+from .views import home
+
+urlpatterns = [
+    path('', home, name='home'),
+]
+</code></pre>
+<h3 id="adminpy">✳️ <code>admin.py</code></h3>
+<p>📌 Django admin paneliga modellarning ro'yxatga olinishi uchun ishlatiladi.</p>
+<pre><code class="language-python">from django.contrib import admin
+from .models import UserProfile
+
+admin.site.register(UserProfile)
+</code></pre>
+<h3 id="migrations">✳️ <code>migrations/</code></h3>
+<p>📌 Ma'lumotlar bazasi o'zgarishlarini saqlovchi fayllar joylashgan.</p>
+<pre><code class="language-shell">python manage.py makemigrations
+</code></pre>
+<p>📌 Migratsiyalarni bajarish uchun:</p>
+<pre><code class="language-shell">python manage.py migrate
+</code></pre>
+<h3 id="appspy">✳️ <code>apps.py</code></h3>
+<p>📌 Django applarni konfiguratsiyalarini saqlaydi.</p>
+<h3 id="testspy">✳️ <code>tests.py</code></h3>
+<p>📌 Djangoda test yozish uchun ishlatiladi.</p>
+<pre><code class="language-python">from django.test import TestCase
+
+class SimpleTest(TestCase):
+    def test_basic(self):
+        self.assertEqual(1 + 1, 2)
+</code></pre>
+<h3 id="templates">✳️ <code>templates/</code></h3>
+<p>📌 HTML shablonlar joylashadigan papka.</p>
+<h3 id="static">✳️ <code>static/</code></h3>
+<p>📌 CSS, JavaScript va media fayllar saqlanadigan joy.</p>
+<h2 id="django-loyihasi-qanday-ishlaydi">Django loyihasi qanday ishlaydi?</h2>
+<ol>
+<li>Brauzer foydalanuvchi so‘rov yuboradi.⬇️</li>
+<li>Django <strong>urls.py</strong> orqali mos keluvchi <strong>view</strong>ni topadi.⬇️</li>
+<li><strong>views.py</strong> da mos keluvchi funksiya ishlaydi. ⬇️</li>
+<li>Agar ma'lumotlar kerak bo'lsa, <strong>models.py</strong> orqali ma'lumotlar bazasidan olinadi.⬇️</li>
+<li>Natija foydalanuvchiga <strong>HttpResponse</strong> yoki <strong>render</strong> orqali qaytariladi.</li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

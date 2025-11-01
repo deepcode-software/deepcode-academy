@@ -42,6 +42,26 @@ nav:
       
   - Django:
     - Introduction to Django: django/introduction-to-django.md
+    - Django Project Structure: django/django-project-structure.md
+    - Url Dispatcher and Views: django/url-dispatcher-and-views.md
+    - Templates (Working with HTML): django/templates.md
+    - Static Files and Bootstrap: django/static-files-and-bootstrap.md
+    - Django ORM and Models: django/django-orm-and-models.md
+    - Django Admin Panel: django/django-admin-panel.md
+    - Django Forms: django/django-forms.md
+    - CRUD Operations: django/crud-operations.md
+    - QuerySet and Filtering: django/queryset-and-filtering.md
+    - Django Authentication System: django/django-authentication-system.md
+    - Middleware and Sessions: django/middleware-and-sessions.md
+    - Class-Based Views (CBV): django/class-based-views.md
+    - Django Messages Framework: django/django-messages-framework.md
+    - File Upload and Media Files: django/file-upload-and-media-files.md
+    - Project Planning: django/project-planning.md
+    - Build Models and Database: django/build-models-and-database.md
+    - Designing and Frontend: django/designing-and-frontend.md
+    - Authentication and User Pages: django/authentication-and-user-pages.md
+    - Deploy and Finalizations: django/deploy-and-finalizations.md
+
 
   - Django REST Framework:
     - Introduction to DRF: django/introduction.md
