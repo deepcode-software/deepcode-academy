@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Umid">
+        <link rel="canonical" href="https://deepcode-academy.vercel.app/psql/function-and-aggregation/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Function and Aggregation - DeepCode Academy</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">DeepCode Academy</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/what-is-python/" class="dropdown-item">What is Python</a>
+</li>
+                                    
+<li>
+    <a href="../../python/variables/" class="dropdown-item">Variables</a>
+</li>
+                                    
+<li>
+    <a href="../../python/data-types/" class="dropdown-item">Data Types</a>
+</li>
+                                    
+<li>
+    <a href="../../python/operators/" class="dropdown-item">Operatos</a>
+</li>
+                                    
+<li>
+    <a href="../../python/lists/" class="dropdown-item">Lists</a>
+</li>
+                                    
+<li>
+    <a href="../../python/tuples/" class="dropdown-item">Tuples</a>
+</li>
+                                    
+<li>
+    <a href="../../python/sets/" class="dropdown-item">Sets</a>
+</li>
+                                    
+<li>
+    <a href="../../python/dictionaries/" class="dropdown-item">Dictionaries</a>
+</li>
+                                    
+<li>
+    <a href="../../python/conditional-statements/" class="dropdown-item">Conditional Statements</a>
+</li>
+                                    
+<li>
+    <a href="../../python/for-loop/" class="dropdown-item">For Loop</a>
+</li>
+                                    
+<li>
+    <a href="../../python/while-loop/" class="dropdown-item">While Loop</a>
+</li>
+                                    
+<li>
+    <a href="../../python/functions/" class="dropdown-item">Functions</a>
+</li>
+                                    
+<li>
+    <a href="../../python/exception-handling/" class="dropdown-item">Exception Handling</a>
+</li>
+                                    
+<li>
+    <a href="../../python/moduls/" class="dropdown-item">Moduls</a>
+</li>
+                                    
+<li>
+    <a href="../../python/file-handling/" class="dropdown-item">File Handling</a>
+</li>
+                                    
+<li>
+    <a href="../../python/database/" class="dropdown-item">Database</a>
+</li>
+                                    
+<li>
+    <a href="../../python/third-party-packages/" class="dropdown-item">Third Party Packages</a>
+</li>
+                                    
+<li>
+    <a href="../../python/oop/" class="dropdown-item">OOP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PostgreSQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../introduction/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../postgresql/" class="dropdown-item">PostgreSQL</a>
+</li>
+                                    
+<li>
+    <a href="../basic-commands/" class="dropdown-item">Basic Commands</a>
+</li>
+                                    
+<li>
+    <a href="../data-retrieval-end-filtering/" class="dropdown-item">Data Retrieval and Filtering</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Function and Aggregation</a>
+</li>
+                                    
+<li>
+    <a href="../data-manipulation/" class="dropdown-item">Data Manipulation</a>
+</li>
+                                    
+<li>
+    <a href="../joins-and-advanced-queries/" class="dropdown-item">Joins and Advanced Queries</a>
+</li>
+                                    
+<li>
+    <a href="../psql-connect-in-python/" class="dropdown-item">PostgreSQL connect in Python</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Django</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../django/introduction-to-django/" class="dropdown-item">Introduction to Django</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Django REST Framework</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../django/introduction.md" class="dropdown-item">Introduction to DRF</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../data-retrieval-end-filtering/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../data-manipulation/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#advanced-data-retrieval-with-functions-and-aggregation" class="nav-link">🐘 Advanced Data Retrieval with Functions and Aggregation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#using-postgresql-functions-count-sum-avg-min-max" class="nav-link">USING PostgreSQL FUNCTIONS COUNT, SUM, AVG, MIN, MAX</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#grouping-data-with-group-by" class="nav-link">GROUPING DATA WITH GROUP BY</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#simple-example-grouping-employees-by-department" class="nav-link">SIMPLE EXAMPLE: GROUPING EMPLOYEES BY DEPARTMENT</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#using-aggregate-functions" class="nav-link">USING AGGREGATE FUNCTIONS</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#grouping-by-multiple-columns" class="nav-link">GROUPING BY MULTIPLE COLUMNS</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#using-having-with-group-by" class="nav-link">USING HAVING WITH GROUP BY</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#filtering-grouped-data-with-having" class="nav-link">FILTERING GROUPED DATA WITH HAVING</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#tasks" class="nav-link">Tasks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="advanced-data-retrieval-with-functions-and-aggregation">🐘 Advanced Data Retrieval with Functions and Aggregation</h1>
+<ul>
+<li>Topics:</li>
+<li>Using PostgreSQL functions <code>COUNT</code>, <code>SUM</code>, <code>AVG</code>, <code>MIN</code>, <code>MAX</code></li>
+<li>Grouping data with <code>GROUP BY</code></li>
+<li>Filtering grouped data with <code>HAVING</code></li>
+</ul>
+<blockquote>
+<p>[!NOTE]
+<strong>PostgreSQL</strong>da murakkab soʻrovlar va maʼlumotlarni samarali boshqarish <code>aggregation functions</code> hamda <code>advanced functions</code>ni ishlatishni talab qiladi.</p>
+</blockquote>
+<h1 id="using-postgresql-functions-count-sum-avg-min-max">USING PostgreSQL FUNCTIONS <code>COUNT</code>, <code>SUM</code>, <code>AVG</code>, <code>MIN</code>, <code>MAX</code></h1>
+<ol>
+<li>
+<p>Aggregate Functions</p>
+<ul>
+<li>Agregatsiya funksiyalari bir necha qator ustida hisob-kitob olib boradi va bitta natija qaytaradi.</li>
+</ul>
+</li>
+<li>
+<p><code>COUNT()</code>: Counts rows.</p>
+</li>
+<li><code>SUM()</code>: Calculates the total sum.</li>
+<li><code>AVG()</code>: Calculates the average.</li>
+<li><code>MAX()</code> and <code>MIN()</code>: Find the highest and lowest values.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>employee_id</th>
+<th>first_name</th>
+<th>last_name</th>
+<th>department</th>
+<th>salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Ali</td>
+<td>Valiyev</td>
+<td>IT</td>
+<td>3000</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sara</td>
+<td>Ahmedova</td>
+<td>HR</td>
+<td>2500</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Olim</td>
+<td>Nazarov</td>
+<td>IT</td>
+<td>4000</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Kamola</td>
+<td>Ismatova</td>
+<td>Finance</td>
+<td>3500</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Zafar</td>
+<td>Bekmurodov</td>
+<td>Marketing</td>
+<td>2000</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Anvar</td>
+<td>Karimov</td>
+<td>IT</td>
+<td>4500</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Lola</td>
+<td>Tursunova</td>
+<td>HR</td>
+<td>2700</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-sql">SELECT department, COUNT(*) AS employee_count, AVG(salary) AS avg_salary
+FROM employees
+GROUP BY department
+ORDER BY avg_salary DESC;
+</code></pre>
+<ul>
+<li>
+<p>Bu soʻrov bo‘limlar bo‘yicha xodimlarni <code>guruhlab</code>, ularning sonini va <code>o‘rtacha ish haqini</code> hisoblaydi.</p>
+</li>
+<li>
+<p>Filtering Aggregated Data</p>
+</li>
+<li>Agregatsiyalangan maʼlumotlarni filtrlash uchun <code>HAVING</code> operatoridan foydalaniladi.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">SELECT department, SUM(salary) AS total_salary
+FROM employees
+GROUP BY department
+HAVING SUM(salary) &gt; 500000;
+</code></pre>
+<ul>
+<li>
+<p>Bu soʻrov umumiy ish haqi <code>500,000</code> dan yuqori boʻlgan bo‘limlarni chiqaradi.</p>
+</li>
+<li>
+<p>Window Functions</p>
+</li>
+<li>Window functions operate on a set of rows related to the current row but do not reduce the result</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">SELECT 
+    employee_id,
+    department,
+    salary,
+    RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS rank
+FROM employees;
+</code></pre>
+<ul>
+<li>
+<p>Bu soʻrov har bir bo‘limdagi ishchilarni ish haqi boʻyicha tartiblaydi.</p>
+</li>
+<li>
+<p>Using Common Table Expressions <code>CTEs</code></p>
+</li>
+<li><code>CTE</code> murakkab soʻrovlarni soddalashtiradi va tushunishni osonlashtiradi.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">WITH department_salaries AS (
+    SELECT department, SUM(salary) AS total_salary
+    FROM employees
+    GROUP BY department
+)
+SELECT department
+FROM department_salaries
+WHERE total_salary &gt; 500000;
+</code></pre>
+<ul>
+<li>
+<p>Bu misolda umumiy ish haqlari hisoblanib, saralangan bo‘limlar chiqariladi.</p>
+</li>
+<li>
+<p>Advanced SQL Functions</p>
+</li>
+<li>
+<p><strong>PostgreSQL</strong>da maʼlumotlarni boshqarish uchun juda koʻp qurilgan funksiyalar mavjud.</p>
+</li>
+<li>
+<p>String Functions:</p>
+</li>
+<li><code>CONCAT()</code>, <code>SUBSTRING()</code>, <code>LOWER()</code>, <code>UPPER()</code></li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">SELECT CONCAT(first_name, ' ', last_name) AS full_name
+FROM employees;
+</code></pre>
+<ul>
+<li>Date/Time Functions:</li>
+<li><code>NOW()</code>, <code>AGE()</code>, <code>DATE_PART()</code></li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">SELECT employee_id, AGE(NOW(), hire_date) AS years_of_service
+FROM employees;
+</code></pre>
+<ul>
+<li>JSON Functions:</li>
+<li><code>JSONB_EXTRACT_PATH_TEXT()</code>, <code>JSON_AGG()</code></li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">SELECT JSON_AGG(department) AS departments
+FROM employees;
+</code></pre>
+<ol>
+<li>Recursive Queries</li>
+<li>Rekursiv soʻrovlar <code>hierarchical</code> yoki <code>tree-structured</code> maʼlumotlar bilan ishlash imkonini beradi.</li>
+</ol>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">WITH RECURSIVE employee_hierarchy AS (
+    SELECT employee_id, manager_id, 1 AS level
+    FROM employees
+    WHERE manager_id IS NULL
+    UNION ALL
+    SELECT e.employee_id, e.manager_id, eh.level + 1
+    FROM employees e
+    JOIN employee_hierarchy eh ON e.manager_id = eh.employee_id
+)
+SELECT * FROM employee_hierarchy;
+</code></pre>
+<p>Bu soʻrov <code>hierarchy of employees</code> va ularning darajasini shakllantiradi.</p>
+<ol>
+<li>Combining Data with <code>JOIN</code> and <code>Aggregates</code></li>
+<li><code>Aggregate Functions</code> bir nechta jadvallar bilan ishlashda ham foydali.</li>
+</ol>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">SELECT d.department_name, COUNT(e.employee_id) AS total_employees
+FROM departments d
+LEFT JOIN employees e ON d.department_id = e.department_id
+GROUP BY d.department_name;
+</code></pre>
+<ul>
+<li>Bu har bir bo‘limdagi ishchilar sonini, ishchi bo‘lmagan bo‘limlarni ham qo‘shib, chiqaradi.</li>
+</ul>
+<h1 id="grouping-data-with-group-by">GROUPING DATA WITH <code>GROUP BY</code></h1>
+<blockquote>
+<p>[!NOTE]
+<code>GROUP BY</code> operatori <strong>PostgreSQL</strong>da ma’lumotlarni guruhlash uchun ishlatiladi. Bu operator ko‘pincha <code>Aggregate Functions</code> (<code>COUNT()</code>, <code>SUM()</code>, <code>AVG()</code>, <code>MAX()</code>, <code>MIN()</code>) bilan birgalikda qo‘llaniladi</p>
+</blockquote>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-sql">SELECT column_name, aggregate_function(column_name)
+FROM table_name
+GROUP BY column_name;
+</code></pre>
+<h2 id="simple-example-grouping-employees-by-department">SIMPLE EXAMPLE: GROUPING EMPLOYEES BY DEPARTMENT</h2>
+<p><strong>Table:</strong> <code>employees</code></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>department</th>
+<th>salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Alice</td>
+<td>HR</td>
+<td>5000</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Bob</td>
+<td>IT</td>
+<td>7000</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Charlie</td>
+<td>IT</td>
+<td>6000</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Diana</td>
+<td>HR</td>
+<td>5500</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Eve</td>
+<td>Sales</td>
+<td>8000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Goal:</strong></p>
+<p>Har bir bo‘limdagi ishchilar sonini aniqlash.</p>
+<p><strong>Query:</strong></p>
+<pre><code class="language-sql">SELECT department, COUNT(*) AS employee_count
+FROM employees
+GROUP BY department;
+</code></pre>
+<p><strong>Result:</strong></p>
+<table>
+<thead>
+<tr>
+<th>department</th>
+<th>employee_count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HR</td>
+<td>2</td>
+</tr>
+<tr>
+<td>IT</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Sales</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="using-aggregate-functions">USING AGGREGATE FUNCTIONS</h2>
+<ul>
+<li>Har bir bo‘limning o‘rtacha maoshi</li>
+</ul>
+<pre><code class="language-sql">SELECT department, AVG(salary) AS average_salary
+FROM employees
+GROUP BY department;
+</code></pre>
+<p><strong>Result:</strong></p>
+<table>
+<thead>
+<tr>
+<th>department</th>
+<th>average_salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HR</td>
+<td>5250</td>
+</tr>
+<tr>
+<td>IT</td>
+<td>6500</td>
+</tr>
+<tr>
+<td>Sales</td>
+<td>8000</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Har bir bo‘limdagi eng katta maosh</li>
+</ul>
+<pre><code class="language-sql">SELECT department, MAX(salary) AS max_salary
+FROM employees
+GROUP BY department;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>department</th>
+<th>average_salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HR</td>
+<td>5500</td>
+</tr>
+<tr>
+<td>IT</td>
+<td>7000</td>
+</tr>
+<tr>
+<td>Sales</td>
+<td>8000</td>
+</tr>
+</tbody>
+</table>
+<h2 id="grouping-by-multiple-columns">GROUPING BY MULTIPLE COLUMNS</h2>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>region</th>
+<th>product</th>
+<th>revenue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>North</td>
+<td>Laptop</td>
+<td>15000</td>
+</tr>
+<tr>
+<td>2</td>
+<td>North</td>
+<td>Phone</td>
+<td>20000</td>
+</tr>
+<tr>
+<td>3</td>
+<td>South</td>
+<td>Laptop</td>
+<td>12000</td>
+</tr>
+<tr>
+<td>4</td>
+<td>South</td>
+<td>Phone</td>
+<td>25000</td>
+</tr>
+<tr>
+<td>5</td>
+<td>East</td>
+<td>Laptop</td>
+<td>10000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Goal:</strong></p>
+<ul>
+<li>Har bir mintaqa va mahsulot bo‘yicha umumiy daromadni hisoblash.</li>
+</ul>
+<pre><code class="language-sql">SELECT region, product, SUM(revenue) AS total_revenue
+FROM sales
+GROUP BY region, product;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>region</th>
+<th>product</th>
+<th>total_revenue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>North</td>
+<td>Laptop</td>
+<td>15000</td>
+</tr>
+<tr>
+<td>North</td>
+<td>Phone</td>
+<td>20000</td>
+</tr>
+<tr>
+<td>South</td>
+<td>Laptop</td>
+<td>12000</td>
+</tr>
+<tr>
+<td>South</td>
+<td>Phone</td>
+<td>25000</td>
+</tr>
+<tr>
+<td>East</td>
+<td>Laptop</td>
+<td>10000</td>
+</tr>
+</tbody>
+</table>
+<h2 id="using-having-with-group-by">USING <code>HAVING</code> WITH <code>GROUP BY</code></h2>
+<ul>
+<li>Har bir bo‘limdagi ishchilar soni <code>1</code> dan katta bo‘lgan holatlar</li>
+<li>HAVING agregat funksiyalar natijasiga cheklov qo‘yish uchun ishlatiladi.</li>
+</ul>
+<pre><code class="language-sql">SELECT department, COUNT(*) AS employee_count
+FROM employees
+GROUP BY department
+HAVING COUNT(*) &gt; 1;
+</code></pre>
+<p><strong>Result:</strong></p>
+<table>
+<thead>
+<tr>
+<th>department</th>
+<th>employee_count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HR</td>
+<td>2</td>
+</tr>
+<tr>
+<td>IT</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h1 id="filtering-grouped-data-with-having">FILTERING GROUPED DATA WITH <code>HAVING</code></h1>
+<blockquote>
+<p>[!NOTE]
+SQLda <code>HAVING</code> clause <code>GROUP BY</code> orqali guruhlangan maʼlumotlarni filtrlash uchun ishlatiladi. <code>WHERE</code> clausedan farqli o‘laroq, <code>HAVING</code> faqat guruhlash va agregatsiya (masalan, <code>COUNT()</code>, <code>SUM()</code>, <code>AVG()</code>, <code>MAX()</code>, <code>MIN()</code>)dan keyin qo‘llaniladi.</p>
+</blockquote>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-sql">SELECT column1, column2, AGGREGATE_FUNCTION(column3)
+FROM table_name
+WHERE condition
+GROUP BY column1, column2
+HAVING aggregate_condition;
+</code></pre>
+<p><strong>Key Points:</strong></p>
+<ol>
+<li><code>WHERE</code> - guruhlashdan oldin qatorlarni filtrlash uchun ishlatiladi.</li>
+<li><code>GROUP BY</code> - qatorlarni belgilangan ustunlarga asoslangan holda guruhlash uchun ishlatiladi.</li>
+<li><code>HAVING</code> - guruhlangan maʼlumotlarni agregatsiya funksiyalariga asoslangan holda filtrlash uchun ishlatiladi.</li>
+</ol>
+<p><strong>Example 1:</strong> Filtering Sales Data</p>
+<p><strong>Table:</strong> Sales</p>
+<table>
+<thead>
+<tr>
+<th>Salesperson</th>
+<th>Region</th>
+<th>Sales</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alice</td>
+<td>East</td>
+<td>500</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>East</td>
+<td>700</td>
+</tr>
+<tr>
+<td>Alice</td>
+<td>West</td>
+<td>300</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>West</td>
+<td>400</td>
+</tr>
+<tr>
+<td>Alice</td>
+<td>East</td>
+<td>200</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>East</td>
+<td>600</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Query:</strong> Umumiy sotuv miqdori 1000 dan oshgan hududlarni ko‘rsating.</p>
+<pre><code class="language-sql">SELECT Region, SUM(Sales) AS Total_Sales
+FROM Sales
+GROUP BY Region
+HAVING SUM(Sales) &gt; 1000;
+</code></pre>
+<p><strong>Result:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Region</th>
+<th>Total_Sales</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>East</td>
+<td>2000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example 2:</strong> Counting Employees in Departments</p>
+<p><strong>Table:</strong> Employees</p>
+<table>
+<thead>
+<tr>
+<th>EmployeeID</th>
+<th>Department</th>
+<th>Salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>IT</td>
+<td>800</td>
+</tr>
+<tr>
+<td>2</td>
+<td>HR</td>
+<td>500</td>
+</tr>
+<tr>
+<td>3</td>
+<td>IT</td>
+<td>900</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Sales</td>
+<td>600</td>
+</tr>
+<tr>
+<td>5</td>
+<td>IT</td>
+<td>700</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Sales</td>
+<td>500</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Query:</strong> 2 dan ortiq xodimga ega bo‘lgan bo‘limlarni ko‘rsating.</p>
+<pre><code class="language-sql">SELECT Department, COUNT(EmployeeID) AS Employee_Count
+FROM Employees
+GROUP BY Department
+HAVING COUNT(EmployeeID) &gt; 2;
+</code></pre>
+<p><strong>Result:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Department</th>
+<th>Employee_Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IT</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example 3:</strong> Average Salary by Department</p>
+<p><strong>Query:</strong> O‘rtacha maosh 600 dan oshgan bo‘limlarni ko‘rsating.</p>
+<pre><code class="language-sql">SELECT Department, AVG(Salary) AS Average_Salary
+FROM Employees
+GROUP BY Department
+HAVING AVG(Salary) &gt; 600;
+</code></pre>
+<p><strong>Result:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Department</th>
+<th>Average_Salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IT</td>
+<td>800</td>
+</tr>
+</tbody>
+</table>
+<h1 id="tasks">Tasks</h1>
+<ol>
+<li>COUNT Function:</li>
+<li>
+<p>Task:</p>
+<ul>
+<li><strong>students</strong> jadvalida nechta talaba borligini hisoblang.</li>
+<li><strong>students</strong> jadvalidagi har bir guruh uchun nechta talaba borligini hisoblang (<strong>group_id</strong> ustuni bo'yicha).</li>
+</ul>
+</li>
+<li>
+<p>SUM Function:</p>
+</li>
+<li>
+<p>Task:</p>
+<ul>
+<li><strong>sales</strong> jadvalida barcha buyurtmalarning umumiy qiymatini hisoblang.</li>
+<li>Har bir mijoz uchun (<strong>customer_id</strong>) buyurtmalarning umumiy qiymatini toping.</li>
+</ul>
+</li>
+<li>
+<p>AVG Function:</p>
+</li>
+<li>
+<p>Task:</p>
+<ul>
+<li><strong>products</strong> jadvalidagi mahsulotlarning o'rtacha narxini hisoblang.</li>
+<li>Har bir toifaga (<strong>category_id</strong>) ko'ra mahsulotlarning o'rtacha narxini toping.</li>
+</ul>
+</li>
+<li>
+<p>MIN and MAX Functions:</p>
+</li>
+<li>
+<p>Task:</p>
+<ul>
+<li><strong>employees</strong> jadvalida eng kam va eng yuqori oylik miqdorini toping.</li>
+<li>Har bir bo'limda (<strong>department_id</strong>) eng kam va eng yuqori oylikni aniqlang.</li>
+</ul>
+</li>
+<li></li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

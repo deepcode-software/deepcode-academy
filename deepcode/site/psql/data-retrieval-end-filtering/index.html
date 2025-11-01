@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Umid">
+        <link rel="canonical" href="https://deepcode-academy.vercel.app/psql/data-retrieval-end-filtering/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Data Retrieval and Filtering - DeepCode Academy</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">DeepCode Academy</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/what-is-python/" class="dropdown-item">What is Python</a>
+</li>
+                                    
+<li>
+    <a href="../../python/variables/" class="dropdown-item">Variables</a>
+</li>
+                                    
+<li>
+    <a href="../../python/data-types/" class="dropdown-item">Data Types</a>
+</li>
+                                    
+<li>
+    <a href="../../python/operators/" class="dropdown-item">Operatos</a>
+</li>
+                                    
+<li>
+    <a href="../../python/lists/" class="dropdown-item">Lists</a>
+</li>
+                                    
+<li>
+    <a href="../../python/tuples/" class="dropdown-item">Tuples</a>
+</li>
+                                    
+<li>
+    <a href="../../python/sets/" class="dropdown-item">Sets</a>
+</li>
+                                    
+<li>
+    <a href="../../python/dictionaries/" class="dropdown-item">Dictionaries</a>
+</li>
+                                    
+<li>
+    <a href="../../python/conditional-statements/" class="dropdown-item">Conditional Statements</a>
+</li>
+                                    
+<li>
+    <a href="../../python/for-loop/" class="dropdown-item">For Loop</a>
+</li>
+                                    
+<li>
+    <a href="../../python/while-loop/" class="dropdown-item">While Loop</a>
+</li>
+                                    
+<li>
+    <a href="../../python/functions/" class="dropdown-item">Functions</a>
+</li>
+                                    
+<li>
+    <a href="../../python/exception-handling/" class="dropdown-item">Exception Handling</a>
+</li>
+                                    
+<li>
+    <a href="../../python/moduls/" class="dropdown-item">Moduls</a>
+</li>
+                                    
+<li>
+    <a href="../../python/file-handling/" class="dropdown-item">File Handling</a>
+</li>
+                                    
+<li>
+    <a href="../../python/database/" class="dropdown-item">Database</a>
+</li>
+                                    
+<li>
+    <a href="../../python/third-party-packages/" class="dropdown-item">Third Party Packages</a>
+</li>
+                                    
+<li>
+    <a href="../../python/oop/" class="dropdown-item">OOP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PostgreSQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../introduction/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../postgresql/" class="dropdown-item">PostgreSQL</a>
+</li>
+                                    
+<li>
+    <a href="../basic-commands/" class="dropdown-item">Basic Commands</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Data Retrieval and Filtering</a>
+</li>
+                                    
+<li>
+    <a href="../function-and-aggregation/" class="dropdown-item">Function and Aggregation</a>
+</li>
+                                    
+<li>
+    <a href="../data-manipulation/" class="dropdown-item">Data Manipulation</a>
+</li>
+                                    
+<li>
+    <a href="../joins-and-advanced-queries/" class="dropdown-item">Joins and Advanced Queries</a>
+</li>
+                                    
+<li>
+    <a href="../psql-connect-in-python/" class="dropdown-item">PostgreSQL connect in Python</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Django</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../django/introduction-to-django/" class="dropdown-item">Introduction to Django</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Django REST Framework</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../django/introduction.md" class="dropdown-item">Introduction to DRF</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../basic-commands/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../function-and-aggregation/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#data-retrieval-and-filtering" class="nav-link">🐘 Data Retrieval and Filtering</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#select-statement-with-where-clause" class="nav-link">SELECT STATEMENT WITH WHERE CLAUSE</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#select-statement" class="nav-link">SELECT STATEMENT</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#where-clause" class="nav-link">WHERE CLAUSE</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#operators-and-conditions-and-or-not" class="nav-link">OPERATORS AND CONDITIONS =, &lt;, &gt;, AND, OR, NOT</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#sorting-data-with-order-by" class="nav-link">SORTING DATA WITH ORDER BY</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#general-syntax" class="nav-link">GENERAL SYNTAX</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#examples-with-explanation" class="nav-link">EXAMPLES WITH EXPLANATION</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#limiting-results-with-limit" class="nav-link">LIMITING RESULTS WITH LIMIT</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#practics" class="nav-link">PRACTICS</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#sample-table-employees" class="nav-link">SAMPLE TABLE: employees</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#tasks" class="nav-link">TASKS</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="data-retrieval-and-filtering">🐘 Data Retrieval and Filtering</h1>
+<ul>
+<li>Topics:</li>
+<li><code>SELECT</code> statement with <code>WHERE</code> clause</li>
+<li>Operators and conditions(<code>=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>AND</code>, <code>OR</code>, <code>NOT</code>)</li>
+<li>Sorting data with <code>ORDER BY</code></li>
+<li>Limiting results with <code>LIMIT</code></li>
+</ul>
+<h1 id="select-statement-with-where-clause"><code>SELECT</code> STATEMENT WITH <code>WHERE</code> CLAUSE</h1>
+<blockquote>
+<p>[!NOTE]
+<code>SELECT</code> operatori va <code>WHERE</code> sharti yordamida <code>database</code>dan aniq shartlarga mos keladigan ma'lumotlarni tanlash mumkin.</p>
+</blockquote>
+<h2 id="select-statement"><code>SELECT</code> STATEMENT</h2>
+<p><code>SELECT</code> SQLning eng asosiy operatorlaridan biri bo'lib, <code>database</code>dan ma'lumotlarni olish uchun ishlatiladi.</p>
+<p><strong>Basic syntax:</strong></p>
+<pre><code class="language-sql">SELECT column1, column2, ...
+FROM table_name;
+</code></pre>
+<p><code>column1, column2, ...:</code> Qaysi ustunlarni tanlash kerakligini ko'rsatadi. Agar barcha ustunlarni tanlash kerak bo'lsa, <code>*</code> ishlatiladi.</p>
+<p><code>table_name:</code> Ma'lumot olingan jadvalning nomi.</p>
+<h2 id="where-clause"><code>WHERE</code> CLAUSE</h2>
+<p><code>WHERE</code> ma'lum bir shartlarga asoslanib, qatorlarni filtrlaydi. Faqat <code>WHERE</code> shartiga mos keladigan qatorlar qaytariladi.</p>
+<p><strong>Basic Examples:</strong></p>
+<ol>
+<li>Malum bir shartga mos keladigan qatorlarni olish</li>
+</ol>
+<p>Foydalanuvchilarning faqat 30 yoshdagilarini olish:</p>
+<pre><code class="language-sql">SELECT name, age
+FROM users
+WHERE age = 30;
+</code></pre>
+<ol>
+<li>Shartlar kombinatsiyasi <code>AND</code> va <code>OR</code></li>
+</ol>
+<p><code>30</code> yoshdan katta va faqat <code>"Toshkent"</code> shahrida yashaydigan foydalanuvchilarni olish:</p>
+<pre><code class="language-sql">SELECT name, city, age
+FROM users
+WHERE age &gt; 30 AND city = 'Toshkent';
+</code></pre>
+<ol>
+<li>Ma'lum bir oraliqda bo'lgan ma'lumotlarni olish</li>
+</ol>
+<p>Yoshi <code>25</code> dan <code>40</code> gacha bo'lgan foydalanuvchilarni olish:</p>
+<pre><code class="language-sql">SELECT name, age
+FROM users
+WHERE age BETWEEN 25 AND 40;
+</code></pre>
+<ol>
+<li>Ma'lumotlarni o'xshashlik bilan qidirish <code>LIKE</code></li>
+</ol>
+<p><code>"Ali"</code> bilan boshlanadigan ismlarni qidirish:</p>
+<pre><code class="language-sql">SELECT name
+FROM users
+WHERE name LIKE 'Ali%';
+</code></pre>
+<ol>
+<li><code>NULL</code> qiymatlarni qidirish</li>
+</ol>
+<p>Telefon raqami kiritilmagan foydalanuvchilarni olish:</p>
+<pre><code class="language-sql">SELECT name, phone
+FROM users
+WHERE phone IS NULL;
+</code></pre>
+<p>Additional Concepts</p>
+<ul>
+<li><code>=</code>: Checks equality</li>
+<li><code>&gt;</code> or <code>&lt;</code>: Checks greater than or less than.</li>
+<li><code>!=</code> or <code>&lt;&gt;</code>: Checks inequality.</li>
+<li><code>IN</code>: Checks if a value exists within a set of specified values.</li>
+</ul>
+<p><strong>Example:</strong> Using <code>IN</code></p>
+<p>Find users living in <code>"Tashkent"</code>, <code>"Samarkand"</code>, or <code>"Bukhara"</code>:</p>
+<pre><code class="language-sql">SELECT name, city
+FROM users
+WHERE city IN ('Tashkent', 'Samarkand', 'Bukhara');
+</code></pre>
+<h1 id="operators-and-conditions-and-or-not">OPERATORS AND CONDITIONS <code>=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>AND</code>, <code>OR</code>, <code>NOT</code></h1>
+<blockquote>
+<p>[!NOTE]
+<code>SQL operatorlari</code> va shartlari yordamida ma'lumotlarni <code>filtrlash</code>, <code>solishtirish</code> va <code>boshqarish</code> mumkin.</p>
+</blockquote>
+<ol>
+<li>
+<p>Equality Operators</p>
+</li>
+<li>
+<p><code>=</code>: Checks if values are equal.</p>
+</li>
+</ol>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">SELECT name, age
+FROM users
+WHERE age = 25;
+</code></pre>
+<p><strong>Explanation</strong>: Returns users whose age is exactly 25.</p>
+<ul>
+<li><code>!=</code> or <code>&lt;&gt;</code>: Checks if values are not equal.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">SELECT name, age
+FROM users
+WHERE age != 25;
+</code></pre>
+<p><strong>Explanation</strong>: Returns users whose age is not 25.</p>
+<ol>
+<li>
+<p>Comparison Operators</p>
+</li>
+<li>
+<p><code>&gt;</code>: Finds values greater than the specified value.</p>
+</li>
+</ol>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">SELECT name, age
+FROM users
+WHERE age &gt; 30;
+</code></pre>
+<ul>
+<li><code>&lt;</code>: Finds values less than the specified value</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">SELECT name, age
+FROM users
+WHERE age &lt; 18;
+</code></pre>
+<p><strong>Explanation</strong>: Returns users younger than 18.</p>
+<ul>
+<li><code>&gt;=</code>: Finds values greater than or equal to the specified value.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">SELECT name, age
+FROM users
+WHERE age &gt;= 21;
+</code></pre>
+<ul>
+<li><code>&lt;=</code>: Finds values less than or equal to the specified value.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">SELECT name, age
+FROM users
+WHERE age &lt;= 60;
+</code></pre>
+<ol>
+<li>Logical Operators</li>
+</ol>
+<p>Mantiqiy operatorlar yordamida bir nechta shartlarni birlashtirish mumkin.</p>
+<ul>
+<li><code>AND</code> Bir nechta shartlarning barchasi bajarilishini talab qiladi.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">SELECT name, age, city
+FROM users
+WHERE age &gt; 25 AND city = 'Tashkent';
+</code></pre>
+<ol>
+<li>Combining Conditions</li>
+</ol>
+<p><code>AND</code>, <code>OR</code>, va <code>NOT</code> operatorlari birgalikda ishlatilishi mumkin. Shartlarni o'qish oson bo'lishi uchun qavslar ishlatiladi.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">SELECT name, age, city
+FROM users
+WHERE (age &gt; 30 AND city = 'Tashkent') OR NOT age = 25;
+</code></pre>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li><code>30</code> yoshdan katta va <code>"Toshkent"</code> shahrida yashovchilar yoki</li>
+<li>
+<p><code>25</code> yoshda bo'lmagan foydalanuvchilarni qaytaradi.</p>
+</li>
+<li>
+<p>Additional Operators</p>
+</li>
+</ul>
+<p><code>BETWEEN</code>: Ma'lum bir oraliqdagi qiymatlarni tanlash.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">SELECT name, age
+FROM users
+WHERE age BETWEEN 20 AND 30;
+</code></pre>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li><code>20</code> dan <code>30</code> yoshgacha bo'lgan foydalanuvchilarni qaytaradi.</li>
+</ul>
+<p><code>IN</code>: Bir nechta qiymatlar ro'yxatiga mos kelishini tekshiradi.</p>
+<pre><code class="language-sql">SELECT name, city
+FROM users
+WHERE city IN ('Tashkent', 'Samarkand', 'Bukhara');
+</code></pre>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li>Foydalanuvchilar "Toshkent", "Samarqand" yoki "Buxoro" shahrida yashashi kerak.</li>
+</ul>
+<p><code>LIKE</code>: Qismiy moslikni tekshiradi (for string).</p>
+<ul>
+<li><code>%</code>: Belgilar ketma-ketligini ifodalaydi.</li>
+<li><code>_</code>: Bitta belgini bildiradi.</li>
+</ul>
+<pre><code class="language-sql">SELECT name
+FROM users
+WHERE name LIKE 'A%';
+</code></pre>
+<p><strong>Explanation:</strong></p>
+<p>Ismi <code>"A"</code> harfi bilan boshlanadigan foydalanuvchilarni qaytaradi.</p>
+<h1 id="sorting-data-with-order-by">SORTING DATA WITH <code>ORDER BY</code></h1>
+<blockquote>
+<p>[!NOTE]
+<code>ORDER BY</code> operatori ma'lumotlarni saralashda ishlatiladi. Bu operator ma'lumotlarni <strong>ascending</strong>(o'sish tartibida) yoki <strong>descending</strong>(kamayish tartibida) tartiblash imkoniyatini beradi.</p>
+</blockquote>
+<h2 id="general-syntax">GENERAL SYNTAX</h2>
+<pre><code class="language-sql">SELECT column1, column2, ...
+FROM table_name
+ORDER BY column_name [ASC | DESC];
+</code></pre>
+<ul>
+<li><code>ASC</code>: Ma'lumotlarni o'sish tartibida saralaydi (standart qiymat).</li>
+<li><code>DESC</code>: Ma'lumotlarni kamayish tartibida saralaydi.</li>
+</ul>
+<h2 id="examples-with-explanation">EXAMPLES WITH EXPLANATION</h2>
+<ol>
+<li>Simple Sorting</li>
+<li>Aytaylik, <code>students</code> jadvalimiz bor va unda quyidagi ma'lumotlar saqlanadi:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Ali</td>
+<td>85</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Umid</td>
+<td>92</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Bekzod</td>
+<td>74</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Shirin</td>
+<td>88</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>O'sish tartibida saralash</li>
+<li>Quyidagi <code>SQL</code> so'rovi ma'lumotlarni <code>score</code> ustuniga qarab o'sish tartibida saralaydi:</li>
+</ul>
+<pre><code class="language-sql">SELECT * 
+FROM students 
+ORDER BY score ASC;
+</code></pre>
+<p><strong>Result</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>Bekzod</td>
+<td>74</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Ali</td>
+<td>85</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Shirin</td>
+<td>88</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Umid</td>
+<td>92</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Kamayish tartibida saralash </li>
+<li>Quyidagi so'rov ma'lumotlarni <code>score</code> ustuniga qarab kamayish tartibida saralaydi:</li>
+</ul>
+<pre><code class="language-sql">SELECT * 
+FROM students 
+ORDER BY score DESC;
+</code></pre>
+<p><strong>Result</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>Umid</td>
+<td>92</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Shirin</td>
+<td>88</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Ali</td>
+<td>85</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Bekzod</td>
+<td>74</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Sorting by Multiple Columns </li>
+<li>Agar bir nechta ustunlar bo'yicha saralash kerak bo'lsa, ular ketma-ket yoziladi.</li>
+</ol>
+<p><strong>Example:</strong></p>
+<p><code>name</code> ustuni bo'yicha alfavit tartibida, agar ism bir xil bo'lsa, <code>score</code> kamayish tartibida saralanadi:</p>
+<pre><code class="language-sql">SELECT * 
+FROM students 
+ORDER BY name ASC, score DESC;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Ali</td>
+<td>85</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Bekzod</td>
+<td>74</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Shirin</td>
+<td>88</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Umid</td>
+<td>92</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Limiting Results with Sorting</li>
+<li>Agar faqat eng yuqori <code>3</code> ta natijani olish kerak bo'lsa:</li>
+</ol>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">SELECT * 
+FROM students 
+ORDER BY score DESC 
+LIMIT 3;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>Umid</td>
+<td>92</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Shirin</td>
+<td>88</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Ali</td>
+<td>85</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Handling NULL Values</li>
+<li>Agar jadvalda <code>NULL</code> qiymatlar bo'lsa, PostgreSQL ularni saralashda oxirida yoki boshida joylashtiradi. Buni boshqarish uchun <code>NULLS FIRST</code> yoki <code>NULLS LAST</code> ishlatiladi.</li>
+</ol>
+<p><strong>Example:</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Ali</td>
+<td>85</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Umid</td>
+<td>92</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Bekzod</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Shirin</td>
+<td>88</td>
+</tr>
+</tbody>
+</table>
+<p>Saralashda <code>NULL</code> qiymatlarni boshiga qo'yish:</p>
+<pre><code class="language-sql">SELECT * 
+FROM students 
+ORDER BY score ASC NULLS FIRST;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>Bekzod</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Ali</td>
+<td>85</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Shirin</td>
+<td>88</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Umid</td>
+<td>92</td>
+</tr>
+</tbody>
+</table>
+<h1 id="limiting-results-with-limit">LIMITING RESULTS WITH <code>LIMIT</code></h1>
+<blockquote>
+<p>[!NOTE]
+<code>LIMIT</code> operatori maʼlumotlarni qaytarishda maʼlum bir son bilan cheklash uchun ishlatiladi. Bu, ayniqsa, ko‘p sonli natijalar bilan ishlaganda muhimdir, chunki <code>LIMIT</code> operatori faqat kerakli miqdordagi yozuvlarni qaytarishga imkon beradi.</p>
+</blockquote>
+<p><code>LIMIT</code> Syntax</p>
+<pre><code class="language-sql">SELECT column1, column2, ...
+FROM table_name
+LIMIT number_of_rows;
+</code></pre>
+<p><code>number_of_rows</code>: Natijalar orasidan nechta yozuvni qaytarish kerakligini belgilaydi.</p>
+<ol>
+<li>Fetching the First <code>5 Rows</code></li>
+<li>Tasavvur qilaylik, bizda <code>students</code> jadvali bor, va u quyidagi ustunlarni o‘z ichiga oladi: <code>id</code>, <code>name</code>, va <code>score</code>.</li>
+</ol>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">SELECT id, name, score
+FROM students
+LIMIT 5;
+</code></pre>
+<ul>
+<li>
+<p>Bu so‘rov <code>students</code> jadvalidan birinchi <code>5</code> ta <code>row</code>ni qaytaradi.</p>
+</li>
+<li>
+<p>Using <code>LIMIT</code> with Sorting</p>
+</li>
+<li>Birinchi eng yuqori baholangan <code>3</code> nafar talabani ko‘rish uchun:</li>
+</ul>
+<pre><code class="language-sql">SELECT id, name, score
+FROM students
+ORDER BY score DESC
+LIMIT 3;
+</code></pre>
+<ul>
+<li><code>ORDER BY score DESC</code>: Yozuvlarni eng yuqori bahodan pastga qarab tartiblaydi.</li>
+<li>
+<p><code>LIMIT 3</code>: Faqat <code>3</code> ta natijani qaytaradi.</p>
+</li>
+<li>
+<p>Combining <code>LIMIT</code> and <code>OFFSET</code></p>
+</li>
+<li><code>OFFSET</code> operatori natijalardagi maʼlum bir sonli yozuvlarni o‘tkazib yuborishga imkon beradi.</li>
+<li>Masalan, 6-<code>row</code>dan boshlab keyingi 5 ta <code>row</code>ni olish uchun:</li>
+</ul>
+<pre><code class="language-sql">SELECT id, name, score
+FROM students
+ORDER BY score DESC
+LIMIT 5 OFFSET 5;
+</code></pre>
+<ul>
+<li><code>LIMIT 5</code>: Faqat <code>5</code> ta <code>row</code>ni qaytaradi.</li>
+<li>
+<p><code>OFFSET 5</code>: Birinchi <code>5</code> ta <code>row</code>ni o‘tkazib yuboradi.</p>
+</li>
+<li>
+<p>Using <code>LIMIT</code> with <code>WHERE</code></p>
+</li>
+<li>Faqat bahosi <code>80</code> dan katta bo‘lgan talabalarning birinchi <code>3</code> tasini olish:</li>
+</ul>
+<pre><code class="language-sql">SELECT id, name, score
+FROM students
+WHERE score &gt; 80
+ORDER BY score DESC
+LIMIT 3;
+</code></pre>
+<ol>
+<li><code>LIMIT</code> with <code>Aggregate Functions</code></li>
+<li>Birinchi 10 ta talabaning o‘rtacha bahosini hisoblash:</li>
+</ol>
+<pre><code class="language-sql">SELECT AVG(score) AS average_score
+FROM (
+    SELECT score
+    FROM students
+    ORDER BY score DESC
+    LIMIT 10
+) AS top_students;
+</code></pre>
+<ul>
+<li>Bu so‘rov eng yuqori baholangan <code>10</code> talabaning <code>o‘rtacha</code> bahosini qaytaradi.</li>
+</ul>
+<h1 id="practics">PRACTICS</h1>
+<p>Here are some tasks based on the <code>SELECT</code> statement with the <code>WHERE</code> clause, along with a sample database structure:</p>
+<h2 id="sample-table-employees">SAMPLE TABLE: <code>employees</code></h2>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>department</th>
+<th>salary</th>
+<th>hire_data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Alice</td>
+<td>HR</td>
+<td>500</td>
+<td>2021-01-15</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Bob</td>
+<td>IT</td>
+<td>7000</td>
+<td>2020-03-20</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Charlie</td>
+<td>IT</td>
+<td>6500</td>
+<td>2019-07-01</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Diana</td>
+<td>Marketing</td>
+<td>6000</td>
+<td>2022-05-12</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Edward</td>
+<td>HR</td>
+<td>5500</td>
+<td>2020-09-30</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tasks">TASKS</h2>
+<ol>
+<li>Basic Filtering</li>
+<li><code>IT</code> bo‘limida ishlaydigan xodimlarni toping.</li>
+<li>
+<p><strong>Expected Output:</strong> Rows with <code>Bob</code> and <code>Charlie</code>.</p>
+</li>
+<li>
+<p>Filtering with <code>Numbers</code></p>
+</li>
+<li>Maoshi <code>6000</code> dan katta bo‘lgan xodimlarni toping.</li>
+<li>
+<p><strong>Expected Output:</strong> Rows with <code>Bob</code> and <code>Charlie</code>.</p>
+</li>
+<li>
+<p>Filtering with <code>Dates</code></p>
+</li>
+<li>2020-yilning 1-yanvaridan keyin ishga qabul qilingan xodimlarni toping.</li>
+<li>
+<p><strong>Expected Output:</strong> Rows with <code>Alice</code>, <code>Diana</code>, and <code>Edward</code>.</p>
+</li>
+<li>
+<p>Combining Conditions</p>
+</li>
+<li><code>HR</code> bo‘limida ishlaydigan va maoshi <code>6000</code> dan kam bo‘lgan xodimlarni toping.</li>
+<li>
+<p><strong>Expected Output:</strong> Rows with <code>Alice</code> and <code>Edward</code>.</p>
+</li>
+<li>
+<p>Using <code>OR</code> in Conditions</p>
+</li>
+<li><code>HR</code> yoki <code>Marketing</code> bo‘limida ishlaydigan xodimlarni toping.</li>
+<li>
+<p><strong>Expected Output:</strong> Rows with <code>Alice</code>, <code>Diana</code>, and <code>Edward</code>.</p>
+</li>
+<li>
+<p>Negating Conditions</p>
+</li>
+<li><code>IT</code> bo‘limida ishlamaydigan xodimlarni toping.</li>
+<li>
+<p><strong>Expected Output:</strong> Rows with <code>Alice</code>, <code>Diana</code>, and <code>Edward</code>.</p>
+</li>
+<li>
+<p>Using Wildcards <code>LIKE</code></p>
+</li>
+<li>Ismi <code>'A'</code> harfi bilan boshlanadigan xodimlarni toping.</li>
+<li>
+<p><strong>Expected Output:</strong> Row with <code>Alice</code>.</p>
+</li>
+<li>
+<p>Using <code>IN</code> Clause</p>
+</li>
+<li><code>IT</code> yoki <code>HR</code> bo‘limida ishlaydigan xodimlarni toping.</li>
+<li>
+<p><strong>Expected Output</strong>: Rows with <code>Alice</code>, <code>Bob</code>, <code>Charlie</code>, and <code>Edward</code>.</p>
+</li>
+<li>
+<p>Using <code>BETWEEN</code> Clause</p>
+</li>
+<li>Maoshi <code>5000</code> va <code>6000</code> orasida bo‘lgan xodimlarni toping.</li>
+<li>
+<p><strong>Expected Output:</strong> Rows with <code>Alice</code>, <code>Diana</code>, and <code>Edward</code>.</p>
+</li>
+<li>
+<p>Case Sensitivity in Filtering</p>
+</li>
+<li>Ismi aniq <code>'diana'</code> (kichik harflar bilan) bo‘lgan xodimlarni toping. (Agar ma’lumotlar bazasi katta-kichik harfga sezgir bo‘lsa.)</li>
+<li><strong>Expected Output:</strong> No rows (if names are stored case-sensitive).</li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

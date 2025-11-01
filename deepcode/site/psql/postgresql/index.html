@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="Umid">
-        <link rel="canonical" href="https://deepcode-academy.vercel.app/django/introduction-to-django/">
+        <link rel="canonical" href="https://deepcode-academy.vercel.app/psql/postgresql/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Introduction to Django - DeepCode Academy</title>
+        <title>PostgreSQL - DeepCode Academy</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/fontawesome.min.css" rel="stylesheet">
         <link href="../../css/brands.min.css" rel="stylesheet">
@@ -112,48 +112,48 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PostgreSQL</a>
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PostgreSQL</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../psql/introduction/" class="dropdown-item">Introduction</a>
+    <a href="../introduction/" class="dropdown-item">Introduction</a>
 </li>
                                     
 <li>
-    <a href="../../psql/postgresql/" class="dropdown-item">PostgreSQL</a>
+    <a href="./" class="dropdown-item active" aria-current="page">PostgreSQL</a>
 </li>
                                     
 <li>
-    <a href="../../psql/basic-commands/" class="dropdown-item">Basic Commands</a>
+    <a href="../basic-commands/" class="dropdown-item">Basic Commands</a>
 </li>
                                     
 <li>
-    <a href="../../psql/data-retrieval-end-filtering/" class="dropdown-item">Data Retrieval and Filtering</a>
+    <a href="../data-retrieval-end-filtering/" class="dropdown-item">Data Retrieval and Filtering</a>
 </li>
                                     
 <li>
-    <a href="../../psql/function-and-aggregation/" class="dropdown-item">Function and Aggregation</a>
+    <a href="../function-and-aggregation/" class="dropdown-item">Function and Aggregation</a>
 </li>
                                     
 <li>
-    <a href="../../psql/data-manipulation/" class="dropdown-item">Data Manipulation</a>
+    <a href="../data-manipulation/" class="dropdown-item">Data Manipulation</a>
 </li>
                                     
 <li>
-    <a href="../../psql/joins-and-advanced-queries/" class="dropdown-item">Joins and Advanced Queries</a>
+    <a href="../joins-and-advanced-queries/" class="dropdown-item">Joins and Advanced Queries</a>
 </li>
                                     
 <li>
-    <a href="../../psql/psql-connect-in-python/" class="dropdown-item">PostgreSQL connect in Python</a>
+    <a href="../psql-connect-in-python/" class="dropdown-item">PostgreSQL connect in Python</a>
 </li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Django</a>
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Django</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active" aria-current="page">Introduction to Django</a>
+    <a href="../../django/introduction-to-django/" class="dropdown-item">Introduction to Django</a>
 </li>
                                 </ul>
                             </li>
@@ -162,7 +162,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../introduction.md" class="dropdown-item">Introduction to DRF</a>
+    <a href="../../django/introduction.md" class="dropdown-item">Introduction to DRF</a>
 </li>
                                 </ul>
                             </li>
@@ -175,12 +175,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../psql/psql-connect-in-python/" class="nav-link">
+                                <a rel="prev" href="../introduction/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../basic-commands/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -201,12 +201,89 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#postgresql" class="nav-link">🐘 PostgreSQL</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#about-postgresql" class="nav-link">About PostgreSQL</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#install-postgresql" class="nav-link">Install PostgreSQL</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#practics" class="nav-link">PRACTICS</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-</div>
+<h1 id="postgresql">🐘 PostgreSQL</h1>
+<ul>
+<li>Topics</li>
+<li><code>Relational databases</code> va <code>PostgreSQL</code> haqida tushuncha</li>
+<li><code>PostgreSQL</code>ning xususiyatlari va foydalanish holatlari</li>
+<li><code>PostgreSQL</code>ni o'rnatish (<code>Windows</code>, <code>macOS</code> va <code>Linux</code> uchun ko'rsatmalar)</li>
+<li><code>pgAdmin</code> bilan ishlashni o'rganish</li>
+<li><code>Terminal</code>da <code>PostgreSQL</code> bilan ishlash uchun asosiy buyruqlar</li>
+</ul>
+<blockquote>
+<p>[!NOTE]
+<code>Relational databases</code>  – bu turli ma'lumotlarni <code>saqlash</code> va ularga <code>tezkor tarzda kirish</code> imkonini beruvchi <code>tizimlar</code> bo'lib, ular ma'lumotlar orasidagi <code>o'zaro bog'lanishni</code> qo'llab-quvvatlaydi. Bu bog'lanishlar odatda <code>jadval</code> shaklida tashkil etiladi va bu jadvallarda ma'lumotlar <code>qator</code> va <code>ustunlar</code> ko'rinishida saqlanadi.</p>
+</blockquote>
+<ul>
+<li><code>Relational databases</code>ning asosiy xususiyatlari:</li>
+<li><strong>Data stored in tables:</strong> Ma'lumotlar qator va ustunlardan iborat jadvallarda saqlanadi. Har bir jadval alohida ma'lumot turini ifodalaydi.</li>
+<li><strong>Primary Keys:</strong> Har bir qatorni noyob ravishda identifikatsiyalovchi ustun mavjud.</li>
+<li><strong>Foreign Keys:</strong> Jadvaldagi ma'lumotlarni boshqa jadvallar bilan bog'lash imkonini beradi.</li>
+<li><strong>SQL (Structured Query Language):</strong> Relational databases bilan ishlashda ishlatiladigan standart so'rov tili.</li>
+</ul>
+<h1 id="about-postgresql">About PostgreSQL</h1>
+<p>PostgreSQL – bu <code>open-source</code> va powerful relational database management system (RDBMS). U ko'p turdagi ma'lumot turlarini qo'llab-quvvatlaydi va <code>murakkab so'rovlar</code>, katta hajmdagi <code>ma'lumotlarni boshqarish</code> imkoniyatini beradi.</p>
+<ul>
+<li><code>PostgreSQL</code>ning asosiy afzalliklari:</li>
+<li><strong>Open-source:</strong> <code>PostgreSQL</code> bepul va uni o'zgartirish yoki moslashtirish mumkin.</li>
+<li><strong>Data Integrity:</strong> Yozilgan ma'lumotlarning to'g'ri va bir xil bo'lishini kafolatlaydi.</li>
+<li><strong>Support for SQL and JSON:</strong> <code>PostgreSQL</code> relational (SQL) va <code>JSON</code> bilan ishlash imkoniyatini beradi, ya'ni bu ikkala usulda ma'lumot saqlash mumkin.</li>
+<li><strong>Extensibility:</strong> <code>PostgreSQL</code>ni qo'shimcha modullar yordamida kengaytirish oson.</li>
+</ul>
+<h1 id="install-postgresql">Install PostgreSQL</h1>
+<ul>
+<li>
+<p>Download PostgreSQL</p>
+<ul>
+<li><a href="https://www.postgresql.org/">PostgreSQL rasmiy saytiga kirib olamiz.</a></li>
+<li>Download tugmasini bosamiz.</li>
+<li>
+<p><img alt="img.png" src="images/img.png" /></p>
+</li>
+<li>
+<p>Bu yerdan o'zimizga kerak bo'lgan <code>OS</code>(<strong>Operating System</strong>) ni tanlab olamiz.
+<img alt="img.png" src="images/selectos.png" /></p>
+</li>
+<li>
+<p>Bu yerdan Download the installer ni bosamiz.
+<img alt="img.png" src="images/download.png" /></p>
+</li>
+<li>
+<p>Bu yerdan esa PostgreSQLni versiyasini tanlashimiz mumkin.
+<img alt="img.png" src="images/selectversion.png" /></p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="practics">PRACTICS</h1>
+<ul>
+<li>PostgreSQLni o'rnatish, <code>terminal</code> va <code>pgAdmin</code> yordamida ulanish.</li>
+</ul></div>
             </div>
         </div>
 

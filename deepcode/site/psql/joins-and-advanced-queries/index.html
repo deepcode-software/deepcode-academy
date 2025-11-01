@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="Umid">
-        <link rel="canonical" href="https://deepcode-academy.vercel.app/psql/introduction/">
+        <link rel="canonical" href="https://deepcode-academy.vercel.app/psql/joins-and-advanced-queries/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Introduction - DeepCode Academy</title>
+        <title>Joins and Advanced Queries - DeepCode Academy</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/fontawesome.min.css" rel="stylesheet">
         <link href="../../css/brands.min.css" rel="stylesheet">
@@ -116,7 +116,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active" aria-current="page">Introduction</a>
+    <a href="../introduction/" class="dropdown-item">Introduction</a>
 </li>
                                     
 <li>
@@ -140,7 +140,7 @@
 </li>
                                     
 <li>
-    <a href="../joins-and-advanced-queries/" class="dropdown-item">Joins and Advanced Queries</a>
+    <a href="./" class="dropdown-item active" aria-current="page">Joins and Advanced Queries</a>
 </li>
                                     
 <li>
@@ -175,12 +175,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../python/oop/" class="nav-link">
+                                <a rel="prev" href="../data-manipulation/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../postgresql/" class="nav-link">
+                                <a rel="next" href="../psql-connect-in-python/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -202,24 +202,63 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#malumotlar-bazasiga-kirish" class="nav-link">🐘 Ma'lumotlar bazasiga kirish</a>
+            <li class="nav-item" data-bs-level="1"><a href="#joins-and-advanced-queries" class="nav-link">🐘 Joins and Advanced Queries</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#malumotlar-bazasi-database-nima" class="nav-link">Ma'lumotlar bazasi (Database) nima?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#malumotlar-bazasi-turlari" class="nav-link">Ma'lumotlar bazasi turlari</a>
+            <li class="nav-item" data-bs-level="2"><a href="#types-of-joins-inner-join-left-join-right-join-full-join" class="nav-link">Types of joins: INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#qisqa-taqqoslash-jadvali" class="nav-link">Qisqa taqqoslash jadvali</a>
+            <li class="nav-item" data-bs-level="2"><a href="#inner-join" class="nav-link">INNER JOIN</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#asosiy-atamalar" class="nav-link">Asosiy atamalar</a>
+            <li class="nav-item" data-bs-level="2"><a href="#left-join" class="nav-link">LEFT JOIN</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#right-join" class="nav-link">RIGHT JOIN</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#full-join" class="nav-link">FULL JOIN</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#combining-tables-with-joins" class="nav-link">Combining tables with joins</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#inner-join_1" class="nav-link">INNER JOIN</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#left-join_1" class="nav-link">LEFT JOIN</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#right-join_1" class="nav-link">RIGHT JOIN</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#full-outer-join" class="nav-link">FULL OUTER JOIN</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#subqueries-and-nested-queries" class="nav-link">Subqueries and nested queries</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#key-characteristics-of-subqueries" class="nav-link">Key Characteristics of Subqueries</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#practics" class="nav-link">PRACTICS</a>
+              <ul class="nav flex-column">
               </ul>
             </li>
         </ul>
@@ -227,129 +266,310 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="malumotlar-bazasiga-kirish">🐘 Ma'lumotlar bazasiga kirish</h1>
-<h2 id="malumotlar-bazasi-database-nima">Ma'lumotlar bazasi (Database) nima?</h2>
-<p><strong>Ma'lumotlar bazasi</strong> — bu ma'lumotlarni tartibli va tizimli tarzda saqlash, ularni tez va oson qidirish, o‘zgartirish hamda boshqarish uchun mo‘ljallangan tizimdir. Zamonaviy dasturlarda ma'lumotlar bazasini boshqarish uchun maxsus dasturlar — Database Management Systems (<strong>DBMS</strong>) ishlatiladi.</p>
-<hr />
-<h2 id="malumotlar-bazasi-turlari">Ma'lumotlar bazasi turlari</h2>
+<h1 id="joins-and-advanced-queries">🐘 Joins and Advanced Queries</h1>
+<ul>
+<li>Topics:</li>
+<li>Types of joins: <code>INNER JOIN</code>, <code>LEFT JOIN</code>, <code>RIGHT JOIN</code>, <code>FULL JOIN</code></li>
+<li>Combining tables with joins</li>
+<li>Subqueries and nested queries</li>
+</ul>
+<h2 id="types-of-joins-inner-join-left-join-right-join-full-join">Types of joins: INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN</h2>
 <blockquote>
-<p><strong>Eslatma:</strong> Ma'lumotlar bazalari tuzilishi va ma'lumotlarni qanday usulda saqlashiga ko‘ra bir necha ko‘rinishda bo‘ladi.</p>
+<p>[!NOTE]
+<code>JOIN</code> operatori SQLda ikki yoki undan ortiq jadvallarni bog'lash va ular orasidagi ma'lumotlarni birlashtirish uchun ishlatiladi. JOIN yordamida ma'lumotlar o'rtasidagi bog'lanishlarni tahlil qilib, kerakli ma'lumotlarni olish mumkin.</p>
 </blockquote>
-<h3 id="1-relatsion-malumotlar-bazasi-relational-database-rdbms">1. Relatsion ma'lumotlar bazasi (Relational Database, RDBMS)</h3>
-<ul>
-<li><strong>Tavsifi:</strong> Ma'lumotlar qatʼiy strukturaga ega bo‘lgan jadvallar (rows va columns) ko‘rinishida saqlanadi. Jadvallar o‘zaro aloqador bo‘lishi mumkin (asosiy kalitlar orqali).</li>
-<li><strong>Misollar:</strong> <code>PostgreSQL</code>, <code>MySQL</code>, <code>Oracle</code>, <code>SQL Server</code></li>
-<li><strong>Qo‘llanilishi:</strong> Internet saytlar, bank tizimlari, korxona axborot tizimlari.</li>
-</ul>
-<p><strong>Jadval yaratish misoli (SQL):</strong></p>
-<pre><code class="language-sql">CREATE TABLE users (
-  user_id INT PRIMARY KEY,         -- Foydalanuvchi uchun unikal identifikator
-  username VARCHAR(50),            -- Foydalanuvchi nomi
-  email VARCHAR(100),              -- Email manzili
-  created_at TIMESTAMP             -- Ro‘yxatdan o‘tgan sana
-);
-</code></pre>
-<hr />
-<h3 id="2-nosql-malumotlar-bazasi">2. NoSQL ma'lumotlar bazasi</h3>
-<ul>
-<li><strong>Tavsifi:</strong> NoSQL (Not Only SQL) bazalarida ma'lumotlar qatʼiy jadval ko‘rinishida emas, balki moslashuvchan va katta hajmdagi ma'lumotlarni saqlash uchun turli formatlarda saqlanadi.</li>
-<li><strong>Turlari:</strong> document, key-value, column-family, graph.</li>
-<li><strong>Misollar:</strong> <code>MongoDB</code> (document), <code>Redis</code> (key-value), <code>Cassandra</code> (column-family), <code>Neo4j</code> (graph)</li>
-<li><strong>Qo‘llanilishi:</strong> Katta hajmdagi ma'lumotlar, tez o‘zgaruvchan ma'lumotlar, real-time ilovalar.</li>
-</ul>
-<hr />
-<h3 id="3-hujjatli-malumotlar-bazasi-document-based-database">3. Hujjatli ma'lumotlar bazasi (Document-Based Database)</h3>
-<ul>
-<li><strong>Tavsifi:</strong> Ma'lumotlar JSON yoki BSON kabi hujjatlar ko‘rinishida saqlanadi. Har bir hujjat mustaqil ma'lumot birligi bo‘lib, ichki strukturasi murakkab bo‘lishi mumkin.</li>
-<li><strong>Misollar:</strong> <code>MongoDB</code>, <code>CouchDB</code></li>
-<li><strong>Qo‘llanilishi:</strong> Foydalanuvchi profillari, kontent boshqarish tizimlari.</li>
-</ul>
-<p><strong>MongoDB hujjat misoli:</strong></p>
-<pre><code class="language-json">{
-  &quot;user_id&quot;: 1,                  // Foydalanuvchi identifikatori
-  &quot;username&quot;: &quot;john_doe&quot;,        // Foydalanuvchi nomi
-  &quot;email&quot;: &quot;john@example.com&quot;,   // Email manzili
-  &quot;created_at&quot;: &quot;2025-06-29T21:00:00Z&quot; // Ro‘yxatdan o‘tgan vaqt
-}
-</code></pre>
-<p><strong>MongoDB'ga hujjat qo‘shish:</strong></p>
-<pre><code class="language-javascript">db.users.insertOne({
-  user_id: 1,                        // Foydalanuvchi identifikatori
-  username: &quot;john_doe&quot;,              // Foydalanuvchi nomi
-  email: &quot;john@example.com&quot;,         // Email manzili
-  created_at: new Date()             // Qo‘shilgan vaqt
-});
-</code></pre>
-<hr />
-<h3 id="4-grafik-malumotlar-bazasi-graph-database">4. Grafik ma'lumotlar bazasi (Graph Database)</h3>
-<ul>
-<li><strong>Tavsifi:</strong> Grafik bazalarida ma'lumotlar tugunlar (node) va ularning o‘zaro bog‘lanishi (edge) orqali saqlanadi. Murakkab aloqalar va tarmoqlar uchun juda qulay.</li>
-<li><strong>Misollar:</strong> <code>Neo4j</code>, <code>ArangoDB</code></li>
-<li><strong>Qo‘llanilishi:</strong> Ijtimoiy tarmoqlar, tavsiya tizimlari, firibgarlikni aniqlash.</li>
-</ul>
-<p><strong>Neo4j uchun Cypher so‘rovi:</strong></p>
-<pre><code class="language-cypher">CREATE (user:User {userId: 1, name: &quot;Alice&quot;})         // Foydalanuvchi tuguni yaratish
-CREATE (product:Product {productId: 100, name: &quot;Book&quot;}) // Mahsulot tuguni yaratish
-CREATE (user)-[:PURCHASED]-&gt;(product)                 // Foydalanuvchi va mahsulot o‘rtasida &quot;sotib olgan&quot; bog‘lanishini yaratish
-</code></pre>
-<hr />
-<h2 id="qisqa-taqqoslash-jadvali">Qisqa taqqoslash jadvali</h2>
+<p><code>students</code> table</p>
 <table>
 <thead>
 <tr>
-<th>Ma'lumotlar bazasi turi</th>
-<th>Tuzilishi</th>
-<th>Misollar</th>
-<th>Qo‘llanilishi</th>
+<th>student_id</th>
+<th>name</th>
+<th>group_id</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Relatsion</td>
-<td>Jadval (SQL)</td>
-<td>MySQL, PostgreSQL</td>
-<td>Korxona, tranzaksiyalar</td>
+<td>1</td>
+<td>Ali</td>
+<td>101</td>
 </tr>
 <tr>
-<td>Hujjatli</td>
-<td>JSON/BSON</td>
-<td>MongoDB, CouchDB</td>
-<td>Kontent, foydalanuvchilar</td>
+<td>2</td>
+<td>Umid</td>
+<td>102</td>
 </tr>
 <tr>
-<td>Kalit-qiymatli</td>
-<td>Key-Value</td>
-<td>Redis, DynamoDB</td>
-<td>Kesh, sessiyalar</td>
+<td>3</td>
+<td>Hasan</td>
+<td>NULL</td>
 </tr>
 <tr>
-<td>Ustunli</td>
-<td>Column-family</td>
-<td>Cassandra, HBase</td>
-<td>Big data, tahlil</td>
-</tr>
-<tr>
-<td>Grafik</td>
-<td>Node/Edge</td>
-<td>Neo4j, ArangoDB</td>
-<td>Tarmoqlar, tavsiyalar</td>
+<td>4</td>
+<td>Kamola</td>
+<td>103</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="asosiy-atamalar">Asosiy atamalar</h2>
+<p><code>groups</code> table</p>
+<table>
+<thead>
+<tr>
+<th>group_id</th>
+<th>group_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>101</td>
+<td>Matematika</td>
+</tr>
+<tr>
+<td>102</td>
+<td>Fizika</td>
+</tr>
+<tr>
+<td>103</td>
+<td>Informatika</td>
+</tr>
+<tr>
+<td>104</td>
+<td>Biologiya</td>
+</tr>
+</tbody>
+</table>
+<h2 id="inner-join">INNER JOIN</h2>
 <ul>
-<li><strong>Jadval (Table):</strong> Relatsion bazalarda ma'lumotlarni saqlash uchun asosiy strukturaviy birlik.</li>
-<li><strong>Hujjat (Document):</strong> Hujjatli bazalarda mustaqil ma'lumot birligi (ko‘pincha JSON ko‘rinishida).</li>
-<li><strong>Tugun/Bog‘lanish (Node/Edge):</strong> Grafik bazalarda ob'ekt va ular o‘rtasidagi munosabat.</li>
-<li><strong>Asosiy kalit (Primary Key):</strong> Har bir yozuv uchun unikal identifikator.</li>
-<li><strong>Tashqi kalit (Foreign Key):</strong> Jadval o‘rtasidagi bog‘liqlikni ifodalovchi maydon.</li>
+<li>Faqat ikkala jadvalda mos keladigan ma'lumotlarni qaytaradi.</li>
 </ul>
-<hr />
+<pre><code class="language-sql">SELECT students.student_id, students.name, groups.group_name
+FROM students
+INNER JOIN groups
+ON students.group_id = groups.group_id;
+</code></pre>
+<h2 id="left-join">LEFT JOIN</h2>
+<ul>
+<li>Chap jadvaldagi barcha ma'lumotlarni qaytaradi va o'ng jadvaldan mos kelmaydigan joylarga <code>NULL</code> qo'shadi.</li>
+</ul>
+<pre><code class="language-sql">SELECT students.student_id, students.name, groups.group_name
+FROM students
+LEFT JOIN groups
+ON students.group_id = groups.group_id;
+</code></pre>
+<h2 id="right-join">RIGHT JOIN</h2>
+<ul>
+<li>O'ng jadvaldagi barcha ma'lumotlarni qaytaradi va chap jadvaldan mos kelmaydigan joylarga <code>NULL</code> qo'shadi.</li>
+</ul>
+<pre><code class="language-sql">SELECT students.student_id, students.name, groups.group_name
+FROM students
+RIGHT JOIN groups
+ON students.group_id = groups.group_id;
+</code></pre>
+<h2 id="full-join">FULL JOIN</h2>
+<ul>
+<li>Ikkala jadvaldagi barcha ma'lumotlarni qaytaradi. Mos kelmagan joylarga <code>NULL</code> qo'shiladi.</li>
+</ul>
+<pre><code class="language-sql">SELECT students.student_id, students.name, groups.group_name
+FROM students
+FULL JOIN groups
+ON students.group_id = groups.group_id;
+</code></pre>
+<h1 id="combining-tables-with-joins">Combining tables with joins</h1>
 <blockquote>
-<p><strong>Maslahat:</strong><br />
-Dastur yoki loyiha uchun ma'lumotlar bazasi tanlashda, sizda qanday ma'lumotlar va ular ustida qanday amallar bajarilishini inobatga oling.</p>
-</blockquote></div>
+<p>[!NOTE]
+JOIN operatori yordamida ikki yoki undan ortiq jadvalni o'zaro bog'langan ustunlar (keys) orqali birlashtirish mumkin. Bu ma'lumotlar orasidagi mantiqiy bog'lanishni ko'rish imkonini beradi.</p>
+</blockquote>
+<h2 id="inner-join_1">INNER JOIN</h2>
+<ul>
+<li>Bu <code>JOIN</code> faqat ikki jadvalda ham mos keladigan (bog'langan) ma'lumotlarni olib keladi.</li>
+</ul>
+<pre><code class="language-sql">SELECT students.name, groups.group_name
+FROM students
+INNER JOIN groups
+ON students.group_id = groups.group_id;
+</code></pre>
+<h2 id="left-join_1">LEFT JOIN</h2>
+<ul>
+<li><code>LEFT JOIN</code> asosiy jadval (chapdagi jadval)dagi barcha malumotlarni oladi va o'ng jadvaldagi mos keladigan malumotlarni birlashtiradi. Agar mos kelmasa, <code>NULL</code> qiymatni qaytaradi.</li>
+</ul>
+<pre><code class="language-sql">SELECT students.name, groups.group_name
+FROM students
+LEFT JOIN groups
+ON students.group_id = groups.group_id;
+</code></pre>
+<h2 id="right-join_1">RIGHT JOIN</h2>
+<ul>
+<li><code>RIGHT JOIN</code> o'ng jadvaldagi barcha malumotlarni oladi va chap jadvaldagi mos keladigan malumotlarni birlashtiradi. Agar mos kelmasa, <code>NULL</code> qiymatni qaytaradi.</li>
+</ul>
+<pre><code class="language-sql">SELECT students.name, groups.group_name
+FROM students
+RIGHT JOIN groups
+ON students.group_id = groups.group_id;
+</code></pre>
+<h2 id="full-outer-join">FULL OUTER JOIN</h2>
+<ul>
+<li><code>FULL OUTER JOIN</code> ikki jadvaldagi barcha malumotlarni oladi, mos kelmasa, <code>NULL</code> bilan to'ldiradi.</li>
+</ul>
+<pre><code class="language-sql">SELECT students.name, groups.group_name
+FROM students
+FULL OUTER JOIN groups
+ON students.group_id = groups.group_id;
+</code></pre>
+<h1 id="subqueries-and-nested-queries">Subqueries and nested queries</h1>
+<blockquote>
+<p>[!NOTE]
+SQLda <code>subqueries</code> (ichki so'rovlar) yoki <code>nested queries</code> (ichama-ich so'rovlar) boshqa bir so'rov ichida yoziladigan so'rovlar hisoblanadi. Subquery asosiy so'rov uchun kerakli ma'lumotni olishga yordam beradi. Subqueries SQL buyruqlarining <code>SELECT</code>, <code>FROM</code>, yoki <code>WHERE</code> qismida ishlatilishi mumkin.</p>
+</blockquote>
+<h2 id="key-characteristics-of-subqueries">Key Characteristics of Subqueries</h2>
+<ol>
+<li>Subquery har doim qavslar <code>( )</code> ichida yozilishi kerak.</li>
+<li>Subquery <code>bitta qiymat</code>, <code>bitta qator</code> yoki <code>butun jadval</code>ni qaytarishi mumkin.</li>
+<li>U quyidagi joylarda ishlatiladi:</li>
+<li><code>SELECT</code>: hisoblangan qiymatlarni olish uchun.</li>
+<li><code>WHERE</code>: filterlash shartlarini belgilash uchun.</li>
+<li><code>FROM</code>: vaqtinchalik jadval sifatida ishlatish uchun.</li>
+<li>Subqueries turlari:</li>
+<li>Uncorrelated Subqueries:</li>
+<li>Correlated Subqueries:</li>
+</ol>
+<h1 id="practics">PRACTICS</h1>
+<ol>
+<li><code>employees</code> table</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>employee_id</th>
+<th>name</th>
+<th>department_id</th>
+<th>salary</th>
+<th>join_date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Ali</td>
+<td>1</td>
+<td>1200.50</td>
+<td>2020-05-15</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Vali</td>
+<td>2</td>
+<td>1500.00</td>
+<td>2019-06-01</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Sodiq</td>
+<td>NULL</td>
+<td>1100.75</td>
+<td>2021-08-20</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Nozima</td>
+<td>3</td>
+<td>1300.00</td>
+<td>2020-03-12</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Shavkat</td>
+<td>1</td>
+<td>1250.00</td>
+<td>2018-11-23</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Madina</td>
+<td>4</td>
+<td>1400.30</td>
+<td>2022-02-10</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Jasur</td>
+<td>2</td>
+<td>1600.45</td>
+<td>2019-12-01</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Karima</td>
+<td>5</td>
+<td>1350.00</td>
+<td>2023-07-01</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Sarvar</td>
+<td>NULL</td>
+<td>1000.00</td>
+<td>2021-01-15</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Malika</td>
+<td>3</td>
+<td>1450.00</td>
+<td>2022-10-25</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><code>departments</code> table</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>department_id</th>
+<th>department_name</th>
+<th>manager</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>HR</td>
+<td>Akbar</td>
+</tr>
+<tr>
+<td>2</td>
+<td>IT</td>
+<td>Dilshod</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Marketing</td>
+<td>Ravshan</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Finance</td>
+<td>Aziza</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Operations</td>
+<td>Nigora</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Logistics</td>
+<td>Kamol</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Xodimlarning bo‘lim nomlarini ko‘rsating. Faqat bo‘limi mavjud xodimlar chiqsin.</li>
+<li>Xodimlar ro‘yxatini ularning bo‘lim nomi bilan ko‘rsating. Bo‘limi yo‘q xodimlar uchun "NULL" chiqsin.</li>
+<li>Har bir bo‘limga tegishli xodimlarni yoki bo‘limda hech kim ishlamasa ham bo‘lim nomini ko‘rsating.</li>
+<li>Har bir xodim va har bir bo‘lim haqida umumiy ma’lumotni ko‘rsating. Bog‘lanmagan ma’lumotlar ham chiqsin.</li>
+<li>Har bir xodim va har bir bo‘lim haqida umumiy ma’lumotni ko‘rsating. Bog‘lanmagan ma’lumotlar ham chiqsin.</li>
+<li>Har bir bo‘limda nechta xodim ishlashini ko‘rsating.</li>
+</ul></div>
             </div>
         </div>
 

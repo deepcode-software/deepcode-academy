@@ -32,6 +32,13 @@ nav:
 
   - PostgreSQL:
     - Introduction: psql/introduction.md
+    - PostgreSQL: psql/postgresql.md
+    - Basic Commands: psql/basic-commands.md
+    - Data Retrieval and Filtering: psql/data-retrieval-end-filtering.md
+    - Function and Aggregation: psql/function-and-aggregation.md
+    - Data Manipulation: psql/data-manipulation.md
+    - Joins and Advanced Queries: psql/joins-and-advanced-queries.md
+    - PostgreSQL connect in Python: psql/psql-connect-in-python.md
       
   - Django:
     - Introduction to Django: django/introduction-to-django.md

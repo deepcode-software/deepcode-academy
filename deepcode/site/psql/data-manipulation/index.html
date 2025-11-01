@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Umid">
+        <link rel="canonical" href="https://deepcode-academy.vercel.app/psql/data-manipulation/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Data Manipulation - DeepCode Academy</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">DeepCode Academy</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/what-is-python/" class="dropdown-item">What is Python</a>
+</li>
+                                    
+<li>
+    <a href="../../python/variables/" class="dropdown-item">Variables</a>
+</li>
+                                    
+<li>
+    <a href="../../python/data-types/" class="dropdown-item">Data Types</a>
+</li>
+                                    
+<li>
+    <a href="../../python/operators/" class="dropdown-item">Operatos</a>
+</li>
+                                    
+<li>
+    <a href="../../python/lists/" class="dropdown-item">Lists</a>
+</li>
+                                    
+<li>
+    <a href="../../python/tuples/" class="dropdown-item">Tuples</a>
+</li>
+                                    
+<li>
+    <a href="../../python/sets/" class="dropdown-item">Sets</a>
+</li>
+                                    
+<li>
+    <a href="../../python/dictionaries/" class="dropdown-item">Dictionaries</a>
+</li>
+                                    
+<li>
+    <a href="../../python/conditional-statements/" class="dropdown-item">Conditional Statements</a>
+</li>
+                                    
+<li>
+    <a href="../../python/for-loop/" class="dropdown-item">For Loop</a>
+</li>
+                                    
+<li>
+    <a href="../../python/while-loop/" class="dropdown-item">While Loop</a>
+</li>
+                                    
+<li>
+    <a href="../../python/functions/" class="dropdown-item">Functions</a>
+</li>
+                                    
+<li>
+    <a href="../../python/exception-handling/" class="dropdown-item">Exception Handling</a>
+</li>
+                                    
+<li>
+    <a href="../../python/moduls/" class="dropdown-item">Moduls</a>
+</li>
+                                    
+<li>
+    <a href="../../python/file-handling/" class="dropdown-item">File Handling</a>
+</li>
+                                    
+<li>
+    <a href="../../python/database/" class="dropdown-item">Database</a>
+</li>
+                                    
+<li>
+    <a href="../../python/third-party-packages/" class="dropdown-item">Third Party Packages</a>
+</li>
+                                    
+<li>
+    <a href="../../python/oop/" class="dropdown-item">OOP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PostgreSQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../introduction/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../postgresql/" class="dropdown-item">PostgreSQL</a>
+</li>
+                                    
+<li>
+    <a href="../basic-commands/" class="dropdown-item">Basic Commands</a>
+</li>
+                                    
+<li>
+    <a href="../data-retrieval-end-filtering/" class="dropdown-item">Data Retrieval and Filtering</a>
+</li>
+                                    
+<li>
+    <a href="../function-and-aggregation/" class="dropdown-item">Function and Aggregation</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Data Manipulation</a>
+</li>
+                                    
+<li>
+    <a href="../joins-and-advanced-queries/" class="dropdown-item">Joins and Advanced Queries</a>
+</li>
+                                    
+<li>
+    <a href="../psql-connect-in-python/" class="dropdown-item">PostgreSQL connect in Python</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Django</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../django/introduction-to-django/" class="dropdown-item">Introduction to Django</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Django REST Framework</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../django/introduction.md" class="dropdown-item">Introduction to DRF</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../function-and-aggregation/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../joins-and-advanced-queries/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#data-manipulation" class="nav-link">🐘 Data Manipulation</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#updating-records-with-update" class="nav-link">Updating records with UPDATE</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#deleting-records-with-delete" class="nav-link">Deleting records with DELETE</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#managing-data-integrity-with-constraints-foreign-keys-unique" class="nav-link">Managing data integrity with constraints (foreign keys, unique)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#practics" class="nav-link">PRACTICS</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#task-1" class="nav-link">Task 1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#task-2" class="nav-link">Task 2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#task-3" class="nav-link">Task 3</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#task-4" class="nav-link">Task 4</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="data-manipulation">🐘 Data Manipulation</h1>
+<ul>
+<li>Topics:</li>
+<li>Updating records with <code>UPDATE</code></li>
+<li>Deleting records with <code>DELETE</code></li>
+<li>Managing data integrity with constraints (foreign keys, unique)</li>
+<li>Transactions and rollback</li>
+</ul>
+<h2 id="updating-records-with-update">Updating records with UPDATE</h2>
+<blockquote>
+<p>[!NOTE]
+PostgreSQLda ma'lumotlarni yangilash uchun <code>UPDATE</code> operatoridan foydalaniladi. Bu operator jadvaldagi mavjud malumotlarni yangilash uchun ishlatiladi.</p>
+</blockquote>
+<h3 id="syntax-of-update">Syntax of UPDATE:</h3>
+<pre><code class="language-sql">UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+</code></pre>
+<ul>
+<li><strong>Key Points:</strong></li>
+<li><code>SET</code>: Qaysi ustunni yangi qiymat bilan yangilashni belgilaydi.</li>
+<li><code>WHERE</code>: Qaysi malumotni yangilashni aniqlash uchun ishlatiladi. Agar <code>WHERE</code> shartini qo'shmasangiz, jadvaldagi barcha malumotlar yangilanadi.</li>
+<li><strong>Conditions</strong>: Agar kerak bo'lsa, bir nechta shartlarni birlashtirish uchun AND, OR mantiqiy operatorlarini ishlatish mumkin.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>client_id</th>
+<th>first_name</th>
+<th>last_name</th>
+<th>date_of_birth</th>
+<th>email</th>
+<th>phone</th>
+<th>address</th>
+<th>city</th>
+<th>country</th>
+<th>postal_code</th>
+<th>registration_date</th>
+<th>last_activity_date</th>
+<th>balance</th>
+<th>status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Ali</td>
+<td>Karimov</td>
+<td>1990-01-01</td>
+<td>ali.karimov@mail.uz</td>
+<td>+99890123456</td>
+<td>Tashkent, Block 15</td>
+<td>Tashkent</td>
+<td>Uzbekistan</td>
+<td>100100</td>
+<td>2024-01-01</td>
+<td>2024-12-01</td>
+<td>150.50</td>
+<td>TRUE</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Dilnoza</td>
+<td>Tursunova</td>
+<td>1985-05-12</td>
+<td>dilnoza@mail.uz</td>
+<td>+99890123457</td>
+<td>Samarkand, Block 7</td>
+<td>Samarkand</td>
+<td>Uzbekistan</td>
+<td>140200</td>
+<td>2024-02-15</td>
+<td>2024-11-20</td>
+<td>0.00</td>
+<td>FALSE</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Bekzod</td>
+<td>Rasulov</td>
+<td>1992-03-22</td>
+<td>bekzod@mail.uz</td>
+<td>+99890123458</td>
+<td>Bukhara, Block 9</td>
+<td>Bukhara</td>
+<td>Uzbekistan</td>
+<td>200300</td>
+<td>2024-05-10</td>
+<td>2024-10-30</td>
+<td>250.75</td>
+<td>TRUE</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+<p>Basic Update Example</p>
+</li>
+<li>
+<p><code>id = 2</code> bo'lgan clientni <code>city</code> ustunini <code>Navoiy</code> ga o'zgartiramiz:</p>
+</li>
+</ol>
+<pre><code class="language-sql">UPDATE clients
+SET city = 'Navoiy'
+WHERE client_id = 2;
+</code></pre>
+<ol>
+<li>
+<p>Updating Multiple Columns</p>
+</li>
+<li>
+<p>Agar bir vaqtning o'zida bir nechta ustunlarni yangilash kerak bo'lsa:</p>
+</li>
+</ol>
+<pre><code class="language-sql">UPDATE clients
+SET city = 'Navoiy', balance = 250.75
+WHERE first_name = 'Ali';
+</code></pre>
+<ol>
+<li>
+<p>Updating All Rows</p>
+</li>
+<li>
+<p>Agar jadvaldagi barcha qatorlarni yangilash kerak bo'lsa:</p>
+</li>
+</ol>
+<pre><code class="language-sql">UPDATE clients
+SET city = 'Navoiy';
+</code></pre>
+<ol>
+<li>
+<p>Conditional Updates with <code>AND</code> and <code>OR</code></p>
+</li>
+<li>
+<p><code>city = 'Toshkent'</code> va <code>status = TRUE</code> bo'lgan clientning <code>phone</code> ustunini <code>+998930850955</code> ga o'zgartiramiz:</p>
+</li>
+</ol>
+<pre><code class="language-sql">UPDATE clients
+SET phone = '+998930850955'
+WHERE city = 'Toshkent' AND status = TRUE;
+</code></pre>
+<h2 id="deleting-records-with-delete">Deleting records with DELETE</h2>
+<blockquote>
+<p>[!NOTE]
+PostgreSQLda ma'lumotlarni o'chirish uchun <code>DELETE</code> operatoridan foydalaniladi.</p>
+</blockquote>
+<h3 id="syntax-of-the-delete-statement">Syntax of the DELETE Statement</h3>
+<pre><code class="language-sql">DELETE FROM table_name
+WHERE condition;
+</code></pre>
+<ul>
+<li><code>table_name</code>: O'chirish amalga oshiriladigan jadval nomi.</li>
+<li><code>condition</code>: Qaysi satrlarni o'chirish kerakligini belgilaydigan shart.</li>
+</ul>
+<blockquote>
+<p>[!CAUTION]
+Agar <code>WHERE</code> sharti ko'rsatilmasa, jadvaldagi barcha yozuvlar o'chiriladi. Bunda ehtiyot bo'lish kerak!</p>
+</blockquote>
+<ol>
+<li>
+<p>Deleting specific records based on a condition</p>
+</li>
+<li>
+<p>Agar jadvaldan faqat aniq bir shartga mos malumotni o'chirish kerak bo'lsa, <code>WHERE</code> sharti qo'llaniladi.</p>
+</li>
+</ol>
+<pre><code class="language-sql">DELETE FROM clients
+WHERE client_id = 2;
+</code></pre>
+<ol>
+<li>Deleting all records</li>
+</ol>
+<p>Agar barcha malumotlarni o'chirish kerak bo'lsa, <code>WHERE</code> sharti berilmaydi.</p>
+<pre><code class="language-sql">DELETE FROM clients;
+</code></pre>
+<h2 id="managing-data-integrity-with-constraints-foreign-keys-unique">Managing data integrity with constraints (foreign keys, unique)</h2>
+<h3 id="foreign-key">Foreign Key</h3>
+<ul>
+<li>Foreign key bir jadvaldagi ustun boshqa jadvaldagi ustunga bog'liq bo'lishini ta'minlaydi. Bu jadvallarni bir biriga bog'lash uchun ishlatiladi ishlatiladi.</li>
+</ul>
+<h3 id="customers-table">Customers Table</h3>
+<table>
+<thead>
+<tr>
+<th>customer_id</th>
+<th>name</th>
+<th>email</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Anvar Aliyev</td>
+<td>aliyev@example.com</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Nodira Karimova</td>
+<td>karimova@example.com</td>
+</tr>
+</tbody>
+</table>
+<h3 id="orders-table">Orders Table</h3>
+<table>
+<thead>
+<tr>
+<th>order_id</th>
+<th>customer_id</th>
+<th>order_date</th>
+<th>amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>2024-12-25</td>
+<td>150.00</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>2024-12-26</td>
+<td>200.50</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-sql">-- Creating the Customers table
+CREATE TABLE customers (
+    customer_id SERIAL PRIMARY KEY, -- Primary key
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL -- Email must be unique
+);
+
+-- Creating the Orders table
+CREATE TABLE orders (
+    order_id SERIAL PRIMARY KEY, -- Primary key
+    customer_id INT NOT NULL,
+    order_date DATE NOT NULL,
+    amount NUMERIC(10, 2) NOT NULL,
+    CONSTRAINT fk_customer FOREIGN KEY (customer_id)
+    REFERENCES customers (customer_id) ON DELETE CASCADE
+);
+</code></pre>
+<h1 id="practics">PRACTICS</h1>
+<h2 id="task-1">Task 1</h2>
+<ul>
+<li>Sizda <code>students</code> nomli jadval mavjud. Jadvalda quyidagi ustunlar bor:</li>
+<li><strong>id (integer)</strong> - talabalar id raqamlari (PRIMARY KEY)</li>
+<li><strong>name (varchar)</strong> - talabaning ismi</li>
+<li><strong>age (integer)</strong> - talabaning yoshi</li>
+<li><strong>grade (varchar)</strong> - talabaning bahosi (masalan, A, B, C, D)</li>
+<li><strong>city (varchar)</strong> - talabaning yashash shahri</li>
+</ul>
+<h3 id="data">Data</h3>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>age</th>
+<th>grade</th>
+<th>city</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Ali</td>
+<td>19</td>
+<td>B</td>
+<td>Tashkent</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Salim</td>
+<td>18</td>
+<td>C</td>
+<td>Samarkand</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Malika</td>
+<td>20</td>
+<td>A</td>
+<td>Bukhara</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Shoxruh</td>
+<td>21</td>
+<td>D</td>
+<td>Tashkent</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Laylo</td>
+<td>22</td>
+<td>C</td>
+<td>Nukus</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tasks">Tasks</h3>
+<ul>
+<li><code>Tashkent</code> shahrida yashovchi barcha talabalarni toping va ularning <code>grade</code> ustunini <code>B</code> ga o'zgartiring.</li>
+<li>Yoshi <code>20</code> yoki undan katta bo'lgan talabalarni toping va ularning yashash shahrini <code>Tashkent</code> ga o'zgartiring.</li>
+<li><code>grade</code> ustuni <code>C</code> bo'lgan barcha talabalar uchun <code>age</code> ni <code>1</code> yoshga oshiring.</li>
+</ul>
+<h2 id="task-2">Task 2</h2>
+<ul>
+<li>Sizda <code>employees</code> nomli jadval bor. Jadvalda quyidagi ustunlar mavjud:</li>
+<li><strong>id (integer)</strong> - xodimning id raqami (asosiy kalit, PRIMARY KEY)</li>
+<li><strong>name (varchar)</strong> - xodimning ismi</li>
+<li><strong>department (varchar)</strong> - xodim ishlaydigan bo'lim (masalan, HR, IT, Sales)</li>
+<li><strong>salary (integer)</strong> - xodimning oyligi</li>
+<li><strong>experience (integer)</strong> - xodimning ish tajribasi (yillarda)</li>
+<li><strong>city (varchar)</strong> - xodim yashayotgan shahar</li>
+</ul>
+<h3 id="data_1">Data</h3>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>department</th>
+<th>salary</th>
+<th>experience</th>
+<th>city</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Nodir</td>
+<td>IT</td>
+<td>1200</td>
+<td>3</td>
+<td>Tashkent</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Malika</td>
+<td>HR</td>
+<td>900</td>
+<td>5</td>
+<td>Samarkand</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Shoxruh</td>
+<td>Sales</td>
+<td>1500</td>
+<td>7</td>
+<td>Bukhara</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Laylo</td>
+<td>IT</td>
+<td>1000</td>
+<td>2</td>
+<td>Nukus</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Kamol</td>
+<td>HR</td>
+<td>850</td>
+<td>6</td>
+<td>Tashkent</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Saida</td>
+<td>Sales</td>
+<td>1100</td>
+<td>4</td>
+<td>Andijan</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tasks_1">Tasks</h3>
+<ul>
+<li>Toshkent shahridagi barcha xodimlarning oyliklarini <code>10%</code> ga oshiring.</li>
+<li>Tajribasi <code>5</code> yildan oshgan xodimlarni toping va ularning bo'limini <code>"Senior"</code> qilib yangilang.</li>
+<li>Oyligi <code>1000</code> dan kam bo'lgan barcha xodimlarni toping va ularning oyligini <code>950</code> ga o'zgartiring.</li>
+<li><code>"Sales"</code> bo'limida ishlaydigan xodimlarning shaharlarini <code>"Tashkent"</code> qilib yangilang.</li>
+<li><code>"IT"</code> bo'limida ishlaydigan, tajribasi <code>3</code> yildan kam bo'lgan xodimlarning oyliklarini <code>20%</code> ga oshiring.</li>
+</ul>
+<h2 id="task-3">Task 3</h2>
+<ul>
+<li>Sizda <code>products</code> nomli jadval mavjud. Jadval quyidagi ustunlardan iborat:</li>
+<li><strong>id (integer)</strong> - mahsulot ID (asosiy kalit, PRIMARY KEY)</li>
+<li><strong>name (varchar)</strong> - mahsulot nomi</li>
+<li><strong>category (varchar)</strong> - mahsulot kategoriyasi (masalan, Electronics, Clothing, Food)</li>
+<li><strong>price (integer)</strong> - mahsulot narxi</li>
+<li><strong>quantity (integer)</strong> - mahsulot ombordagi miqdori</li>
+<li><strong>supplier (varchar)</strong> - yetkazib beruvchi nomi</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>category</th>
+<th>price</th>
+<th>quantity</th>
+<th>supplier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Laptop</td>
+<td>Electronics</td>
+<td>1200</td>
+<td>10</td>
+<td>TechStore</td>
+</tr>
+<tr>
+<td>2</td>
+<td>T-Shirt</td>
+<td>Clothing</td>
+<td>25</td>
+<td>50</td>
+<td>FashionHub</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Phone</td>
+<td>Electronics</td>
+<td>800</td>
+<td>5</td>
+<td>TechStore</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Bread</td>
+<td>Food</td>
+<td>2</td>
+<td>100</td>
+<td>FoodMart</td>
+</tr>
+<tr>
+<td>5</td>
+<td>TV</td>
+<td>Electronics</td>
+<td>500</td>
+<td>2</td>
+<td>HomeAppliance</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Jacket</td>
+<td>Clothing</td>
+<td>60</td>
+<td>20</td>
+<td>FashionHub</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Milk</td>
+<td>Food</td>
+<td>1</td>
+<td>200</td>
+<td>FoodMart</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Tablet</td>
+<td>Electronics</td>
+<td>300</td>
+<td>0</td>
+<td>TechStore</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Headphones</td>
+<td>Electronics</td>
+<td>50</td>
+<td>15</td>
+<td>AudioWorld</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Sneakers</td>
+<td>Clothing</td>
+<td>80</td>
+<td>0</td>
+<td>FashionHub</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tasks_2">Tasks</h3>
+<ul>
+<li><code>quantity</code> 0 bo'lgan barcha mahsulotlarni o'chirib tashlang.</li>
+<li><code>Food</code> kategoriyasidagi <code>quantity</code> 50 dan kam bo'lgan mahsulotlarni o'chiring.</li>
+<li><code>TechStore</code> yetkazib beruvchidan bo'lgan va <code>price</code> 1000 dan yuqori mahsulotlarni o'chirib tashlang.</li>
+<li><code>Electronics</code> kategoriyasidagi <code>price</code> 100 dan kam bo'lgan barcha mahsulotlarni o'chirib tashlang.</li>
+<li><code>Clothing</code> kategoriyasidagi <code>price</code> 30 dan kam yoki teng bo'lgan mahsulotlarni o'chiring.</li>
+</ul>
+<h2 id="task-4">Task 4</h2>
+<ul>
+<li>Sizda students nomli jadval mavjud. Jadval quyidagi ustunlardan iborat:<ul>
+<li><strong>id (integer)</strong> - talaba ID (asosiy kalit, PRIMARY KEY)</li>
+<li><strong>name (varchar)</strong> - talabaning ismi</li>
+<li><strong>age (integer)</strong> - talabaning yoshi</li>
+<li><strong>gender (varchar)</strong> - talabaning jinsi (Male, Female)</li>
+<li><strong>grade (integer)</strong> - talabaning umumiy bahosi (0 dan 100 gacha)</li>
+<li><strong>city (varchar)</strong> - talaba yashaydigan shahar</li>
+<li><strong>scholarship (varchar)</strong> - talabaning stipendiyasi bor yoki yo'qligi (Yes, No)</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>age</th>
+<th>gender</th>
+<th>grade</th>
+<th>city</th>
+<th>scholarship</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Ali</td>
+<td>19</td>
+<td>Male</td>
+<td>85</td>
+<td>Tashkent</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Laylo</td>
+<td>20</td>
+<td>Female</td>
+<td>90</td>
+<td>Samarkand</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Jasur</td>
+<td>18</td>
+<td>Male</td>
+<td>40</td>
+<td>Bukhara</td>
+<td>No</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Malika</td>
+<td>22</td>
+<td>Female</td>
+<td>75</td>
+<td>Tashkent</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Timur</td>
+<td>21</td>
+<td>Male</td>
+<td>50</td>
+<td>Andijan</td>
+<td>No</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Zarina</td>
+<td>20</td>
+<td>Female</td>
+<td>30</td>
+<td>Tashkent</td>
+<td>No</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Shoxruh</td>
+<td>19</td>
+<td>Male</td>
+<td>65</td>
+<td>Nukus</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Nargiza</td>
+<td>23</td>
+<td>Female</td>
+<td>70</td>
+<td>Bukhara</td>
+<td>No</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Davron</td>
+<td>20</td>
+<td>Male</td>
+<td>55</td>
+<td>Tashkent</td>
+<td>No</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Sabina</td>
+<td>19</td>
+<td>Female</td>
+<td>35</td>
+<td>Andijan</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tasks_3">Tasks</h3>
+<ul>
+<li><code>grade</code> 50 dan past bo'lgan barcha talabalarni o'chiring.</li>
+<li><code>city</code> "Tashkent" bo'lgan va stipendiyasi yo'q (<code>scholarship = 'No'</code>) bo'lgan barcha talabalarni o'chiring.</li>
+<li><code>age</code> 20 dan katta va <code>grade</code> 60 dan yuqori bo'lgan barcha talabalarni o'chirib tashlang.</li>
+<li><code>scholarship</code> "Yes" bo'lgan va <code>city</code> "Samarkand" bo'lgan talabalarni o'chiring.</li>
+<li><code>gender</code> "Male" bo'lgan va <code>grade</code> 70 dan past bo'lgan barcha talabalarni o'chirib tashlang.</li>
+<li>Barcha talabalarning ma'lumotlarini o'chiring, agar ular "Andijan" shahridan bo'lsa.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -2,98 +2,126 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://deepcode-academy.vercel.app/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://deepcode-academy.vercel.app/django/introduction-to-django/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://deepcode-academy.vercel.app/drf/introduction/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/psql/basic-commands/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/psql/data-manipulation/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/psql/data-retrieval-end-filtering/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/psql/function-and-aggregation/</loc>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://deepcode-academy.vercel.app/psql/introduction/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/psql/joins-and-advanced-queries/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/psql/postgresql/</loc>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://deepcode-academy.vercel.app/psql/psql-connect-in-python/</loc>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://deepcode-academy.vercel.app/python/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://deepcode-academy.vercel.app/python/conditional-statements/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://deepcode-academy.vercel.app/python/data-types/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://deepcode-academy.vercel.app/python/database/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://deepcode-academy.vercel.app/python/dictionaries/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://deepcode-academy.vercel.app/python/exception-handling/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://deepcode-academy.vercel.app/python/file-handling/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://deepcode-academy.vercel.app/python/for-loop/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://deepcode-academy.vercel.app/python/functions/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://deepcode-academy.vercel.app/python/lists/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://deepcode-academy.vercel.app/python/modules/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://deepcode-academy.vercel.app/python/moduls/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://deepcode-academy.vercel.app/python/oop/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://deepcode-academy.vercel.app/python/operators/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://deepcode-academy.vercel.app/python/sets/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://deepcode-academy.vercel.app/python/third-party-packages/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://deepcode-academy.vercel.app/python/tuples/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://deepcode-academy.vercel.app/python/variables/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://deepcode-academy.vercel.app/python/what-is-python/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://deepcode-academy.vercel.app/python/while-loop/</loc>
-         <lastmod>2025-10-31</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
 </urlset>

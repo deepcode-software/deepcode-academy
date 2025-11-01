@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Umid">
+        <link rel="canonical" href="https://deepcode-academy.vercel.app/psql/basic-commands/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Basic Commands - DeepCode Academy</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">DeepCode Academy</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/what-is-python/" class="dropdown-item">What is Python</a>
+</li>
+                                    
+<li>
+    <a href="../../python/variables/" class="dropdown-item">Variables</a>
+</li>
+                                    
+<li>
+    <a href="../../python/data-types/" class="dropdown-item">Data Types</a>
+</li>
+                                    
+<li>
+    <a href="../../python/operators/" class="dropdown-item">Operatos</a>
+</li>
+                                    
+<li>
+    <a href="../../python/lists/" class="dropdown-item">Lists</a>
+</li>
+                                    
+<li>
+    <a href="../../python/tuples/" class="dropdown-item">Tuples</a>
+</li>
+                                    
+<li>
+    <a href="../../python/sets/" class="dropdown-item">Sets</a>
+</li>
+                                    
+<li>
+    <a href="../../python/dictionaries/" class="dropdown-item">Dictionaries</a>
+</li>
+                                    
+<li>
+    <a href="../../python/conditional-statements/" class="dropdown-item">Conditional Statements</a>
+</li>
+                                    
+<li>
+    <a href="../../python/for-loop/" class="dropdown-item">For Loop</a>
+</li>
+                                    
+<li>
+    <a href="../../python/while-loop/" class="dropdown-item">While Loop</a>
+</li>
+                                    
+<li>
+    <a href="../../python/functions/" class="dropdown-item">Functions</a>
+</li>
+                                    
+<li>
+    <a href="../../python/exception-handling/" class="dropdown-item">Exception Handling</a>
+</li>
+                                    
+<li>
+    <a href="../../python/moduls/" class="dropdown-item">Moduls</a>
+</li>
+                                    
+<li>
+    <a href="../../python/file-handling/" class="dropdown-item">File Handling</a>
+</li>
+                                    
+<li>
+    <a href="../../python/database/" class="dropdown-item">Database</a>
+</li>
+                                    
+<li>
+    <a href="../../python/third-party-packages/" class="dropdown-item">Third Party Packages</a>
+</li>
+                                    
+<li>
+    <a href="../../python/oop/" class="dropdown-item">OOP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PostgreSQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../introduction/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../postgresql/" class="dropdown-item">PostgreSQL</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Basic Commands</a>
+</li>
+                                    
+<li>
+    <a href="../data-retrieval-end-filtering/" class="dropdown-item">Data Retrieval and Filtering</a>
+</li>
+                                    
+<li>
+    <a href="../function-and-aggregation/" class="dropdown-item">Function and Aggregation</a>
+</li>
+                                    
+<li>
+    <a href="../data-manipulation/" class="dropdown-item">Data Manipulation</a>
+</li>
+                                    
+<li>
+    <a href="../joins-and-advanced-queries/" class="dropdown-item">Joins and Advanced Queries</a>
+</li>
+                                    
+<li>
+    <a href="../psql-connect-in-python/" class="dropdown-item">PostgreSQL connect in Python</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Django</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../django/introduction-to-django/" class="dropdown-item">Introduction to Django</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Django REST Framework</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../django/introduction.md" class="dropdown-item">Introduction to DRF</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../postgresql/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../data-retrieval-end-filtering/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#postgresql-asoslari" class="nav-link">🐘 PostgreSQL ASOSLARI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#2-dars-basic-commands" class="nav-link">🧩 2-DARS BASIC COMMANDS</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#database-table-column-va-row-haqida-sodda-tushuncha" class="nav-link">✅ DATABASE, TABLE, COLUMN va ROW haqida sodda tushuncha</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#data-types" class="nav-link">✅ DATA TYPES</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#asosiy-sql-buyruqlari-create-database-create-table-drop-insert-select" class="nav-link">✅ ASOSIY SQL BUYRUQLARI: CREATE DATABASE, CREATE TABLE, DROP, INSERT, SELECT</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#create-table" class="nav-link">CREATE TABLE</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#drop" class="nav-link">DROP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#insert" class="nav-link">INSERT</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#select" class="nav-link">SELECT</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#primary-keys-and-constraints" class="nav-link">PRIMARY KEYS AND CONSTRAINTS</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#practice" class="nav-link">PRACTICE</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="postgresql-asoslari">🐘 PostgreSQL ASOSLARI</h1>
+<h1 id="2-dars-basic-commands">🧩 2-DARS BASIC COMMANDS</h1>
+<h2 id="database-table-column-va-row-haqida-sodda-tushuncha">✅ DATABASE, TABLE, COLUMN va ROW haqida sodda tushuncha</h2>
+<hr />
+<h3 id="database-malumotlar-bazasi">💾 <strong>DATABASE (Ma’lumotlar bazasi)</strong></h3>
+<p>📘 <strong>Database</strong> — bu <strong>katta ma’lumotlar saqlanadigan joy</strong>.<br />
+U kompyuter xotirasidagi <strong>katta fayl</strong>ga o‘xshaydi, lekin ichida ma’lumotlar <strong>tartibli va boshqariladigan</strong> holda saqlanadi.</p>
+<p><strong>Masalan:</strong>
+- Maktabda o‘quvchilar haqida ma’lumotlar<br />
+- Internet do‘konida mahsulotlar ro‘yxati<br />
+- Ijtimoiy tarmoqda foydalanuvchilar profillari  </p>
+<p>🧩 Ya’ni <strong>database</strong> — bu <strong>ma’lumotlar uchun uy</strong>.</p>
+<hr />
+<h3 id="table-jadval">🧮 <strong>TABLE (Jadval)</strong></h3>
+<p>📋 <strong>Table</strong> — bu <strong>database</strong> ichidagi bitta bo‘lim yoki varaq.<br />
+Har bir table <strong>ma’lum bir turdagi ma’lumotni</strong> saqlaydi.</p>
+<p><strong>Masalan:</strong>
+- <code>Students</code> — o‘quvchilar haqida ma’lumot<br />
+- <code>Courses</code> — kurslar haqida ma’lumot<br />
+- <code>Teachers</code> — o‘qituvchilar haqida ma’lumot  </p>
+<p>🔹 Table — bu <strong>Exceldagi jadval</strong>ga o‘xshaydi:<br />
+unda <strong>ustunlar (columns)</strong> va <strong>qatorlar (rows)</strong> bo‘ladi.</p>
+<hr />
+<h3 id="column-ustun">📊 <strong>COLUMN (Ustun)</strong></h3>
+<p>📗 <strong>Column</strong> — bu jadvaldagi <strong>ma’lumot turi</strong>ni bildiradi.<br />
+Har bir column faqat <strong>bitta turdagi ma’lumotni</strong> saqlaydi.</p>
+<p><strong>Masalan, <code>Students</code> jadvali uchun:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Column nomi</th>
+<th>Ma’lumot turi</th>
+<th>Tavsif</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Raqam (integer)</td>
+<td>O‘quvchining raqami</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>Matn (text)</td>
+<td>O‘quvchining ismi</td>
+</tr>
+<tr>
+<td><code>age</code></td>
+<td>Raqam (integer)</td>
+<td>O‘quvchining yoshi</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>Matn (text)</td>
+<td>O‘quvchining elektron pochtasi</td>
+</tr>
+</tbody>
+</table>
+<p>🔹 Column — bu <strong>jadvaldagi ustun nomi va turi</strong>, ya’ni “qaysi ma’lumot saqlanadi” degan savolga javob beradi.</p>
+<hr />
+<h3 id="row-qator">🧍 <strong>ROW (Qator)</strong></h3>
+<p>📙 <strong>Row</strong> — bu jadvaldagi <strong>bitta to‘liq ma’lumot yozuvi</strong>.<br />
+Har bir row biror shaxs, buyum yoki hodisani ifodalaydi.</p>
+<p><strong>Masalan:</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>age</th>
+<th>email</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Umid</td>
+<td>20</td>
+<td>umid@gmail.com</td>
+</tr>
+</tbody>
+</table>
+<p>Bu qator (row) — <strong>bitta o‘quvchi</strong> haqida to‘liq ma’lumot.</p>
+<p>🔹 Har bir <strong>row</strong> — bu <strong>columnlar</strong>da belgilangan joylarga <strong>ma’lumotni to‘ldirish</strong> natijasidir.</p>
+<p>📌 Agar bizda <code>students</code> nomli jadval bo'lsa, uning tarkibi quyidagicha bo'lishi mumkin:</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Surname</th>
+<th>Age</th>
+<th>Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Ali</td>
+<td>Valiyev</td>
+<td>20</td>
+<td>A1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Madina</td>
+<td>Ismailova</td>
+<td>21</td>
+<td>A2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Bekzod</td>
+<td>Karimov</td>
+<td>22</td>
+<td>A3</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Database</strong> - bunda bizning <code>"University"</code> nomli ma'lumotlar bazamiz bor deb tasavvur qilaylik.</li>
+<li><strong>Table</strong> - <code>students</code> jadvali.</li>
+<li><strong>Columns</strong> - <code>ID</code>, <code>Name</code>, <code>Surname</code>, <code>Age</code>, <code>Class</code>.</li>
+<li><strong>Rows</strong> - har bir talaba haqida ma'lumotni ifodalovchi yozuvlar.</li>
+</ul>
+<h2 id="data-types">✅ DATA TYPES</h2>
+<p>📌 PostgreSQLda ma'lumot turlari (<strong>data types</strong>) ustunlarda saqlanadigan ma'lumotlarning turini belgilaydi va ular bilan qanday ishlash mumkinligini aniqlaydi.</p>
+<h3 id="number">❇️ NUMBER</h3>
+<p>📌 <strong>NUMBER</strong> — bu SQL ma'lumotlar bazasida sonlarni saqlash uchun ishlatiladigan asosiy ma'lumot turi hisoblanadi. NUMBER turlari yordamida butun sonlar, o‘nlik sonlar va boshqa raqamli qiymatlar saqlanadi.</p>
+<h4 id="integer">✳️ INTEGER</h4>
+<p>📌 <strong>INTEGER (int, int4)</strong> — bu 4 baytli butun son turi bo‘lib, −2,147,483,648 dan +2,147,483,647 gacha bo‘lgan sonlarni saqlaydi.</p>
+<p>🎯 Oddiy ma’lumot saqlash uchun <strong>example</strong> jadvali yaratish</p>
+<pre><code class="language-sql">-- Example nomli jadval yaratilyapti
+-- Bu jadvalda faqat bitta ustun bor: num
+-- num ustuni INTEGER (butun son) tipida bo‘ladi
+CREATE TABLE Example (
+    num INTEGER
+);
+</code></pre>
+<p>🎯 Talabalar haqidagi ma’lumotlarni saqlash uchun <strong>students</strong> jadvali yaratish</p>
+<pre><code class="language-sql">-- students nomli jadval yaratilyapti
+CREATE TABLE students (
+
+    -- id ustuni yaratilmoqda
+    -- Har bir talabaning yagona (unique) identifikatori sifatida ishlatiladi
+    -- INTEGER tipida bo‘ladi va PRIMARY KEY (asosiy kalit)
+    id INTEGER PRIMARY KEY,
+
+    -- name ustuni yaratilmoqda
+    -- Talabaning ismini saqlaydi
+    -- Maksimal uzunligi 50 belgidan iborat bo‘lishi mumkin
+    name VARCHAR(50),
+
+    -- age ustuni yaratilmoqda
+    -- Talabaning yoshini saqlaydi
+    -- INTEGER (butun son) tipida bo‘ladi
+    age INTEGER
+);
+</code></pre>
+<h4 id="bigint">✳️ BIGINT</h4>
+<p>📌 <strong>BIGINT (int8)</strong> — bu 8 baytli butun son turi bo‘lib, juda katta butun sonlarni saqlash uchun ishlatiladi.</p>
+<p>🎯 Oddiy <strong>BIGINT</strong> turidagi ustun yaratish uchun Example jadvali.</p>
+<pre><code class="language-sql">-- Example nomli jadval yaratilyapti
+-- Bu jadvalda faqat bitta ustun bor: big_num
+-- big_num ustuni BIGINT (katta butun son) tipida bo‘ladi
+CREATE TABLE example (
+    big_num BIGINT
+);
+</code></pre>
+<p>🎯 Bank tranzaktsiyalarini saqlash uchun jadval yaratish</p>
+<pre><code class="language-sql">-- transactions nomli jadval yaratilyapti
+CREATE TABLE transactions (
+
+    -- transaction_id ustuni yaratilmoqda
+    -- Har bir tranzaktsiyaga noyob raqam beriladi
+    -- Katta qiymatlarni saqlash uchun BIGINT ishlatiladi
+    transaction_id BIGINT PRIMARY KEY,
+
+    -- amount ustuni yaratilmoqda
+    -- Tranzaksiya summasini saqlaydi
+    -- BIGINT ishlatilmoqda, chunki ba'zi hollarda juda katta summalar bo‘lishi mumkin
+    amount BIGINT,
+
+    -- description ustuni yaratilmoqda
+    -- Tranzaksiya haqida qisqa izoh
+    description VARCHAR(100)
+);
+</code></pre>
+<h4 id="smallint">✳️ SMALLINT</h4>
+<p>📌 <strong>SMALLINT (int2)</strong> — bu 2 baytli butun son turi bo‘lib, kichik diapazondagi butun sonlarni saqlash uchun ishlatiladi.</p>
+<p>🎯 Oddiy <strong>SMALLINT</strong> turidagi ustun yaratish uchun <strong>example</strong> jadvali:</p>
+<pre><code class="language-sql">-- Example nomli jadval yaratilyapti
+-- Bu jadvalda faqat bitta ustun bor: small_num
+-- small_num ustuni SMALLINT (kichik butun son) tipida bo‘ladi
+CREATE TABLE example (
+    small_num SMALLINT
+);
+</code></pre>
+<p>🎯 Xodimlarning lavozim darajasini saqlash uchun.</p>
+<pre><code class="language-sql">-- employees nomli jadval yaratilyapti
+CREATE TABLE employees (
+
+    -- id ustuni: har bir xodimning ID raqami
+    id INTEGER PRIMARY KEY,
+
+    -- name ustuni: xodimning ismi
+    name VARCHAR(50),
+
+    -- level ustuni: xodimning lavozim darajasi
+    -- Odatda bu 1 dan 10 gacha bo‘lgan kichik son bo‘ladi
+    level SMALLINT
+);
+</code></pre>
+<h4 id="decimal-or-numeric">✳️ DECIMAL OR NUMERIC</h4>
+<p>📌 <strong>DECIMAL yoki NUMERIC</strong> — bu aniq o‘nlik kasr sonlarni saqlash uchun ishlatiladigan ma'lumot turi. Bu turda aniqlik (precision) va kasr sonlar soni (scale) aniq belgilanadi.</p>
+<p>🎯 <strong>example</strong> jadvali bilan amaliy misol</p>
+<pre><code class="language-sql">-- Example nomli jadval yaratilyapti
+CREATE TABLE example (
+
+    -- price ustuni yaratilmoqda
+    -- Mahsulot yoki xizmat narxini saqlash uchun ishlatiladi
+    -- DECIMAL(8, 2) tipida bo‘lib, maksimal qiymat 999999.99 bo‘lishi mumkin
+    price DECIMAL(8, 2)
+);
+</code></pre>
+<ul>
+<li><code>DECIMAL</code>(<strong>precision</strong>, <strong>scale</strong>)</li>
+<li><strong>Precision:</strong> Jami raqamlar soni.</li>
+<li><strong>Scale:</strong> Kasr qismidagi raqamlar soni.</li>
+</ul>
+<h4 id="real">✳️ REAL</h4>
+<p>📌 <strong>REAL</strong> — bu 4 baytli haqiqiy son (floating point) turi bo‘lib, o‘nlik kasr sonlarni taxminiy aniqlikda saqlaydi.</p>
+<pre><code class="language-sql">-- Example nomli jadval yaratilyapti
+-- value ustuni REAL tipida, bu ustun haqiqiy sonlarni saqlaydi
+CREATE TABLE example (
+    value REAL
+);
+</code></pre>
+<p>🎯 Ob-havo ma’lumotlari jadvali:</p>
+<pre><code class="language-sql">-- weather_data nomli jadval yaratilyapti
+CREATE TABLE weather_data (
+
+    -- id: har bir yozuv uchun ID
+    id INTEGER PRIMARY KEY,
+
+    -- temperature: harorat, REAL tipida
+    temperature REAL,
+
+    -- humidity: namlik foizi, REAL tipida
+    humidity REAL
+);
+</code></pre>
+<h4 id="double-precision">✳️ DOUBLE PRECISION</h4>
+<p><strong>DOUBLE PRECISION</strong> — bu 8 baytli aniqroq suzuvchi nuqtali haqiqiy sonlarni saqlash uchun ishlatiladigan ma'lumot turi, katta va kichik onlik sonlarni aniqlik bilan saqlaydi.</p>
+<pre><code class="language-sql">-- Example nomli jadval yaratilyapti
+CREATE TABLE example (
+
+    -- value ustuni yaratilmoqda
+    -- Bu ustun DOUBLE PRECISION tipida bo‘ladi
+    -- 8 baytli haqiqiy sonlarni (floating point) saqlaydi
+    -- Katta aniqlikka ega kasr sonlarni saqlash uchun ishlatiladi
+    value DOUBLE PRECISION
+);
+</code></pre>
+<h3 id="text-type">❇️ TEXT TYPE</h3>
+<h4 id="charn">✳️ CHAR(N)</h4>
+<p><strong>CHAR(n)</strong> — bu aniq uzunlikdagi matn turi, matn uzunligi n dan qisqa bo‘lsa, qolgan qismlar avtomatik bo‘sh joy (space) bilan to‘ldiriladi.</p>
+<pre><code class="language-sql">-- Example nomli jadval yaratilyapti
+CREATE TABLE example (
+
+    -- code ustuni yaratilmoqda
+    -- CHAR(5) - bu ustun sabit (belgilangan) uzunlikdagi matn saqlaydi
+    -- Har doim 5 ta belgi joy ajratiladi
+    -- Agar kiritilgan matn 5 ta belgidan kam bo‘lsa, qolgan joylar bo‘sh joy (space) bilan to‘ldiriladi
+    code CHAR(5)
+);
+</code></pre>
+<h4 id="varcharn">✳️ VARCHAR(N)</h4>
+<p><strong>VARCHAR(n)</strong> — bu o‘zgaruvchan uzunlikdagi matn turi, matn uzunligi qancha bo‘lsa, shuncha joy egallaydi, lekin maksimal uzunlik n dan oshmaydi.</p>
+<pre><code class="language-sql">-- Example nomli jadval yaratilyapti
+CREATE TABLE example (
+
+    -- name ustuni yaratilmoqda
+    -- VARCHAR(50) - bu ustun o‘zgaruvchan uzunlikdagi matn saqlaydi
+    -- Maksimal uzunlik 50 ta belgi bilan cheklanadi
+    -- Kiritilgan matn qancha uzunlikda bo‘lsa, shuncha joy egallaydi
+    -- CHAR bilan farqi: bo‘sh joy bilan to‘ldirilmaydi, faqat kerakli joy egallanadi
+    name VARCHAR(50)
+);
+</code></pre>
+<h4 id="text">✳️ TEXT</h4>
+<p><strong>TEXT</strong> - bu cheksiz uzunlikdagi matn saqlash uchun ishlatiladigan ma'lumotlar turi. Matn uzunligi chegaralanmagan, ya'ni istalgan uzunlikdagi yozuvlar saqlanishi mumkin. <strong>VARCHAR(N)</strong> dan farqli ravishda maksimal uzunlik ko‘rsatilmaydi.</p>
+<pre><code class="language-sql">-- Example nomli jadval yaratilyapti
+CREATE TABLE example (
+
+    -- description ustuni yaratilmoqda
+    -- TEXT - bu ustun cheksiz uzunlikdagi matn saqlaydi
+    -- Matn uzunligi oldindan belgilab qo‘yilmaydi
+    -- Juda katta (katta hajmli) matnlar uchun qulay
+    description TEXT
+);
+</code></pre>
+<h3 id="date-and-time-types">❇️ DATE AND TIME TYPES</h3>
+<h4 id="date">✳️ DATE</h4>
+<p><strong>DATE</strong> - bu faqat sana (yil, oy, kun) ni saqlaydigan ma'lumotlar turi. DATE turi vaqtni (soat, daqiqa, soniya) o‘z ichiga olmaydi — faqatgina sana qismi saqlanadi.</p>
+<pre><code class="language-sql">-- Example nomli jadval yaratilyapti
+CREATE TABLE example (
+
+    -- birth_date ustuni yaratilmoqda
+    -- DATE - bu ustun faqat sanani (yil, oy, kun) saqlaydi
+    -- Vaqt qismi (soat, daqiqa, soniya) bu yerda mavjud emas
+    birth_date DATE
+);
+</code></pre>
+<h4 id="time">✳️ TIME</h4>
+<p><strong>TIME</strong> — bu faqat vaqt (soat, daqiqa, soniya) ni saqlaydigan ma'lumotlar turi.
+Bu turda sana (yil, oy, kun) saqlanmaydi — faqat kun ichidagi vaqt ifodalanadi.</p>
+<pre><code class="language-sql">-- Example nomli jadval yaratilyapti
+CREATE TABLE example (
+
+    -- work_start ustuni yaratilmoqda
+    -- TIME - bu ustun faqat vaqtni (soat, daqiqa, soniya) saqlaydi
+    -- Sana (yil, oy, kun) bu yerda mavjud emas
+    -- Masalan: '08:30:00', '17:45:30' kabi qiymatlar saqlanadi
+    work_start TIME
+);
+</code></pre>
+<h4 id="timestamp">✳️ TIMESTAMP</h4>
+<p><strong>TIMESTAMP</strong> — bu sana va vaqtni birgalikda saqlovchi ma'lumotlar turi. Yil, oy, kun va soat, daqiqa, soniya birga saqlanadi. Ko‘pincha yozilgan vaqtni, o‘zgartirilgan vaqtni avtomatik yozib borishda ishlatiladi.</p>
+<pre><code class="language-sql">-- Example nomli jadval yaratilyapti
+CREATE TABLE example (
+
+    -- created_at ustuni yaratilmoqda
+    -- TIMESTAMP - bu ustun sana va vaqtni birgalikda saqlaydi
+    -- Sana: yil, oy, kun
+    -- Vaqt: soat, daqiqa, soniya
+    -- Masalan: '2025-07-13 22:30:15' kabi qiymat saqlanadi
+    created_at TIMESTAMP
+);
+</code></pre>
+<h4 id="timestamptz">✳️ TIMESTAMPTZ</h4>
+<p><strong>TIMESTAMPTZ</strong> (Timestamp with Time Zone) — bu sana va vaqtni soat mintaqasi bilan birga saqlaydigan ma'lumotlar turi. Yil, oy, kun, soat, daqiqa, soniya va vaqt zonasi (UTC+05, UTC-03 va h.k.) birgalikda saqlanadi. Bu tur ko‘pincha global loyihalarda, foydalanuvchining aniq vaqtini belgilash uchun ishlatiladi.</p>
+<pre><code class="language-sql">-- Example nomli jadval yaratilyapti
+CREATE TABLE example (
+
+    -- event_time ustuni yaratilmoqda
+    -- TIMESTAMPTZ - bu ustun sana, vaqt va vaqt mintaqasini birga saqlaydi
+    -- Masalan: '2025-07-13 18:45:00+05:00'
+    -- Bu vaqt UTC+5 mintaqasiga tegishli ekanligini bildiradi
+    event_time TIMESTAMPTZ
+);
+</code></pre>
+<h4 id="interval">✳️ INTERVAL</h4>
+<p><strong>INTERVAL</strong> — bu vaqt oralig‘ini (davrni) saqlovchi ma'lumotlar turi. Masalan: 1 kun, 3 soat, 2 oy 15 kun, 1 yil 5 oy 10 kun 4 soat 30 daqiqa kabi qiymatlar saqlanishi mumkin. Bu tur vaqtlar orasidagi farqni ifodalash yoki vaqt ustiga qo‘shish/ayirishda ishlatiladi.</p>
+<pre><code class="language-sql">-- Example nomli jadval yaratilyapti
+CREATE TABLE example (
+
+    -- duration ustuni yaratilmoqda
+    -- INTERVAL - bu ustun vaqt oralig‘ini saqlaydi
+    -- Masalan: '1 day', '3 hours', '2 months 15 days' kabi qiymatlar
+    duration INTERVAL
+);
+</code></pre>
+<h3 id="boolean-type">❇️ BOOLEAN TYPE</h3>
+<h4 id="boolean">✳️ BOOLEAN</h4>
+<p><strong>BOOLEAN</strong> — bu mantiqiy (true/false) qiymatlarni saqlovchi ma'lumotlar turi. Faqatgina TRUE, FALSE yoki NULL qiymatlarni qabul qiladi. Ko‘pincha holatni bildiruvchi ustunlarda ishlatiladi (masalan: foydalanuvchi faolmi yoki yo‘qmi).</p>
+<pre><code class="language-sql">-- Example nomli jadval yaratilyapti
+CREATE TABLE example (
+
+    -- is_active ustuni yaratilmoqda
+    -- BOOLEAN - bu ustun TRUE yoki FALSE qiymatlarini saqlaydi
+    -- TRUE - agar holat faol bo‘lsa
+    -- FALSE - agar holat faol bo‘lmasa
+    -- NULL - agar holat noma’lum bo‘lsa
+    is_active BOOLEAN
+);
+</code></pre>
+<h3 id="array-type">❇️ ARRAY TYPE</h3>
+<h4 id="array">✳️ ARRAY</h4>
+<p><strong>ARRAY</strong> — bu bir xil turdagi bir nechta qiymatlarni bitta ustun ichida saqlash imkonini beruvchi massiv (array) ma'lumot turi. Massivdagi barcha elementlar bir xil ma'lumot turiga ega bo‘lishi kerak (masalan: INTEGER[], TEXT[]).</p>
+<pre><code class="language-sql">-- Example nomli jadval yaratilyapti
+CREATE TABLE example (
+
+    -- scores ustuni yaratilmoqda
+    -- INTEGER[] - bu ustun butun sonlardan iborat massivni saqlaydi
+    -- Masalan: {90, 85, 78} kabi qiymatlar
+    -- Har bir qiymat massiv ichida, bir xil turda bo'lishi shart
+    scores INTEGER[]
+);
+</code></pre>
+<h3 id="json-and-jsonb-types">❇️ JSON AND JSONB TYPES</h3>
+<h4 id="json">✳️ JSON</h4>
+<p><strong>JSON</strong> — bu JSON (JavaScript Object Notation) formatidagi tuzilgan ma'lumotlarni saqlovchi ma'lumot turi. Strukturaviy (nested) ma'lumotlarni, juftlik ko‘rinishidagi (kalit:qiymat) yozuvlarni saqlash uchun ishlatiladi. PostgreSQL JSON ustunlarida ma'lumotlarni o‘qish, izlash va o‘zgartirish uchun maxsus funksiyalarni qo‘llab-quvvatlaydi.</p>
+<pre><code class="language-sql">-- Example nomli jadval yaratilyapti
+CREATE TABLE example (
+
+    -- data ustuni yaratilmoqda
+    -- JSON - bu ustun JSON formatidagi strukturalangan ma'lumotni saqlaydi
+    -- Masalan: {'name': 'Umid', 'age': 25} kabi
+    -- Kalit-qiymat juftliklari ko‘rinishida saqlanadi
+    data JSON
+);
+</code></pre>
+<h4 id="jsonb">✳️ JSONB</h4>
+<p><strong>JSONB</strong> — bu JSON formatidagi ma'lumotlarni binary (ikkilik) formatda saqlovchi ma'lumot turi. JSON turiga o‘xshaydi, lekin JSONB tezroq ishlaydi, indekslash imkoniyatiga ega va tartiblanmagan (unordered) ko‘rinishda saqlanadi. Katta hajmdagi va murakkab tuzilgan JSON ma'lumotlar bilan samarali ishlash uchun tavsiya etiladi.</p>
+<pre><code class="language-sql">-- Example nomli jadval yaratilyapti
+CREATE TABLE example (
+
+    -- data ustuni yaratilmoqda
+    -- JSONB - bu ustun JSON formatidagi ma'lumotni binary ko‘rinishda saqlaydi
+    -- JSON ga nisbatan ko‘proq imkoniyat va tezlik taqdim etadi
+    -- Masalan: {'product': 'laptop', 'price': 1500} kabi ma'lumotlar
+    data JSONB
+);
+</code></pre>
+<h3 id="uuid-type">❇️ UUID TYPE</h3>
+<h4 id="uuid">✳️ UUID</h4>
+<p><strong>UUID (Universally Unique Identifier)</strong> — bu butun dunyo bo‘yicha yagona (noyob) identifikatorlarni saqlash uchun ishlatiladigan ma'lumot turi. Ko‘pincha foydalanuvchi ID, mahsulot ID yoki boshqa unikal elementlarni aniqlashda ishlatiladi. UUID qiymatlari 128-bitli bo‘ladi va tasodifiy yoki belgilangan algoritm asosida yaratiladi.</p>
+<pre><code class="language-sql">-- Example nomli jadval yaratilyapti
+CREATE TABLE example (
+
+    -- user_id ustuni yaratilmoqda
+    -- UUID - bu ustun noyob identifikatorlarni saqlaydi
+    -- Masalan: 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'
+    -- Har bir qiymat global darajada noyob bo‘ladi
+    user_id UUID
+);
+</code></pre>
+<h3 id="binary-data-types">❇️ BINARY DATA TYPES</h3>
+<h4 id="bytea">✳️ BYTEA</h4>
+<p><strong>BYTEA (Byte Array)</strong> — bu binary (ikkilik) ma'lumotlarni saqlash uchun ishlatiladigan ma'lumot turi. Masalan, rasmlar, video, audio, fayllar, shifrlangan ma'lumotlar yoki boshqa raqamli kontent saqlashda ishlatiladi. Saqlangan ma'lumotlar ikkilamchi (2-lik) ko‘rinishda bazaga yoziladi.</p>
+<pre><code class="language-sql">-- Example nomli jadval yaratilyapti
+CREATE TABLE example (
+
+    -- image ustuni yaratilmoqda
+    -- BYTEA - bu ustun binary (ikkilik) ma'lumotlarni saqlaydi
+    -- Masalan: rasm, fayl, video, audio va h.k.
+    -- Ma'lumotlar 2-lik ko‘rinishda saqlanadi
+    image BYTEA
+);
+</code></pre>
+<h3 id="serial-and-bigserial-types">❇️ SERIAL AND BIGSERIAL TYPES</h3>
+<h4 id="serial">✳️ SERIAL</h4>
+<p><strong>SERIAL</strong> — bu avtomatik ravishda o‘sib boruvchi butun son qiymatlarni yaratish uchun ishlatiladigan ma'lumot turi. Ko‘pincha asosiy kalit (primary key) sifatida ishlatiladi. Har bir yangi yozuv qo‘shilganda qiymat avtomatik tarzda 1 taga ortadi. SERIAL bu INTEGER ustuniga AUTO INCREMENT xususiyatini qo‘shadi.</p>
+<pre><code class="language-sql">-- Example nomli jadval yaratilyapti
+CREATE TABLE example (
+
+    -- id ustuni yaratilmoqda
+    -- SERIAL - bu ustun avtomatik ravishda raqam hosil qiladi
+    -- Har bir yangi yozuv uchun qiymat avtomatik 1 taga ortadi
+    -- PRIMARY KEY - bu ustun asosiy kalit (noyob va NULL bo‘lmaydi)
+    id SERIAL PRIMARY KEY
+);
+</code></pre>
+<h4 id="bigserial">✳️ BIGSERIAL</h4>
+<p><strong>BIGSERIAL</strong> — bu katta hajmdagi avtomatik o‘suvchi butun sonlarni yaratish uchun ishlatiladigan ma'lumot turi. SERIAL turiga o‘xshaydi, lekin katta raqamlar (64-bitgacha) bilan ishlash imkonini beradi. Ko‘pincha millionlab yozuvlar yoki katta hajmli bazalar uchun asosiy kalit (primary key) sifatida qo‘llaniladi.</p>
+<pre><code class="language-sql">-- Example nomli jadval yaratilyapti
+CREATE TABLE example (
+
+    -- id ustuni yaratilmoqda
+    -- BIGSERIAL - bu ustun avtomatik tarzda katta raqamlar yaratadi
+    -- Har bir yangi yozuv uchun qiymat avtomatik 1 taga ortadi
+    -- PRIMARY KEY - bu ustun asosiy kalit hisoblanadi
+    -- Katta hajmli ma'lumotlar bazalari uchun mos
+    id BIGSERIAL PRIMARY KEY
+);
+</code></pre>
+<h2 id="asosiy-sql-buyruqlari-create-database-create-table-drop-insert-select">✅ ASOSIY SQL BUYRUQLARI: CREATE DATABASE, CREATE TABLE, DROP, INSERT, SELECT</h2>
+<p><code>\h</code> - SQL dagi buyruqlarni chiqarish</p>
+<p><code>\?</code>  - PSQL ni ishlatish uchun buyruqlar</p>
+<p><code>\q</code> - dasturdan chiqish</p>
+<p><code>\l</code> - database larni ko'rish</p>
+<p><code>\! cls</code> - terminalni tozalash</p>
+<p><code>\c database_name</code> - ma'lumotlar bazasiga ulanish</p>
+<p><code>\dt</code> - jadvalni ko'rish</p>
+<p><code>\d table_name</code> - jadvalga ulanish</p>
+<h3 id="create-database">❇️ CREATE DATABASE</h3>
+<p><strong>CREATE DATABASE</strong>: Yangi database yaratish.</p>
+<p><strong>\c database_name;</strong> - databasega ulanish</p>
+<pre><code class="language-sql">CREATE DATABASE university;
+</code></pre>
+<h2 id="create-table">CREATE TABLE</h2>
+<p><code>CREATE TABLE</code>: Ma'lumotlar bazasi ichida yangi table(jadval) yaratadi.</p>
+<pre><code class="language-sql">CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    ...
+);
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">CREATE TABLE Students (
+    StudentID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    Age INT,
+    Grade VARCHAR(10)
+);
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>StudentID</th>
+<th>Name</th>
+<th>Age</th>
+<th>Grade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><code>\dt</code> - yaratilgan jadvalni ko'rish</p>
+<p><code>\d table_name;</code> - jadvalga ulanish</p>
+<h2 id="drop">DROP</h2>
+<p><code>DROP</code>: Ma'lumotlar bazasini yoki jadvalni o‘chirib tashlaydi. Ushbu buyruqni ehtiyotkorlik bilan ishlating, chunki u barcha ma'lumotlarni o‘chiradi.</p>
+<p><code>Database</code>ni o‘chirish:</p>
+<pre><code class="language-sql">DROP DATABASE database_name;
+</code></pre>
+<p><code>Table</code>ni o'chirish</p>
+<pre><code class="language-sql">DROP TABLE table_name;
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">DROP TABLE Students;
+</code></pre>
+<h2 id="insert">INSERT</h2>
+<p><code>INSERT</code>: Jadvalni elementlar bilan to'ldirish.</p>
+<pre><code class="language-sql">INSERT INTO table_name (column1, column2, ...)
+VALUES (value1, value2, ...);
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">INSERT INTO Students (StudentID, Name, Age, Grade)
+VALUES (1, 'John Doe', 20, 'A');
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>StudentID</th>
+<th>Name</th>
+<th>Age</th>
+<th>Grade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>John Doe</td>
+<td>20</td>
+<td>A</td>
+</tr>
+</tbody>
+</table>
+<h2 id="select">SELECT</h2>
+<p><code>SELECT</code>: Jadvaldan ma'lumotlarni chiqarib beradi. Maxsus ustunlarni yoki shartlarni belgilash mumkin.</p>
+<pre><code class="language-sql">SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">SELECT Name, Age
+FROM Students
+WHERE Grade = 'A';
+</code></pre>
+<h1 id="primary-keys-and-constraints">PRIMARY KEYS AND CONSTRAINTS</h1>
+<blockquote>
+<p>[!NOTE]
+Ma'lumotlar bazasida asosiy kalit (primary key) va cheklovlar (constraints) ma'lumotlarning to'g'ri va tartibli saqlanishini ta'minlash uchun ishlatiladi.</p>
+</blockquote>
+<h3 id="primary-key">Primary key</h3>
+<p>Primary key jadvaldagi har bir qatorni yagona tarzda identifikatsiya qiladi. U shuni ta'minlaydiki, jadvaldagi ikkita qator bir xil asosiy kalit qiymatiga ega bo'lmaydi va asosiy kalit hech qachon <code>NULL</code> bo'lmaydi.</p>
+<ul>
+<li>Characteristics of a Primary Key:</li>
+<li><strong>Uniqueness:</strong> Har bir qator uchun asosiy kalit qiymati takrorlanmas bo'lishi kerak.</li>
+<li><strong>Non-null:</strong> Primary key ustunida <code>NULL</code> qiymatlari bo'lishi mumkin emas.</li>
+<li><strong>Single-column or Composite:</strong> Asosiy kalit bitta ustundan yoki bir nechta ustunlarning birikmasidan iborat bo'lishi mumkin.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">CREATE TABLE Students (
+    StudentID INT PRIMARY KEY,
+    Name VARCHAR(100),
+    Age INT
+);
+</code></pre>
+<p>Bu yerda <code>StudentID</code> asosiy kalit bo'lib, har bir talabaning noyob <code>ID</code>ga ega bo'lishini ta'minlaydi.</p>
+<p><strong>Composite Primary Key Example:</strong></p>
+<pre><code class="language-sql">CREATE TABLE Enrollments (
+    StudentID INT,
+    CourseID INT,
+    PRIMARY KEY (StudentID, CourseID)
+);
+</code></pre>
+<p>Bu jadvalda <code>StudentID</code> va <code>CourseID</code> birgalikda birikma asosiy kalit sifatida ishlatiladi, ya'ni har bir talaba bitta kursga faqat bir marta yozilishi mumkin.</p>
+<h3 id="constraints">Constraints</h3>
+<blockquote>
+<p>[!NOTE]
+<code>Constraints</code> jadval ustunlariga qo'llaniladigan qoidalar bo'lib, ular ma'lumotlarning <code>to'g'ri</code> va <code>tartibli</code> bo'lishini ta'minlaydi.</p>
+</blockquote>
+<p>Types of Constraints:
+1. NOT NULL</p>
+<p>Ustunda <code>NULL</code> qiymat bo'lishiga ruxsat bermaydi.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL
+);
+</code></pre>
+<ol>
+<li>UNIQUE</li>
+</ol>
+<p>Ustundagi barcha qiymatlar takrorlanmas bo'lishini ta'minlaydi.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">CREATE TABLE Products (
+    ProductID INT PRIMARY KEY,
+    SKU VARCHAR(50) UNIQUE
+);
+</code></pre>
+<ol>
+<li>PRIMARY KEY</li>
+</ol>
+<p>U <code>NOT NULL</code> va <code>UNIQUE</code> qoidalarini birlashtirib, har bir qatorni noyob identifikatsiyalaydi.</p>
+<ol>
+<li>FOREIGN KEY</li>
+</ol>
+<p>Jadvalni boshqa jadval bilan bog'laydi, boshqa jadvalning asosiy kalitiga ishora qiladi.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    CustomerID INT,
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
+</code></pre>
+<ol>
+<li>CHECK</li>
+</ol>
+<p>Ustundagi qiymatlarning ma'lum bir shartga mos kelishini tekshiradi.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">CREATE TABLE Accounts (
+    AccountID INT PRIMARY KEY,
+    Balance DECIMAL(10, 2) CHECK (Balance &gt;= 0)
+);
+</code></pre>
+<ol>
+<li>DEFAULT</li>
+</ol>
+<p>Agar kiritishda qiymat berilmasa, ustun uchun <code>standart</code> qiymatni belgilaydi.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-sql">CREATE TABLE Users (
+    UserID INT PRIMARY KEY,
+    RegistrationDate DATE DEFAULT CURRENT_DATE
+);
+</code></pre>
+<h1 id="practice">PRACTICE</h1>
+<ol>
+<li>
+<p>Create <code>library_system</code> database</p>
+</li>
+<li>
+<p><code>library_system</code> nomli ma’lumotlar bazasini yarating.</p>
+</li>
+<li><code>library_system</code> bazasida <code>books</code> nomli jadval yarating va quyidagi ustunlarni qo‘shing:</li>
+<li><code>id</code> (integer, primary key)</li>
+<li><code>title</code> (varchar, maksimal 200 ta belgi)</li>
+<li><code>author</code> (varchar, maksimal 100 ta belgi)</li>
+<li><code>published_year</code> (integer)</li>
+<li><code>books</code> jadvaliga quyidagi ma’lumotlarni kiriting:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>title</th>
+<th>author</th>
+<th>published_year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>"1984"</td>
+<td>"George Orwell"</td>
+<td>1949</td>
+</tr>
+<tr>
+<td>2</td>
+<td>"To Kill a Mockingbird"</td>
+<td>"Harper Lee"</td>
+<td>1960</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>books</code> jadvalidan barcha ma’lumotlarni oling.</li>
+<li>1950-yildan keyin nashr etilgan kitoblarning faqat <code>title</code> va <code>author</code> ustunlarini oling.</li>
+<li><code>books</code> jadvalini o‘chirib tashlang.</li>
+<li>
+<p><code>library_system</code> ma’lumotlar bazasini o‘chirib tashlang (ehtiyotkorlik bilan foydalaning!).</p>
+</li>
+<li>
+<p>Primary Key bilan jadval yaratish</p>
+</li>
+<li>
+<p><code>students</code> nomli jadval yarating. U quyidagi ustunlardan iborat bo‘lsin:</p>
+</li>
+<li><code>student_id</code> (integer, primary key)</li>
+<li><code>name</code> (varchar, 100 ta belgi)</li>
+<li>
+<p><code>age</code> (integer)</p>
+</li>
+<li>
+<p><code>Composite Primary Key</code> yaratish</p>
+</li>
+<li>
+<p><code>enrollments</code> nomli jadval yarating. U quyidagi ustunlardan iborat bo‘lsin:</p>
+</li>
+<li><code>student_id</code> (integer)</li>
+<li><code>course_id</code> (integer)</li>
+<li><code>enrollment_date</code> (date)</li>
+<li>
+<p><code>student_id</code> va <code>course_id</code> ustunlarini birgalikda <code>composite primary key</code> sifatida belgilang</p>
+</li>
+<li>
+<p><code>NOT NULL Constraint</code> qo‘shish</p>
+</li>
+<li>
+<p><code>teachers</code> nomli jadval yarating. U quyidagi ustunlardan iborat bo‘lsin:</p>
+</li>
+<li><code>teacher_id</code> (integer, primary key)</li>
+<li><code>name</code> (varchar, 100 ta belgi, null bo‘lishi mumkin emas)</li>
+<li>
+<p><code>subject</code> (varchar, 50 ta belgi)</p>
+</li>
+<li>
+<p><code>UNIQUE Constraint</code> qo‘shish</p>
+</li>
+<li>
+<p><code>courses</code> nomli jadval yarating. U quyidagi ustunlardan iborat bo‘lsin:</p>
+</li>
+<li><code>course_id</code> (integer, primary key)</li>
+<li>
+<p><code>course_name</code> (varchar, 100 ta belgi, har bir nom noyob bo‘lishi kerak)</p>
+</li>
+<li>
+<p><code>FOREIGN KEY Constraint</code> qo‘shish</p>
+</li>
+<li>
+<p><code>classes</code> nomli jadval yarating. U quyidagi ustunlardan iborat bo‘lsin:</p>
+</li>
+<li><code>class_id</code> (integer, primary key)</li>
+<li>
+<p><code>teacher_id</code> (integer, teachers jadvalidagi teacher_id ustuniga bog‘langan bo‘lishi kerak)</p>
+</li>
+<li>
+<p><code>CHECK Constraint</code> qo‘shish</p>
+</li>
+<li>
+<p><code>grades</code> nomli jadval yarating. U quyidagi ustunlardan iborat bo‘lsin:</p>
+<ul>
+<li><code>grade_id</code> (integer, primary key)</li>
+<li><code>student_id</code> (integer)</li>
+<li><code>grade</code> (integer, qiymati 0 va 100 oralig‘ida bo‘lishi kerak)</li>
+</ul>
+</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
